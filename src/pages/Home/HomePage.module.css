@@ -1,0 +1,6 @@
+.section { padding-top: 48px; }
+.section + .section { padding-top: 64px; }
+.practiceGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.topicGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .topicGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .practiceGrid, .topicGrid { grid-template-columns: 1fr; } }

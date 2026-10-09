@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" font-family="Arial, sans-serif">
+  <rect width="720" height="220" rx="14" fill="#f4f5ff"/>
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <rect x="30" y="70" width="170" height="80" rx="12" fill="#fff" stroke="#5b5bd6" stroke-width="2"/>
+    <text x="115" y="105" fill="#1e1b4b">State / Props</text><text x="115" y="127" font-weight="400" fill="#64748b">change</text>
+    <rect x="275" y="70" width="170" height="80" rx="12" fill="#fff" stroke="#5b5bd6" stroke-width="2"/>
+    <text x="360" y="105" fill="#1e1b4b">New Virtual DOM</text><text x="360" y="127" font-weight="400" fill="#64748b">diff with old tree</text>
+    <rect x="520" y="70" width="170" height="80" rx="12" fill="#5b5bd6"/>
+    <text x="605" y="105" fill="#fff">Real DOM</text><text x="605" y="127" font-weight="400" fill="#e0e0ff">only changed nodes</text>
+  </g>
+  <g stroke="#5b5bd6" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M205 110h60M450 110h60"/><path d="M258 102l10 8-10 8M503 102l10 8-10 8"/></g>
+</svg>
