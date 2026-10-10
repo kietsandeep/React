@@ -1,0 +1,83 @@
+{
+  "id": "dsa-005",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a non-empty array of numbers `arr`, return the largest number without using `Math.max`.",
+  "examples": [
+    "console.log(findMax([3, 9, 2])); // 9"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {number[]} arr\n * @return {number}\n */\nfunction findMax(arr) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {number[]} arr\n * @return {number}\n */\nfunction findMax(arr) {\n  let max = arr[0];\n  for (const x of arr) if (x > max) max = x;\n  return max;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Positive numbers",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "findMax",
+          "args": [
+            [
+              3,
+              9,
+              2
+            ]
+          ],
+          "equals": 9
+        }
+      ]
+    },
+    {
+      "name": "All negative",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "findMax",
+          "args": [
+            [
+              -5,
+              -1,
+              -9
+            ]
+          ],
+          "equals": -1
+        }
+      ]
+    },
+    {
+      "name": "Single element",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "findMax",
+          "args": [
+            [
+              7
+            ]
+          ],
+          "equals": 7
+        }
+      ]
+    },
+    {
+      "name": "All equal",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "findMax",
+          "args": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "equals": 1
+        }
+      ]
+    }
+  ]
+}

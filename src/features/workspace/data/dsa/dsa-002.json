@@ -1,0 +1,96 @@
+{
+  "id": "dsa-002",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a string `str`, return `true` if it reads the same forward and backward, otherwise `false`. The check is case-sensitive.",
+  "examples": [
+    "console.log(isPalindrome(\"madam\")); // true",
+    "console.log(isPalindrome(\"hello\")); // false"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {string} str\n * @return {boolean}\n */\nfunction isPalindrome(str) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {string} str\n * @return {boolean}\n */\nfunction isPalindrome(str) {\n  let i = 0, j = str.length - 1;\n  while (i < j) {\n    if (str[i++] !== str[j--]) return false;\n  }\n  return true;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Odd length",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPalindrome",
+          "args": [
+            "madam"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Even length",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPalindrome",
+          "args": [
+            "abba"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Not a palindrome",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPalindrome",
+          "args": [
+            "hello"
+          ],
+          "equals": false
+        }
+      ]
+    },
+    {
+      "name": "Empty string",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPalindrome",
+          "args": [
+            ""
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Single character",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPalindrome",
+          "args": [
+            "a"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Almost a palindrome",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPalindrome",
+          "args": [
+            "abca"
+          ],
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

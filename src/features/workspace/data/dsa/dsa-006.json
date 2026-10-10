@@ -1,0 +1,109 @@
+{
+  "id": "dsa-006",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given an integer `n`, return `true` if it is a prime number, otherwise `false`. Numbers below `2` are not prime.",
+  "examples": [
+    "console.log(isPrime(7)); // true",
+    "console.log(isPrime(9)); // false"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {number} n\n * @return {boolean}\n */\nfunction isPrime(n) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {number} n\n * @return {boolean}\n */\nfunction isPrime(n) {\n  if (n < 2) return false;\n  for (let i = 2; i * i <= n; i++) {\n    if (n % i === 0) return false;\n  }\n  return true;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Smallest prime",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            2
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Small prime",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            7
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Odd composite",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            9
+          ],
+          "equals": false
+        }
+      ]
+    },
+    {
+      "name": "One",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            1
+          ],
+          "equals": false
+        }
+      ]
+    },
+    {
+      "name": "Zero",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            0
+          ],
+          "equals": false
+        }
+      ]
+    },
+    {
+      "name": "Larger prime",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            97
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Even composite",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "isPrime",
+          "args": [
+            100
+          ],
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

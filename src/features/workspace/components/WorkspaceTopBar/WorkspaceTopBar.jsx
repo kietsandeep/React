@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SITE } from "@/constants/site";
 import Icon from "@/components/common/Icon/Icon";
 import styles from "./WorkspaceTopBar.module.css";
 
@@ -14,9 +15,9 @@ export default function WorkspaceTopBar({
 }) {
   return (
     <header className={styles.bar}>
-      <Link to="/" className={styles.brand} aria-label="InterviewDepth home">
-        <span className={styles.logo}>ID</span>
-        <span className={styles.name}>Interview<b>Depth</b></span>
+      <Link to="/" className={styles.brand} aria-label={`${SITE.name} home`}>
+        <span className={styles.logo}>{SITE.short}</span>
+        <span className={styles.name}>{SITE.name}</span>
       </Link>
       <span className={styles.sep} />
       <Link to={`/practice/${setSlug}`} className={styles.btn}><Icon name="arrowLeft" size={15} /> Problems</Link>

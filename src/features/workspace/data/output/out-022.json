@@ -1,0 +1,9 @@
+{
+  "id": "out-022",
+  "kind": "output",
+  "code": "var a = 1;\nfunction data() {\n  if(!a) {\n    var a = 10;\n  }\n  console.log(a);\n}\ndata();",
+  "expected": [
+    "10"
+  ],
+  "explanation": "`var a` inside `data` is hoisted to the top of the function and shadows the global. It starts as `undefined`, so `!a` is true and `a` becomes 10."
+}

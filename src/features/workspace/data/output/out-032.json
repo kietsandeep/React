@@ -1,0 +1,9 @@
+{
+  "id": "out-032",
+  "kind": "output",
+  "code": "let x = 10+2*3\nconsole.log(x);",
+  "expected": [
+    "16"
+  ],
+  "explanation": "Multiplication has higher precedence: `2*3` is 6, then `10+6` is 16."
+}

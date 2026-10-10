@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": 1,
+  "set": {
+    "slug": "dsa",
+    "eyebrow": "Algorithms · Coding Practice",
+    "title": "DSA Questions",
+    "subtitle": "Hand-picked algorithm and problem-solving questions from beginner to advanced, designed to mirror real interview rounds. Open any question and jump into a focused coding workspace.",
+    "searchPlaceholder": "Search by title or keyword...",
+    "mockAssessment": {
+      "title": "Mock Assessment",
+      "unlockAfter": 5
+    },
+    "labels": {
+      "icon": "code",
+      "total": "Challenges",
+      "levels": {
+        "easy": "Beginner",
+        "medium": "Intermediate",
+        "hard": "Advanced"
+      },
+      "progressDone": "solved",
+      "mockPrefix": "Solve"
+    }
+  },
+  "questions": [
+    {
+      "id": "dsa-001",
+      "number": 1,
+      "slug": "write-a-program-to-remove-duplicates-from-an-array",
+      "title": "Write a program to remove duplicates from an array ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 2014,
+      "description": "Given a sorted array nums of size n, remove the duplicates in place such that each element appears only once and return the new length."
+    },
+    {
+      "id": "dsa-002",
+      "number": 2,
+      "slug": "how-to-check-whether-a-string-is-palindrome-or-not",
+      "title": "How to check whether a string is palindrome or not ?",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1894,
+      "description": "Given a string str, return true if it reads the same forward and backward."
+    },
+    {
+      "id": "dsa-003",
+      "number": 3,
+      "slug": "javascript-program-to-find-the-factorial-of-given-number",
+      "title": "Javascript program to Find the factorial of given number ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 987,
+      "description": "Given a non-negative integer n, return n! (the product of all positive integers up to n)."
+    },
+    {
+      "id": "dsa-004",
+      "number": 4,
+      "slug": "javascript-program-to-find-longest-word-in-a-given-sentence",
+      "title": "Javascript Program to find longest word in a given sentence ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 2986,
+      "description": "Given a sentence str, return the longest word in it."
+    },
+    {
+      "id": "dsa-005",
+      "number": 5,
+      "slug": "write-a-javascript-program-to-find-the-maximum-number-in-an-array",
+      "title": "Write a JavaScript program to find the maximum number in an array ?",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 1768,
+      "description": "Given an array of numbers arr, return the largest number."
+    },
+    {
+      "id": "dsa-006",
+      "number": 6,
+      "slug": "write-a-javascript-function-to-check-if-a-given-number-is-prime",
+      "title": "Write a JavaScript function to check if a given number is prime ?",
+      "difficulty": "easy",
+      "company": "Infosys",
+      "views": 1099,
+      "description": "Given an integer n, return true if it is a prime number, otherwise false."
+    },
+    {
+      "id": "dsa-007",
+      "number": 7,
+      "slug": "program-to-find-reverse-of-a-string-without-using-built-in-method",
+      "title": "Program to find Reverse of a string without using built-in method ?",
+      "difficulty": "easy",
+      "company": "EPAM",
+      "views": 3197,
+      "description": "Given a string str, return it reversed without using reverse() or similar built-in helpers."
+    },
+    {
+      "id": "dsa-008",
+      "number": 8,
+      "slug": "javascript-program-find-the-smallest-word-in-a-given-sentence",
+      "title": "Javascript program Find the smallest word in a given sentence ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 2321,
+      "description": "Given a sentence str, return the shortest word in it."
+    },
+    {
+      "id": "dsa-009",
+      "number": 9,
+      "slug": "function-that-returns-the-fibonacci-sequence-up-to-a-given-number-of-terms",
+      "title": "Function that returns the Fibonacci sequence up to a given number of terms",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1998,
+      "description": "Given n, return an array with the first n terms of the Fibonacci sequence."
+    },
+    {
+      "id": "dsa-010",
+      "number": 10,
+      "slug": "javascript-program-to-find-the-max-count-of-consecutive-1-s-in-an-array",
+      "title": "Javascript program to Find the max count of consecutive 1's in an array ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 2132,
+      "description": "Given a binary array arr, return the maximum number of consecutive 1s."
+    },
+    {
+      "id": "dsa-011",
+      "number": 11,
+      "slug": "given-2-arrays-that-are-sorted-merge-them-and-into-single-array-and-sort-it",
+      "title": "Given 2 arrays that are sorted. Merge them and into single array and sort it",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 2312,
+      "description": "Given two sorted arrays a and b, merge them into a single sorted array."
+    },
+    {
+      "id": "dsa-012",
+      "number": 12,
+      "slug": "find-if-one-string-can-be-formed-by-rearranging-the-letters-of-other-string-qwer",
+      "title": "Find if one string can be formed by rearranging the letters of other string 'qwerty','qeywrt' ==> true",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 3021,
+      "description": "Given two strings a and b, return true if b is an anagram of a."
+    },
+    {
+      "id": "dsa-013",
+      "number": 13,
+      "slug": "write-a-program-to-find-largest-element-in-nested-array-3-4-58-709-8-9-10-11-111",
+      "title": "Write a program to find largest element in nested array [[3, 4, 58], [709, 8, 9, [10, 11]], [111, 2]]",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1768,
+      "description": "Given an arbitrarily nested array of numbers, return the largest number."
+    },
+    {
+      "id": "dsa-014",
+      "number": 14,
+      "slug": "given-a-string-write-a-javascript-function-to-count-the-occurrences-of-each-char",
+      "title": "Given a string, write a javascript function to count the occurrences of each character in the string",
+      "difficulty": "easy",
+      "company": "EPAM",
+      "views": 2112,
+      "description": "Given a string str, return an object mapping each character to its number of occurrences."
+    },
+    {
+      "id": "dsa-015",
+      "number": 15,
+      "slug": "write-a-javascript-function-that-sorts-an-array-of-numbers-in-ascending-order",
+      "title": "Write a javascript function that sorts an array of numbers in ascending order.",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 2431,
+      "description": "Given an array of numbers arr, return a new array sorted in ascending order."
+    },
+    {
+      "id": "dsa-016",
+      "number": 16,
+      "slug": "write-a-function-that-reverses-the-order-of-words-in-a-sentence-without-using-bu",
+      "title": "Write a function that reverses the order of words in a sentence without using built-in methods",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 2674,
+      "description": "Given a sentence str, return the sentence with the order of the words reversed."
+    },
+    {
+      "id": "dsa-017",
+      "number": 17,
+      "slug": "implement-a-javascript-function-that-flattens-a-nested-array-into-a-single-dimen",
+      "title": "Implement a javascript function that flattens a nested array into a single-dimensional array",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 2762,
+      "description": "Given a nested array arr, return a single-level array containing all the values."
+    },
+    {
+      "id": "dsa-018",
+      "number": 18,
+      "slug": "write-a-function-which-converts-a-b-c-somevalue-to-object-a-b-c-somevalue",
+      "title": "Write a function which converts ('a.b.c', 'someValue') to object {a: {b: {c: 'someValue'}}}",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 2323,
+      "description": "Given a dotted path and a value, build the nested object that ends with that value."
+    },
+    {
+      "id": "dsa-019",
+      "number": 19,
+      "slug": "given-an-array-return-an-array-where-the-each-value-is-the-product-of-the-next-t",
+      "title": "Given an array,return an array where the each value is the product of the next two items [3, 4, 5] -> [20, 15, 12]",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1887,
+      "description": "For each index, multiply the next two items (wrapping around the end of the array)."
+    },
+    {
+      "id": "dsa-020",
+      "number": 20,
+      "slug": "find-the-2nd-largest-element-from-a-given-array-100-20-112-22",
+      "title": "Find the 2nd largest element from a given array ? [100,20,112,22]",
+      "difficulty": "easy",
+      "company": "Infosys",
+      "views": 2614,
+      "description": "Given an array arr, return the second-largest distinct number."
+    },
+    {
+      "id": "dsa-021",
+      "number": 21,
+      "slug": "write-a-program-to-get-below-output-from-given-input-i-p-abbcccddddeeea-o-p-1a2b",
+      "title": "Write a program to get below output from given input ? I/P: abbcccddddeeea, O/P: 1a2b3c4d2e1a",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1323,
+      "description": "Given a string str, return each run of identical characters as count followed by the character."
+    },
+    {
+      "id": "dsa-022",
+      "number": 22,
+      "slug": "find-pairs-from-given-input-input1-1-2-3-4-5-6-7-8-9-input2-10-output-4-6-3-7-2",
+      "title": "Find pairs from given input ? input1 = [1,2,3,4,5,6,7,8,9]; input2 = 10; output = [[4,6],[3,7],[2,8],[1,9]]",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 1234,
+      "description": "Given an array and a target sum, return all pairs of numbers that add up to the target."
+    },
+    {
+      "id": "dsa-023",
+      "number": 23,
+      "slug": "write-a-javascript-function-that-sorts-an-array-of-numbers-in-descending-order",
+      "title": "Write a javascript function that sorts an array of numbers in descending order",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1321,
+      "description": "Given an array of numbers arr, return a new array sorted in descending order."
+    },
+    {
+      "id": "dsa-024",
+      "number": 24,
+      "slug": "function-that-return-true-if-every-value-in-arr1-has-corresponding-value-squared",
+      "title": "function that return true if every value in arr1 has corresponding value squared in array2. The frequency of values must be same.",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1109,
+      "description": "Return true if every value in arr1 has its square in arr2 with the same frequency."
+    },
+    {
+      "id": "dsa-025",
+      "number": 25,
+      "slug": "write-a-function-sumofthirds-arr-which-should-return-a-sum-of-every-third-number",
+      "title": "Write a function sumOfThirds(arr) which should return a sum of every third number in the array, starting from the first one.",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 998,
+      "description": "Return the sum of the elements at index 0, 3, 6, ... of the array."
+    },
+    {
+      "id": "dsa-026",
+      "number": 26,
+      "slug": "find-the-longest-common-prefix-among-all-strings-in-given-array-flower-flow-flig",
+      "title": "Find the longest common prefix among all strings in given array ['flower', 'flow', 'flight']",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 197,
+      "description": "Given an array of strings, return the longest prefix shared by all of them."
+    },
+    {
+      "id": "dsa-027",
+      "number": 27,
+      "slug": "rotate-the-given-array-clockwise-i-p-1-2-3-4-5-6-o-p-5-6-1-2-3-4",
+      "title": "Rotate the given array clockwise. I/P: [1,2,3,4,5,6], O/P: [5,6,1,2,3,4]",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1180,
+      "description": "Given an array arr and k, rotate the array to the right (clockwise) by k positions."
+    },
+    {
+      "id": "dsa-028",
+      "number": 28,
+      "slug": "count-the-number-of-vowels-and-consonants-in-a-string",
+      "title": "Count the number of vowels and consonants in a string ?",
+      "difficulty": "easy",
+      "company": "EPAM",
+      "views": 1420,
+      "description": "Given a string str, return how many vowels and how many consonants it contains."
+    },
+    {
+      "id": "dsa-029",
+      "number": 29,
+      "slug": "find-the-first-non-repeating-character-in-a-string",
+      "title": "Find the first non-repeating character in a string ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 1650,
+      "description": "Given a string str, return the first character that appears exactly once."
+    },
+    {
+      "id": "dsa-030",
+      "number": 30,
+      "slug": "remove-duplicate-characters-from-a-string",
+      "title": "Remove duplicate characters from a string ?",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1385,
+      "description": "Given a string str, return it with repeated characters removed, keeping the first occurrence."
+    },
+    {
+      "id": "dsa-031",
+      "number": 31,
+      "slug": "find-the-first-repeating-character-in-a-string",
+      "title": "Find the first repeating character in a string ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1240,
+      "description": "Given a string str, return the first character that appears again later."
+    },
+    {
+      "id": "dsa-032",
+      "number": 32,
+      "slug": "count-the-number-of-words-in-a-sentence",
+      "title": "Count the number of words in a sentence ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 1310,
+      "description": "Given a sentence str, return the number of words in it."
+    },
+    {
+      "id": "dsa-033",
+      "number": 33,
+      "slug": "find-the-most-frequently-occurring-character-in-a-string",
+      "title": "Find the most frequently occurring character in a string ?",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1290,
+      "description": "Given a string str, return the character that occurs the most times."
+    },
+    {
+      "id": "dsa-034",
+      "number": 34,
+      "slug": "find-the-character-with-the-second-highest-frequency-in-a-string",
+      "title": "Find the character with the second-highest frequency in a string ?",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1120,
+      "description": "Given a string str, return the character with the second-highest occurrence count."
+    },
+    {
+      "id": "dsa-035",
+      "number": 35,
+      "slug": "find-all-duplicate-characters-in-a-string",
+      "title": "Find all duplicate characters in a string ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1080,
+      "description": "Given a string str, return every character that appears more than once."
+    },
+    {
+      "id": "dsa-036",
+      "number": 36,
+      "slug": "check-whether-one-string-is-a-rotation-of-another",
+      "title": "Check whether one string is a rotation of another ?",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1155,
+      "description": "Given strings a and b, return true if b can be obtained by rotating a."
+    },
+    {
+      "id": "dsa-037",
+      "number": 37,
+      "slug": "find-the-length-of-the-longest-substring-without-repeating-characters",
+      "title": "Find the length of the longest substring without repeating characters ?",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 1730,
+      "description": "Given a string str, return the length of its longest substring with all unique characters."
+    },
+    {
+      "id": "dsa-038",
+      "number": 38,
+      "slug": "find-the-longest-palindromic-substring-in-a-string",
+      "title": "Find the longest palindromic substring in a string ?",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1580,
+      "description": "Given a string str, return the longest substring that is a palindrome."
+    },
+    {
+      "id": "dsa-039",
+      "number": 39,
+      "slug": "compress-a-string-i-p-aaabbcccc-o-p-a3b2c4",
+      "title": "Compress a string. I/P: 'aaabbcccc', O/P: 'a3b2c4'",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 1465,
+      "description": "Given a string str, compress consecutive repeated characters into character + count."
+    },
+    {
+      "id": "dsa-040",
+      "number": 40,
+      "slug": "expand-a-compressed-string-i-p-a3b2c4-o-p-aaabbcccc",
+      "title": "Expand a compressed string. I/P: 'a3b2c4', O/P: 'aaabbcccc'",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1210,
+      "description": "Given a compressed string like 'a3b2', expand it back to its original form."
+    },
+    {
+      "id": "dsa-041",
+      "number": 41,
+      "slug": "find-all-substrings-of-a-string",
+      "title": "Find all substrings of a string ?",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1035,
+      "description": "Given a string str, return all of its contiguous substrings."
+    },
+    {
+      "id": "dsa-042",
+      "number": 42,
+      "slug": "find-the-minimum-number-of-characters-to-remove-to-make-two-strings-anagrams",
+      "title": "Find the minimum number of characters to remove to make two strings anagrams ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1150,
+      "description": "Given strings a and b, return how many characters must be removed in total to make them anagrams."
+    },
+    {
+      "id": "dsa-043",
+      "number": 43,
+      "slug": "replace-all-spaces-in-a-string-with-20",
+      "title": "Replace all spaces in a string with '%20' ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 990,
+      "description": "Given a string str, replace every space with the sequence %20 (URL encoding)."
+    },
+    {
+      "id": "dsa-044",
+      "number": 44,
+      "slug": "find-the-smallest-substring-containing-all-characters-of-another-string",
+      "title": "Find the smallest substring containing all characters of another string ?",
+      "difficulty": "hard",
+      "company": "Wipro",
+      "views": 1340,
+      "description": "Given strings s and t, return the smallest substring of s that contains all characters of t (minimum window substring)."
+    },
+    {
+      "id": "dsa-045",
+      "number": 45,
+      "slug": "find-the-smallest-number-in-an-array",
+      "title": "Find the smallest number in an array ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1720,
+      "description": "Given an array of numbers arr, return the smallest number without using inbuilt methods."
+    },
+    {
+      "id": "dsa-046",
+      "number": 46,
+      "slug": "find-the-second-smallest-number-in-an-array",
+      "title": "Find the second-smallest number in an array ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 1490,
+      "description": "Given an array of numbers arr, return the second-smallest distinct number. Return -1 if it does not exist."
+    },
+    {
+      "id": "dsa-047",
+      "number": 47,
+      "slug": "reverse-an-array-without-using-reverse",
+      "title": "Reverse an array without using reverse() ?",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 1610,
+      "description": "Given an array arr, return a new array with the elements in reverse order without using the inbuilt reverse() method."
+    },
+    {
+      "id": "dsa-048",
+      "number": 48,
+      "slug": "find-the-duplicate-elements-in-an-array",
+      "title": "Find the duplicate elements in an array ?",
+      "difficulty": "easy",
+      "company": "Infosys",
+      "views": 1550,
+      "description": "Given an array arr, return all elements that appear more than once (each duplicate once)."
+    },
+    {
+      "id": "dsa-049",
+      "number": 49,
+      "slug": "find-the-missing-number-from-1-n-in-an-array",
+      "title": "Find the missing number from 1...N in an array ?",
+      "difficulty": "easy",
+      "company": "EPAM",
+      "views": 1680,
+      "description": "Given an array arr containing N-1 distinct numbers from the range 1..N, find the missing number."
+    },
+    {
+      "id": "dsa-050",
+      "number": 50,
+      "slug": "find-the-sum-of-all-elements-in-an-array",
+      "title": "Find the sum of all elements in an array ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 1770,
+      "description": "Given an array of numbers arr, return the sum of all elements."
+    },
+    {
+      "id": "dsa-051",
+      "number": 51,
+      "slug": "count-the-frequency-of-each-element-in-an-array",
+      "title": "Count the frequency of each element in an array ?",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1430,
+      "description": "Given an array arr, return an object mapping each element to its number of occurrences."
+    },
+    {
+      "id": "dsa-052",
+      "number": 52,
+      "slug": "move-all-zeros-to-the-end-of-an-array-i-p-0-1-0-3-12-o-p-1-3-12-0-0",
+      "title": "Move all zeros to the end of an array. I/P: [0,1,0,3,12], O/P: [1,3,12,0,0]",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1520,
+      "description": "Given an array arr, move all zeros to the end while keeping the relative order of the non-zero elements."
+    },
+    {
+      "id": "dsa-053",
+      "number": 53,
+      "slug": "move-all-negative-numbers-to-the-beginning-of-an-array",
+      "title": "Move all negative numbers to the beginning of an array ?",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 1240,
+      "description": "Given an array arr, move all negative numbers to the beginning while keeping the relative order of the rest."
+    },
+    {
+      "id": "dsa-054",
+      "number": 54,
+      "slug": "find-the-intersection-of-two-arrays",
+      "title": "Find the intersection of two arrays ?",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1360,
+      "description": "Given two arrays a and b, return their intersection (common distinct elements)."
+    },
+    {
+      "id": "dsa-055",
+      "number": 55,
+      "slug": "find-the-union-of-two-arrays",
+      "title": "Find the union of two arrays ?",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1280,
+      "description": "Given two arrays a and b, return their union (all distinct elements from both)."
+    },
+    {
+      "id": "dsa-056",
+      "number": 56,
+      "slug": "find-the-elements-that-appear-only-once-in-an-array",
+      "title": "Find the elements that appear only once in an array ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1150,
+      "description": "Given an array arr, return all elements that appear exactly once."
+    },
+    {
+      "id": "dsa-057",
+      "number": 57,
+      "slug": "find-the-pair-whose-sum-equals-a-target-i-p-2-7-11-15-target-9-o-p-2-7",
+      "title": "Find the pair whose sum equals a target. I/P: [2,7,11,15], target = 9, O/P: [2,7]",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1830,
+      "description": "Given an array arr and a target, return a pair of numbers that add up to the target (two-sum)."
+    },
+    {
+      "id": "dsa-058",
+      "number": 58,
+      "slug": "find-all-triplets-whose-sum-equals-zero",
+      "title": "Find all triplets whose sum equals zero ?",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 1390,
+      "description": "Given an array arr, return all unique triplets [a, b, c] such that a + b + c = 0."
+    },
+    {
+      "id": "dsa-059",
+      "number": 59,
+      "slug": "find-the-maximum-sum-of-a-contiguous-subarray-kadane-s-algorithm",
+      "title": "Find the maximum sum of a contiguous subarray (Kadane's algorithm) ?",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1910,
+      "description": "Given an array arr, find the largest sum of any contiguous subarray."
+    },
+    {
+      "id": "dsa-060",
+      "number": 60,
+      "slug": "find-the-length-of-the-longest-consecutive-sequence-i-p-100-4-200-1-3-2-o-p-4",
+      "title": "Find the length of the longest consecutive sequence. I/P: [100,4,200,1,3,2], O/P: 4",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 1470,
+      "description": "Given an unsorted array arr, return the length of the longest run of consecutive integers."
+    },
+    {
+      "id": "dsa-061",
+      "number": 61,
+      "slug": "find-the-majority-element-appears-more-than-n-2-times",
+      "title": "Find the majority element (appears more than n/2 times) ?",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1350,
+      "description": "Given an array arr where one element appears more than n/2 times, return that element (Boyer-Moore voting)."
+    },
+    {
+      "id": "dsa-062",
+      "number": 62,
+      "slug": "find-the-element-that-occurs-only-once-when-every-other-element-occurs-twice",
+      "title": "Find the element that occurs only once when every other element occurs twice ?",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1420,
+      "description": "Given an array arr where every element appears twice except one, find the single element using XOR."
+    },
+    {
+      "id": "dsa-063",
+      "number": 63,
+      "slug": "find-the-product-of-array-elements-except-itself-i-p-1-2-3-4-o-p-24-12-8-6",
+      "title": "Find the product of array elements except itself. I/P: [1,2,3,4], O/P: [24,12,8,6]",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1560,
+      "description": "Given an array arr, return an array where each index holds the product of all elements except the one at that index (without division)."
+    },
+    {
+      "id": "dsa-064",
+      "number": 64,
+      "slug": "find-the-maximum-profit-from-buying-and-selling-a-stock-once",
+      "title": "Find the maximum profit from buying and selling a stock once ?",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1750,
+      "description": "Given an array of prices where prices[i] is the price on day i, return the maximum profit from one buy and one sell."
+    },
+    {
+      "id": "dsa-065",
+      "number": 65,
+      "slug": "find-a-subarray-with-a-given-sum",
+      "title": "Find a subarray with a given sum ?",
+      "difficulty": "hard",
+      "company": "Wipro",
+      "views": 1290,
+      "description": "Given an array of positive numbers arr and a target, return a contiguous subarray that adds up to the target."
+    },
+    {
+      "id": "dsa-066",
+      "number": 66,
+      "slug": "find-the-length-of-the-longest-subarray-with-sum-k",
+      "title": "Find the length of the longest subarray with sum K ?",
+      "difficulty": "hard",
+      "company": "Cognizant",
+      "views": 1220,
+      "description": "Given an array arr and a value k, return the length of the longest contiguous subarray whose sum equals k."
+    },
+    {
+      "id": "dsa-067",
+      "number": 67,
+      "slug": "find-the-maximum-product-subarray",
+      "title": "Find the maximum product subarray ?",
+      "difficulty": "hard",
+      "company": "Capgemini",
+      "views": 1180,
+      "description": "Given an array arr, find the contiguous subarray with the largest product and return that product."
+    },
+    {
+      "id": "dsa-068",
+      "number": 68,
+      "slug": "find-the-minimum-size-subarray-whose-sum-is-k",
+      "title": "Find the minimum size subarray whose sum is >= K ?",
+      "difficulty": "hard",
+      "company": "Accenture",
+      "views": 1140,
+      "description": "Given an array of positive numbers arr and a value k, return the minimal length of a contiguous subarray whose sum is at least k."
+    },
+    {
+      "id": "dsa-069",
+      "number": 69,
+      "slug": "merge-overlapping-intervals-i-p-1-3-2-6-8-10-9-12-o-p-1-6-8-12",
+      "title": "Merge overlapping intervals. I/P: [[1,3],[2,6],[8,10],[9,12]], O/P: [[1,6],[8,12]]",
+      "difficulty": "hard",
+      "company": "Infosys",
+      "views": 1490,
+      "description": "Given an array of intervals, merge all overlapping intervals and return the result."
+    },
+    {
+      "id": "dsa-070",
+      "number": 70,
+      "slug": "find-the-equilibrium-index-of-an-array",
+      "title": "Find the equilibrium index of an array ?",
+      "difficulty": "hard",
+      "company": "EPAM",
+      "views": 1120,
+      "description": "Given an array arr, return an index where the sum of elements to its left equals the sum of elements to its right. Return -1 if none."
+    },
+    {
+      "id": "dsa-071",
+      "number": 71,
+      "slug": "find-the-leaders-in-an-array-i-p-16-17-4-3-5-2-o-p-17-5-2",
+      "title": "Find the leaders in an array. I/P: [16,17,4,3,5,2], O/P: [17,5,2]",
+      "difficulty": "hard",
+      "company": "TCS",
+      "views": 1250,
+      "description": "An element is a leader if it is greater than all the elements to its right. Return all leaders in order."
+    },
+    {
+      "id": "dsa-072",
+      "number": 72,
+      "slug": "find-the-next-greater-element-for-every-element-in-an-array",
+      "title": "Find the next greater element for every element in an array ?",
+      "difficulty": "hard",
+      "company": "Wipro",
+      "views": 1310,
+      "description": "Given an array arr, for each element return the next element to its right that is greater than it, or -1 if none."
+    },
+    {
+      "id": "dsa-073",
+      "number": 73,
+      "slug": "find-the-trapped-rainwater-i-p-0-1-0-2-1-0-1-3-2-1-2-1-o-p-6",
+      "title": "Find the trapped rainwater. I/P: [0,1,0,2,1,0,1,3,2,1,2,1], O/P: 6",
+      "difficulty": "hard",
+      "company": "Cognizant",
+      "views": 1640,
+      "description": "Given an array of bar heights, compute how much rainwater can be trapped between the bars."
+    },
+    {
+      "id": "dsa-074",
+      "number": 74,
+      "slug": "find-the-maximum-value-of-arr-j-arr-i-where-j-i",
+      "title": "Find the maximum value of arr[j] - arr[i] where j > i ?",
+      "difficulty": "hard",
+      "company": "Capgemini",
+      "views": 1080,
+      "description": "Given an array arr, find the maximum difference arr[j] - arr[i] such that j > i."
+    },
+    {
+      "id": "dsa-075",
+      "number": 75,
+      "slug": "sort-an-array-containing-only-0-1-and-2-without-using-sort",
+      "title": "Sort an array containing only 0, 1 and 2 without using sort() ?",
+      "difficulty": "hard",
+      "company": "Accenture",
+      "views": 1520,
+      "description": "Given an array of only 0s, 1s and 2s, sort it in a single pass (Dutch national flag) without using sort()."
+    },
+    {
+      "id": "dsa-076",
+      "number": 76,
+      "slug": "find-the-median-of-two-sorted-arrays",
+      "title": "Find the median of two sorted arrays ?",
+      "difficulty": "hard",
+      "company": "Infosys",
+      "views": 1590,
+      "description": "Given two sorted arrays a and b, return the median of the combined sorted sequence."
+    },
+    {
+      "id": "dsa-077",
+      "number": 77,
+      "slug": "find-the-elements-that-occur-more-than-n-3-times-in-an-array",
+      "title": "Find the elements that occur more than N/3 times in an array ?",
+      "difficulty": "hard",
+      "company": "EPAM",
+      "views": 1160,
+      "description": "Given an array arr, return all elements that appear more than n/3 times (at most two)."
+    },
+    {
+      "id": "dsa-078",
+      "number": 78,
+      "slug": "find-the-smallest-missing-positive-integer-in-an-array",
+      "title": "Find the smallest missing positive integer in an array ?",
+      "difficulty": "hard",
+      "company": "TCS",
+      "views": 1440,
+      "description": "Given an unsorted array arr, find the smallest positive integer that is missing."
+    },
+    {
+      "id": "dsa-079",
+      "number": 79,
+      "slug": "reverse-each-word-in-a-sentence-i-p-hello-world-o-p-olleh-dlrow",
+      "title": "Reverse each word in a sentence. I/P: 'Hello World', O/P: 'olleH dlroW'",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1380,
+      "description": "Given a sentence str, reverse the letters of each word individually while keeping the word order and spaces intact."
+    },
+    {
+      "id": "dsa-080",
+      "number": 80,
+      "slug": "count-how-many-times-a-particular-character-occurs-in-a-string",
+      "title": "Count how many times a particular character occurs in a string ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1290,
+      "description": "Given a string str and a character ch, count how many times ch occurs in str."
+    },
+    {
+      "id": "dsa-081",
+      "number": 81,
+      "slug": "remove-all-spaces-from-a-string",
+      "title": "Remove all spaces from a string ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 1120,
+      "description": "Given a string str, remove all the space characters."
+    },
+    {
+      "id": "dsa-082",
+      "number": 82,
+      "slug": "remove-all-special-characters-from-a-string",
+      "title": "Remove all special characters from a string ?",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 1080,
+      "description": "Given a string str, keep only letters, digits and spaces and remove all special characters."
+    },
+    {
+      "id": "dsa-083",
+      "number": 83,
+      "slug": "convert-the-first-character-of-every-word-to-uppercase-title-case",
+      "title": "Convert the first character of every word to uppercase (title case) ?",
+      "difficulty": "easy",
+      "company": "Infosys",
+      "views": 1340,
+      "description": "Given a sentence str, capitalise the first letter of every word."
+    },
+    {
+      "id": "dsa-084",
+      "number": 84,
+      "slug": "find-the-longest-and-shortest-word-in-a-sentence-together",
+      "title": "Find the longest and shortest word in a sentence together ?",
+      "difficulty": "easy",
+      "company": "EPAM",
+      "views": 1160,
+      "description": "Given a sentence str, return both the longest and the shortest word."
+    },
+    {
+      "id": "dsa-085",
+      "number": 85,
+      "slug": "count-the-number-of-uppercase-and-lowercase-characters-in-a-string",
+      "title": "Count the number of uppercase and lowercase characters in a string ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 1220,
+      "description": "Given a string str, count how many uppercase and lowercase letters it contains."
+    },
+    {
+      "id": "dsa-086",
+      "number": 86,
+      "slug": "count-digits-and-alphabets-in-a-string",
+      "title": "Count digits and alphabets in a string ?",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1090,
+      "description": "Given a string str, count how many digits and how many alphabets it contains."
+    },
+    {
+      "id": "dsa-087",
+      "number": 87,
+      "slug": "check-whether-a-string-contains-only-numbers",
+      "title": "Check whether a string contains only numbers ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 980,
+      "description": "Given a string str, return true if it contains only digit characters."
+    },
+    {
+      "id": "dsa-088",
+      "number": 88,
+      "slug": "check-whether-a-string-contains-only-alphabets",
+      "title": "Check whether a string contains only alphabets ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 990,
+      "description": "Given a string str, return true if it contains only alphabetic characters."
+    },
+    {
+      "id": "dsa-089",
+      "number": 89,
+      "slug": "toggle-the-case-of-every-character-i-p-hello-world-o-p-hello-world",
+      "title": "Toggle the case of every character. I/P: 'Hello World', O/P: 'hELLO wORLD'",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 1250,
+      "description": "Given a string str, convert uppercase letters to lowercase and lowercase letters to uppercase."
+    },
+    {
+      "id": "dsa-090",
+      "number": 90,
+      "slug": "remove-duplicate-words-from-a-sentence",
+      "title": "Remove duplicate words from a sentence ?",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1310,
+      "description": "Given a sentence str, remove repeated words keeping the first occurrence."
+    },
+    {
+      "id": "dsa-091",
+      "number": 91,
+      "slug": "find-the-duplicate-words-in-a-sentence",
+      "title": "Find the duplicate words in a sentence ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1180,
+      "description": "Given a sentence str, return the words that appear more than once."
+    },
+    {
+      "id": "dsa-092",
+      "number": 92,
+      "slug": "find-the-most-frequently-occurring-word-in-a-sentence",
+      "title": "Find the most frequently occurring word in a sentence ?",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1230,
+      "description": "Given a sentence str, return the word that occurs the most number of times."
+    },
+    {
+      "id": "dsa-093",
+      "number": 93,
+      "slug": "find-the-first-word-that-occurs-only-once-in-a-sentence",
+      "title": "Find the first word that occurs only once in a sentence ?",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 1050,
+      "description": "Given a sentence str, return the first word that appears exactly once."
+    },
+    {
+      "id": "dsa-094",
+      "number": 94,
+      "slug": "reverse-the-characters-of-a-string-but-preserve-the-space-positions",
+      "title": "Reverse the characters of a string but preserve the space positions ?",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1160,
+      "description": "Given a string str, reverse only the non-space characters while keeping the spaces at their original positions."
+    },
+    {
+      "id": "dsa-095",
+      "number": 95,
+      "slug": "replace-every-vowel-in-a-string-with",
+      "title": "Replace every vowel in a string with '*' ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 1010,
+      "description": "Given a string str, replace every vowel with an asterisk (*)."
+    },
+    {
+      "id": "dsa-096",
+      "number": 96,
+      "slug": "find-the-number-of-occurrences-of-a-substring-inside-a-string",
+      "title": "Find the number of occurrences of a substring inside a string ?",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1140,
+      "description": "Given a string str and a sub, count how many times sub appears (overlapping counted from each index)."
+    },
+    {
+      "id": "dsa-097",
+      "number": 97,
+      "slug": "check-whether-a-string-starts-and-ends-with-the-same-character",
+      "title": "Check whether a string starts and ends with the same character ?",
+      "difficulty": "easy",
+      "company": "Infosys",
+      "views": 930,
+      "description": "Given a string str, return true if its first and last characters are the same."
+    },
+    {
+      "id": "dsa-098",
+      "number": 98,
+      "slug": "find-the-character-with-the-lowest-frequency-in-a-string",
+      "title": "Find the character with the lowest frequency in a string ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1070,
+      "description": "Given a string str, return the character that occurs the fewest number of times."
+    },
+    {
+      "id": "dsa-099",
+      "number": 99,
+      "slug": "find-the-common-characters-between-two-strings",
+      "title": "Find the common characters between two strings ?",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1130,
+      "description": "Given two strings a and b, return the distinct characters present in both."
+    },
+    {
+      "id": "dsa-100",
+      "number": 100,
+      "slug": "find-characters-present-in-the-first-string-but-not-in-the-second",
+      "title": "Find characters present in the first string but not in the second ?",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 1020,
+      "description": "Given two strings a and b, return the distinct characters that are in a but not in b."
+    },
+    {
+      "id": "dsa-101",
+      "number": 101,
+      "slug": "find-the-longest-consecutive-repeating-character-i-p-aaabbccccdd-o-p-cccc",
+      "title": "Find the longest consecutive repeating character. I/P: 'aaabbccccdd', O/P: 'cccc'",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1200,
+      "description": "Given a string str, return the longest run of the same character repeated consecutively."
+    },
+    {
+      "id": "dsa-102",
+      "number": 102,
+      "slug": "remove-consecutive-duplicate-characters-i-p-aaabbccdaa-o-p-abcda",
+      "title": "Remove consecutive duplicate characters. I/P: 'aaabbccdaa', O/P: 'abcda'",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 1150,
+      "description": "Given a string str, collapse consecutive duplicate characters into a single character."
+    },
+    {
+      "id": "dsa-103",
+      "number": 103,
+      "slug": "check-whether-a-sentence-is-a-palindrome-ignoring-spaces-and-special-characters",
+      "title": "Check whether a sentence is a palindrome ignoring spaces and special characters ?",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1290,
+      "description": "Given a sentence str, return true if it reads the same forward and backward, ignoring case, spaces and special characters."
+    },
+    {
+      "id": "dsa-104",
+      "number": 104,
+      "slug": "find-all-words-that-are-palindromes-i-p-madam-hello-level-world-o-p-madam-level",
+      "title": "Find all words that are palindromes. I/P: 'madam hello level world', O/P: ['madam','level']",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1170,
+      "description": "Given a sentence str, return all words that are palindromes."
+    },
+    {
+      "id": "dsa-105",
+      "number": 105,
+      "slug": "find-the-longest-palindrome-word-in-a-sentence",
+      "title": "Find the longest palindrome word in a sentence ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1090,
+      "description": "Given a sentence str, return the longest word that is a palindrome."
+    },
+    {
+      "id": "dsa-106",
+      "number": 106,
+      "slug": "find-the-largest-and-smallest-number-in-an-array-in-a-single-loop",
+      "title": "Find the largest and smallest number in an array in a single loop ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 1640,
+      "description": "Given an array of numbers arr, find both the largest and the smallest number using a single pass."
+    },
+    {
+      "id": "dsa-107",
+      "number": 107,
+      "slug": "count-the-even-and-odd-numbers-in-an-array",
+      "title": "Count the even and odd numbers in an array ?",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1510,
+      "description": "Given an array of numbers arr, count how many are even and how many are odd."
+    },
+    {
+      "id": "dsa-108",
+      "number": 108,
+      "slug": "count-positive-negative-and-zero-values-in-an-array",
+      "title": "Count positive, negative and zero values in an array ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1420,
+      "description": "Given an array of numbers arr, count how many are positive, negative and zero."
+    },
+    {
+      "id": "dsa-109",
+      "number": 109,
+      "slug": "find-the-sum-of-even-numbers-in-an-array",
+      "title": "Find the sum of even numbers in an array ?",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 1330,
+      "description": "Given an array of numbers arr, return the sum of all even numbers."
+    },
+    {
+      "id": "dsa-110",
+      "number": 110,
+      "slug": "find-the-sum-of-odd-numbers-in-an-array",
+      "title": "Find the sum of odd numbers in an array ?",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 1300,
+      "description": "Given an array of numbers arr, return the sum of all odd numbers."
+    },
+    {
+      "id": "dsa-111",
+      "number": 111,
+      "slug": "find-all-numbers-greater-than-a-given-value-in-an-array",
+      "title": "Find all numbers greater than a given value in an array ?",
+      "difficulty": "easy",
+      "company": "Infosys",
+      "views": 1240,
+      "description": "Given an array arr and a value, return all numbers greater than that value."
+    },
+    {
+      "id": "dsa-112",
+      "number": 112,
+      "slug": "find-all-numbers-between-two-given-values-in-an-array",
+      "title": "Find all numbers between two given values in an array ?",
+      "difficulty": "easy",
+      "company": "EPAM",
+      "views": 1180,
+      "description": "Given an array arr and a range low..high, return all numbers within the range (inclusive)."
+    },
+    {
+      "id": "dsa-113",
+      "number": 113,
+      "slug": "find-the-index-of-a-given-element-without-using-indexof",
+      "title": "Find the index of a given element without using indexOf() ?",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 1350,
+      "description": "Given an array arr and a target, return its first index without using indexOf(). Return -1 if not found."
+    },
+    {
+      "id": "dsa-114",
+      "number": 114,
+      "slug": "check-whether-an-array-contains-a-particular-element-without-using-includes",
+      "title": "Check whether an array contains a particular element without using includes() ?",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 1290,
+      "description": "Given an array arr and a target, return true if the array contains the target without using includes()."
+    },
+    {
+      "id": "dsa-115",
+      "number": 115,
+      "slug": "copy-an-array-without-using-spread-syntax",
+      "title": "Copy an array without using spread syntax ?",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1160,
+      "description": "Given an array arr, return a shallow copy without using the spread operator or slice()."
+    },
+    {
+      "id": "dsa-116",
+      "number": 116,
+      "slug": "remove-all-falsy-values-from-an-array-i-p-0-1-false-2-3-null-o-p-1-2-3",
+      "title": "Remove all falsy values from an array. I/P: [0,1,false,2,'',3,null], O/P: [1,2,3]",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 1470,
+      "description": "Given an array arr, remove all falsy values (0, false, '', null, undefined, NaN)."
+    },
+    {
+      "id": "dsa-117",
+      "number": 117,
+      "slug": "separate-even-and-odd-numbers-into-two-arrays",
+      "title": "Separate even and odd numbers into two arrays ?",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 1310,
+      "description": "Given an array of numbers arr, split it into two arrays: evens and odds."
+    },
+    {
+      "id": "dsa-118",
+      "number": 118,
+      "slug": "find-duplicate-numbers-and-their-frequencies-i-p-1-2-3-2-4-1-2-o-p-1-2-2-3",
+      "title": "Find duplicate numbers and their frequencies. I/P: [1,2,3,2,4,1,2], O/P: {1:2, 2:3}",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1360,
+      "description": "Given an array arr, return an object of the duplicate numbers mapped to how many times they occur."
+    },
+    {
+      "id": "dsa-119",
+      "number": 119,
+      "slug": "find-the-first-duplicate-number-in-an-array",
+      "title": "Find the first duplicate number in an array ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1240,
+      "description": "Given an array arr, return the first number that has appeared before. Return -1 if there are no duplicates."
+    },
+    {
+      "id": "dsa-120",
+      "number": 120,
+      "slug": "find-the-first-unique-number-in-an-array",
+      "title": "Find the first unique number in an array ?",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1150,
+      "description": "Given an array arr, return the first number that appears exactly once. Return -1 if none."
+    },
+    {
+      "id": "dsa-121",
+      "number": 121,
+      "slug": "find-the-numbers-that-occur-exactly-twice-in-an-array",
+      "title": "Find the numbers that occur exactly twice in an array ?",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 1080,
+      "description": "Given an array arr, return all numbers that appear exactly two times."
+    },
+    {
+      "id": "dsa-122",
+      "number": 122,
+      "slug": "find-the-common-elements-between-three-arrays",
+      "title": "Find the common elements between three arrays ?",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1220,
+      "description": "Given three arrays a, b and c, return the distinct elements common to all three."
+    },
+    {
+      "id": "dsa-123",
+      "number": 123,
+      "slug": "find-elements-that-exist-in-one-array-but-not-in-another",
+      "title": "Find elements that exist in one array but not in another ?",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 1140,
+      "description": "Given two arrays a and b, return the distinct elements in a that are not in b (a - b)."
+    },
+    {
+      "id": "dsa-124",
+      "number": 124,
+      "slug": "find-the-difference-between-two-arrays-symmetric-difference",
+      "title": "Find the difference between two arrays (symmetric difference) ?",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 1100,
+      "description": "Given two arrays a and b, return the distinct elements that are in exactly one of the two arrays."
+    },
+    {
+      "id": "dsa-125",
+      "number": 125,
+      "slug": "find-all-missing-numbers-from-1-n-in-an-array-i-p-1-2-5-6-n-6-o-p-3-4",
+      "title": "Find all missing numbers from 1...N in an array. I/P: [1,2,5,6] (N=6), O/P: [3,4]",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 1280,
+      "description": "Given an array arr and a number n, return all numbers from 1..n that are missing from the array."
+    },
+    {
+      "id": "dsa-126",
+      "number": 126,
+      "slug": "find-pairs-whose-difference-equals-a-target",
+      "title": "Find pairs whose difference equals a target ?",
+      "difficulty": "medium",
+      "company": "EPAM",
+      "views": 1190,
+      "description": "Given an array arr and a target, return all pairs whose absolute difference equals the target."
+    },
+    {
+      "id": "dsa-127",
+      "number": 127,
+      "slug": "find-the-number-that-appears-the-maximum-number-of-times-in-an-array",
+      "title": "Find the number that appears the maximum number of times in an array ?",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 1260,
+      "description": "Given an array arr, return the number that occurs most frequently."
+    },
+    {
+      "id": "dsa-128",
+      "number": 128,
+      "slug": "find-the-number-that-appears-the-minimum-number-of-times-in-an-array",
+      "title": "Find the number that appears the minimum number of times in an array ?",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 1130,
+      "description": "Given an array arr, return the number that occurs the fewest number of times."
+    },
+    {
+      "id": "dsa-129",
+      "number": 129,
+      "slug": "rotate-an-array-to-the-left-by-k-positions-i-p-1-2-3-4-5-6-k-2-o-p-3-4-5-6-1-2",
+      "title": "Rotate an array to the left by K positions. I/P: [1,2,3,4,5,6], k=2, O/P: [3,4,5,6,1,2]",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 1420,
+      "description": "Given an array arr and a number k, rotate the array to the left (anticlockwise) by k positions."
+    },
+    {
+      "id": "dsa-130",
+      "number": 130,
+      "slug": "find-the-length-of-the-longest-increasing-consecutive-run-in-an-array",
+      "title": "Find the length of the longest increasing consecutive run in an array ?",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 1210,
+      "description": "Given an array arr, return the length of the longest contiguous run where each element is greater than the previous one."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+.banner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 28px;
+  padding: 38px 44px; border-radius: 28px; overflow: hidden; color: #eafaf7; background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); box-shadow: var(--shadow); }
+.banner::after { content: ""; position: absolute; right: -80px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, .32), transparent 65%); pointer-events: none; }
+.text, .side { position: relative; z-index: 1; }
+.text { flex: 1 1 380px; min-width: 0; }
+.eyebrow { display: inline-block; margin-bottom: 10px; padding: 5px 12px; border-radius: 999px; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .18);
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fcd34d; }
+.text h1 { font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -.03em; line-height: 1.12; color: #fff; }
+.text p { margin-top: 10px; max-width: 58ch; font-size: 15.5px; line-height: 1.65; color: #b9dcd7; }
+.side { flex: 0 1 360px; min-width: 240px; }
+@media (max-width: 760px) { .banner { padding: 28px 22px; border-radius: 22px; } }

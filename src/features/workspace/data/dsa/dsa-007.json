@@ -1,0 +1,69 @@
+{
+  "id": "dsa-007",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a string `str`, return it reversed. Do not use `reverse()` or `split()` — use a loop.",
+  "examples": [
+    "console.log(reverseString(\"hello\")); // \"olleh\""
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {string} str\n * @return {string}\n */\nfunction reverseString(str) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {string} str\n * @return {string}\n */\nfunction reverseString(str) {\n  let out = \"\";\n  for (let i = str.length - 1; i >= 0; i--) out += str[i];\n  return out;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Simple word",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "reverseString",
+          "args": [
+            "hello"
+          ],
+          "equals": "olleh"
+        }
+      ]
+    },
+    {
+      "name": "Empty string",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "reverseString",
+          "args": [
+            ""
+          ],
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "name": "Single character",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "reverseString",
+          "args": [
+            "a"
+          ],
+          "equals": "a"
+        }
+      ]
+    },
+    {
+      "name": "With a space",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "reverseString",
+          "args": [
+            "ab cd"
+          ],
+          "equals": "dc ba"
+        }
+      ]
+    }
+  ]
+}

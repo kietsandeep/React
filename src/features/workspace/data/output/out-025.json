@@ -1,0 +1,9 @@
+{
+  "id": "out-025",
+  "kind": "output",
+  "code": "var x = 23;\n\n(function(){\n  var x = 43;\n  (function random(){\n    x++;\n    console.log(x);\n    var x = 21;\n  })();\n})();",
+  "expected": [
+    "NaN"
+  ],
+  "explanation": "Inside `random`, `var x` is hoisted and shadows the outer ones. When `x++` runs, `x` is `undefined`, and `undefined + 1` is `NaN`."
+}

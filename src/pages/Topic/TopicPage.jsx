@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { SITE } from "@/constants/site";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { getTopic } from "@/features/topics/services/topicService";
 import { searchQuestions } from "@/features/topics/utils/search";
@@ -26,7 +27,7 @@ export default function TopicPage() {
 
   useEffect(() => { setOpenIds(new Set()); }, [activeSlug, searching, slug]);
   useEffect(() => {
-    document.title = topic ? `${topic.topic.title} | InterviewDepth` : "InterviewDepth";
+    document.title = topic ? `${topic.topic.title} | ${SITE.name}` : SITE.name;
   }, [topic]);
 
   const toggleOpen = (id) =>

@@ -10,7 +10,7 @@
 .code pre { margin: 0; padding: 16px; overflow-x: auto; color: #e2e8f0; font: 13.5px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .tk_comment { color: #64748b; font-style: italic; }
 .tk_string { color: #86efac; }
-.tk_keyword { color: #c4b5fd; }
+.tk_keyword { color: #5eead4; }
 .tk_number { color: #fdba74; }
 .tk_tag { color: #7dd3fc; }
 .tk_fn { color: #fde68a; }

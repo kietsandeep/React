@@ -1,5 +1,5 @@
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   border: 0; border-radius: 999px; padding: 10px 20px; font-weight: 700; font-size: 14px; transition: transform .15s, box-shadow .15s; }
 .btn:hover { transform: translateY(-1px); }
-.primary { background: var(--green); color: #fff; box-shadow: 0 6px 16px rgba(22, 163, 74, .3); }
+.primary { background: var(--brand-deep); color: #fff; box-shadow: 0 6px 16px rgba(22, 163, 74, .3); }
 .ghost { background: var(--surface); color: var(--text); border: 1px solid var(--line); }

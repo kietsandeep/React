@@ -1,0 +1,10 @@
+{
+  "id": "out-034",
+  "kind": "output",
+  "code": "console.log(+true);\nconsole.log(!\"sai\");",
+  "expected": [
+    "1",
+    "false"
+  ],
+  "explanation": "The unary `+` turns `true` into 1. A non-empty string is truthy, so `!\"sai\"` is `false`."
+}

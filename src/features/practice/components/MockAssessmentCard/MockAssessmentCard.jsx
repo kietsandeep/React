@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/common/Icon/Icon";
 import styles from "./MockAssessmentCard.module.css";
 
-export default function MockAssessmentCard({ slug, config, done }) {
+export default function MockAssessmentCard({ slug, config, done, prefix = "Complete" }) {
   const need = Math.max(0, config.unlockAfter - done);
   const locked = need > 0;
   return (
@@ -12,12 +12,12 @@ export default function MockAssessmentCard({ slug, config, done }) {
         <h2>{config.title}</h2>
         <p>
           {locked
-            ? `Complete ${need} more question${need === 1 ? "" : "s"} to unlock a timed, interview-style assessment.`
+            ? `${prefix} ${need} more question${need === 1 ? "" : "s"} to unlock a timed, interview-style assessment.`
             : "You've unlocked the timed, interview-style assessment."}
         </p>
       </div>
       {locked ? (
-        <span className={styles.badge} aria-label={`${done} of ${config.unlockAfter} completed`}>
+        <span className={styles.badge} aria-label={`${done} of ${config.unlockAfter} done`}>
           <Icon name="lock" size={14} /> {Math.min(done, config.unlockAfter)}/{config.unlockAfter}
         </span>
       ) : (

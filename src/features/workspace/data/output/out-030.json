@@ -1,0 +1,9 @@
+{
+  "id": "out-030",
+  "kind": "output",
+  "code": "const x = [1];\nconst y = [2];\nconsole.log(x+y);",
+  "expected": [
+    "12"
+  ],
+  "explanation": "`+` converts both arrays to strings (`\"1\"` and `\"2\"`) and concatenates them."
+}

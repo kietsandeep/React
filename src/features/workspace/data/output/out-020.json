@@ -1,0 +1,10 @@
+{
+  "id": "out-020",
+  "kind": "output",
+  "code": "function test() {\n  console.log(a);\n  console.log(foo());\n\n  var a = 1;\n  function foo() {\n    return 2;\n  }\n}\n\ntest();",
+  "expected": [
+    "undefined",
+    "2"
+  ],
+  "explanation": "`var a` is hoisted but its value is not, so `a` is `undefined`. The function declaration `foo` is fully hoisted, so `foo()` returns 2."
+}

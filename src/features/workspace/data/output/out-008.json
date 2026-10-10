@@ -1,0 +1,9 @@
+{
+  "id": "out-008",
+  "kind": "output",
+  "code": "function x(){\n  let a = 10;\n  function d(){\n    console.log(a);\n  }\n  a = 500;\n  return d;\n}\n\nvar z = x();\nz();",
+  "expected": [
+    "500"
+  ],
+  "explanation": "`d` closes over the variable `a`, not its value at the time `d` was created. By the time `z()` runs, `a` has been updated to 500."
+}

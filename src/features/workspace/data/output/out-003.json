@@ -1,0 +1,13 @@
+{
+  "id": "out-003",
+  "kind": "output",
+  "code": "console.log(2+2)\nconsole.log(\"2\"+\"2\")\nconsole.log(2+2-2)\nconsole.log(\"2\"+\"2\"-\"2\")\nconsole.log(4+\"2\"+2+4+\"25\"+2+2)",
+  "expected": [
+    "4",
+    "22",
+    "2",
+    "20",
+    "42242522"
+  ],
+  "explanation": "`+` concatenates as soon as one side is a string, while `-` always converts to numbers. `\"2\"+\"2\"-\"2\"` is `\"22\"-\"2\"` = 20. The last line: `4+\"2\"` = \"42\", and everything after that is appended as text."
+}

@@ -1,0 +1,92 @@
+{
+  "id": "dsa-001",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a `sorted array` `nums` of size `n`, remove the duplicates in place such that each element appears only once and returns the new array.",
+  "examples": [
+    "const nums = [1, 1, 2];\nconst newArray = removeDuplicates(nums);\nconsole.log(newArray); // [1, 2]",
+    "const nums = [0, 0, 2, 2, 3, 3, 4];\nconst newArray = removeDuplicates(nums);\nconsole.log(newArray); // [0, 2, 3, 4]"
+  ],
+  "note": "The array should be `sorted` before calling the function. If it's not sorted, the result may be incorrect.",
+  "files": {
+    "solution.js": "/**\n * @param {number[]} arr\n * @return {number[]}\n */\nfunction removeDuplicates(arr) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {number[]} arr\n * @return {number[]}\n */\nfunction removeDuplicates(arr) {\n  const out = [];\n  for (const x of arr) {\n    if (out[out.length - 1] !== x) out.push(x);\n  }\n  return out;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Sorted simple",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "removeDuplicates",
+          "args": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "equals": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "No duplicates",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "removeDuplicates",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "equals": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "All the same",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "removeDuplicates",
+          "args": [
+            [
+              5,
+              5,
+              5
+            ]
+          ],
+          "equals": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Empty array",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "removeDuplicates",
+          "args": [
+            []
+          ],
+          "equals": []
+        }
+      ]
+    }
+  ]
+}

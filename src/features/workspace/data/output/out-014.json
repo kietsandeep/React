@@ -1,0 +1,12 @@
+{
+  "id": "out-014",
+  "kind": "output",
+  "code": "async function foo() {\n  console.log(\"A\");\n  await Promise.resolve();\n  console.log(\"B\");\n  await new Promise(resolve => setTimeout(resolve, 0));\n  console.log(\"C\");\n}\n\nfoo();\nconsole.log(\"D\");",
+  "expected": [
+    "A",
+    "D",
+    "B",
+    "C"
+  ],
+  "explanation": "`foo` runs synchronously until the first `await` (prints A), then yields. D prints, then the microtask continues `foo` (B). The second `await` waits on a timer, so C comes last."
+}

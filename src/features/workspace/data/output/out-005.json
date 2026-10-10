@@ -1,0 +1,10 @@
+{
+  "id": "out-005",
+  "kind": "output",
+  "code": "var x=10;\nfunction foo(){\n  var x = 5;\n  console.log(x)\n}\n\nfoo();\nconsole.log(x)",
+  "expected": [
+    "5",
+    "10"
+  ],
+  "explanation": "Inside `foo` the local `x` (5) shadows the global one. Outside, the global `x` is still 10."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "out-023",
+  "kind": "output",
+  "code": "function guessArray() {\n  let a = [1, 2];\n  let b = [1, 2];\n  console.log(a == b);\n  console.log(a === b);\n}\n\nguessArray();",
+  "expected": [
+    "false",
+    "false"
+  ],
+  "explanation": "Arrays are objects, compared by reference. Two separate array literals are never equal with `==` or `===`."
+}

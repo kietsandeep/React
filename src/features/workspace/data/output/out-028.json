@@ -1,0 +1,9 @@
+{
+  "id": "out-028",
+  "kind": "output",
+  "code": "console.log(typeof typeof 1)",
+  "expected": [
+    "string"
+  ],
+  "explanation": "`typeof 1` is the string `\"number\"`, and `typeof` of any string is `\"string\"`."
+}

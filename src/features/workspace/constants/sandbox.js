@@ -6,6 +6,6 @@ export const SANDBOX_SCRIPTS = [
 ];
 
 // Tab order in the editor. Files are concatenated in this order (JS first, then CSS is injected as a stylesheet).
-export const FILE_ORDER = ["Practice.js", "App.js", "styles.css"];
-export const JS_FILES = ["Practice.js", "App.js"];
+export const FILE_ORDER = ["solution.js", "Practice.js", "App.js", "styles.css"];
+export const JS_FILES = ["solution.js", "Practice.js", "App.js"];
 export const CSS_FILE = "styles.css";

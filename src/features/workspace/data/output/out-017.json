@@ -1,0 +1,14 @@
+{
+  "id": "out-017",
+  "kind": "output",
+  "code": "let c=0;\n\nlet id = setInterval(() => {\n  console.log(c++)\n},100)\n\nsetTimeout(() => {\n  clearInterval(id);\n  console.log(\"stopped\");\n}, 550)",
+  "expected": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "stopped"
+  ],
+  "explanation": "The interval fires every 100ms (at about 100, 200, 300, 400 and 500ms) printing 0 to 4, then the 550ms timer clears it and prints `stopped`."
+}

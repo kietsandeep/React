@@ -1,0 +1,9 @@
+{
+  "id": "out-002",
+  "kind": "output",
+  "code": "const p = { k: 1, l: 2 };\nconst q = { k: 1, l: 2 };\nlet isEqual = p==q;\nlet isStartEqual = p===q;\n\nconsole.log(isEqual, isStartEqual)",
+  "expected": [
+    "false false"
+  ],
+  "explanation": "Objects are compared by reference, not by contents. `p` and `q` are two different objects, so both `==` and `===` are `false`."
+}

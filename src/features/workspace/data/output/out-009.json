@@ -1,0 +1,10 @@
+{
+  "id": "out-009",
+  "kind": "output",
+  "code": "getData1()\ngetData();\n\nfunction getData1(){\n  console.log(\"getData11\")\n}",
+  "expected": [
+    "getData11",
+    "Uncaught ReferenceError: getData is not defined"
+  ],
+  "explanation": "Function declarations are hoisted, so `getData1()` works. `getData` is never declared, so the second call throws a ReferenceError."
+}

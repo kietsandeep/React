@@ -1,0 +1,12 @@
+{
+  "id": "out-012",
+  "kind": "output",
+  "code": "let a = true;\nlet n = 0;\nsetTimeout(() => {\n  a = false;\n}, 2000)\n\nwhile(a) {\n  console.log(\"inside\");\n  if (++n === 3) break;\n}\nconsole.log(\"done\");",
+  "expected": [
+    "inside",
+    "inside",
+    "inside",
+    "done"
+  ],
+  "explanation": "The timer callback can only run when the call stack is empty, so while the `while` loop is running `a` can never become false. (In the original question the loop never ends and freezes the page — here we break out after 3 rounds.)"
+}

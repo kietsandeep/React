@@ -4,6 +4,8 @@ import HomePage from "@/pages/Home/HomePage";
 import TopicPage from "@/pages/Topic/TopicPage";
 import PracticeListPage from "@/pages/PracticeList/PracticeListPage";
 import WorkspacePage from "@/pages/Workspace/WorkspacePage";
+import PracticeHubPage from "@/pages/PracticeHub/PracticeHubPage";
+import TopicsHubPage from "@/pages/TopicsHub/TopicsHubPage";
 import PlaceholderPage from "@/pages/Placeholder/PlaceholderPage";
 
 export default function AppRoutes() {
@@ -12,6 +14,8 @@ export default function AppRoutes() {
       <Route path="practice/:slug/:questionSlug" element={<WorkspacePage />} />
       <Route element={<MainLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="practice" element={<PracticeHubPage />} />
+        <Route path="topics" element={<TopicsHubPage />} />
         <Route path="topics/:slug" element={<TopicPage />} />
         <Route path="practice/:slug" element={<PracticeListPage />} />
         <Route path="*" element={<PlaceholderPage />} />

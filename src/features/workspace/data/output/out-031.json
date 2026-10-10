@@ -1,0 +1,9 @@
+{
+  "id": "out-031",
+  "kind": "output",
+  "code": "const data = {\n  name: \"sai\",\n  name: \"krishna\"\n}\nconsole.log(data.name);",
+  "expected": [
+    "krishna"
+  ],
+  "explanation": "Duplicate keys in an object literal are allowed; the last value wins."
+}

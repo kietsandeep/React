@@ -1,6 +1,12 @@
-.section { padding-top: 48px; }
-.section + .section { padding-top: 64px; }
-.practiceGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.topicGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.section { padding-top: 72px; scroll-margin-top: 80px; }
+.bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.topicGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 @media (max-width: 1000px) { .topicGrid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 700px) { .practiceGrid, .topicGrid { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .bento { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .bento, .topicGrid { grid-template-columns: 1fr; } }
+@media (min-width: 1001px) { .topicGrid > :last-child:nth-child(3n + 1) { grid-column: 1 / -1; } }
+@media (max-width: 1000px) and (min-width: 761px) { .topicGrid > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
+.more { display: flex; justify-content: center; margin-top: 28px; }
+.moreBtn { display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 28px; border-radius: 14px; border: 2px solid var(--text);
+  font-weight: 800; font-size: 15px; transition: background .18s, color .18s, gap .18s; }
+.moreBtn:hover { background: var(--text); color: var(--bg); gap: 14px; }

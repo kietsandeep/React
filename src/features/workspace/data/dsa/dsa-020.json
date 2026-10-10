@@ -1,0 +1,102 @@
+{
+  "id": "dsa-020",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given an array `arr`, return the second-largest `distinct` number. Return `-1` if there is none.",
+  "examples": [
+    "console.log(secondLargest([100, 20, 112, 22])); // 100",
+    "console.log(secondLargest([5, 5, 5])); // -1"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {number[]} arr\n * @return {number}\n */\nfunction secondLargest(arr) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {number[]} arr\n * @return {number}\n */\nfunction secondLargest(arr) {\n  let first = -Infinity, second = -Infinity;\n  for (const x of arr) {\n    if (x > first) { second = first; first = x; }\n    else if (x > second && x < first) second = x;\n  }\n  return second === -Infinity ? -1 : second;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Mixed numbers",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "secondLargest",
+          "args": [
+            [
+              100,
+              20,
+              112,
+              22
+            ]
+          ],
+          "equals": 100
+        }
+      ]
+    },
+    {
+      "name": "All equal",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "secondLargest",
+          "args": [
+            [
+              5,
+              5,
+              5
+            ]
+          ],
+          "equals": -1
+        }
+      ]
+    },
+    {
+      "name": "Two elements",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "secondLargest",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "Single element",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "secondLargest",
+          "args": [
+            [
+              9
+            ]
+          ],
+          "equals": -1
+        }
+      ]
+    },
+    {
+      "name": "Duplicate maximum",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "secondLargest",
+          "args": [
+            [
+              3,
+              8,
+              8,
+              1
+            ]
+          ],
+          "equals": 3
+        }
+      ]
+    }
+  ]
+}

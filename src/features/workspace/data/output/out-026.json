@@ -1,0 +1,14 @@
+{
+  "id": "out-026",
+  "kind": "output",
+  "code": "console.log(typeof [1,2,3,4]);\nconsole.log(typeof null);\nconsole.log(typeof NaN);\nconsole.log(typeof 1234n);\nconsole.log(typeof 3.14);\nconsole.log(typeof Symbol());",
+  "expected": [
+    "object",
+    "object",
+    "number",
+    "bigint",
+    "number",
+    "symbol"
+  ],
+  "explanation": "Arrays and `null` are both reported as `object`. `NaN` is a number, `1234n` is a bigint and `Symbol()` is a symbol."
+}

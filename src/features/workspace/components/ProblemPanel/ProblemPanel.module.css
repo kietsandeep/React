@@ -4,9 +4,9 @@
 .easy { background: rgba(14, 165, 233, .14); color: #0284c7; }
 .medium { background: rgba(245, 158, 11, .16); color: #b45309; }
 .hard { background: rgba(239, 68, 68, .14); color: #dc2626; }
-.company { background: rgba(124, 58, 237, .12); color: #6d28d9; }
+.company { background: rgba(13, 148, 136, .12); color: #0f766e; }
 .done { margin-left: auto; background: rgba(22, 163, 74, .16); color: #15803d; }
-:global([data-theme="dark"]) .company { color: #c4b5fd; }
+:global([data-theme="dark"]) .company { color: #5eead4; }
 :global([data-theme="dark"]) .medium { color: #fbbf24; }
 .panel h1 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
 .desc { margin-top: 12px; font-size: 16px; line-height: 1.75; }

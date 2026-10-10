@@ -1,0 +1,11 @@
+{
+  "id": "out-024",
+  "kind": "output",
+  "code": "let a = 3;\nlet b = new Number(3);\nlet c = 3;\n\nconsole.log(a == b);\nconsole.log(a === b);\nconsole.log(b === c);",
+  "expected": [
+    "true",
+    "false",
+    "false"
+  ],
+  "explanation": "`==` converts the Number object to a primitive, so 3 == 3 is true. `===` also compares types (number vs object), so it is false in both remaining lines."
+}

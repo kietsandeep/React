@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
+import { SITE } from "@/constants/site";
 import { Link, useParams } from "react-router-dom";
 import { getPracticeSet } from "@/features/practice/services/practiceService";
 import { buildFallbackProblem, loadProblem } from "@/features/workspace/services/problemService";
+import { getLabels } from "@/features/practice/utils/labels";
 import { useProgress } from "@/features/topics/hooks/useProgress";
 import { useWorkspaceCode } from "@/features/workspace/hooks/useWorkspaceCode";
 import { useSandbox } from "@/features/workspace/hooks/useSandbox";
@@ -12,6 +14,8 @@ import EditorPanel from "@/features/workspace/components/EditorPanel/EditorPanel
 import PreviewPanel from "@/features/workspace/components/PreviewPanel/PreviewPanel";
 import ResultsModal from "@/features/workspace/components/ResultsModal/ResultsModal";
 import SolutionModal from "@/features/workspace/components/SolutionModal/SolutionModal";
+import DsaWorkspace from "@/features/workspace/components/DsaWorkspace/DsaWorkspace";
+import OutputWorkspace from "@/features/workspace/components/OutputWorkspace/OutputWorkspace";
 import styles from "./WorkspacePage.module.css";
 
 function Workspace({ slug, set, question, problem, prev, next }) {
@@ -43,7 +47,7 @@ function Workspace({ slug, set, question, problem, prev, next }) {
     }
   };
 
-  useEffect(() => { document.title = `${question.number}. ${question.title} | InterviewDepth`; }, [question]);
+  useEffect(() => { document.title = `${question.number}. ${question.title} | ${SITE.name}`; }, [question]);
 
   return (
     <div className={styles.page}>
@@ -53,7 +57,7 @@ function Workspace({ slug, set, question, problem, prev, next }) {
         onSubmit={submit} running={running} canSubmit={canSubmit} onSolution={() => setShowSolution(true)} canSolution={canSolution}
       />
       <div className={`${styles.body} ${showProblem ? "" : styles.noProblem}`}>
-        {showProblem && <ProblemPanel question={question} problem={problem} done={done.has(question.id)} />}
+        {showProblem && <ProblemPanel question={question} problem={problem} done={done.has(question.id)} levels={getLabels(set).levels} />}
         <EditorPanel files={files} order={order} setFile={setFile} onReset={reset} />
         <PreviewPanel iframeRef={sandbox.iframeRef} iframeKey={sandbox.runKey} srcDoc={sandbox.srcDoc}
           logs={sandbox.logs} onRefresh={sandbox.refresh} onClear={sandbox.clearLogs} />
@@ -81,8 +85,8 @@ export default function WorkspacePage() {
     if (!question) return undefined;
     let alive = true;
     loadProblem(slug, question.id)
-      .then((p) => alive && setState({ id: question.id, problem: p ?? buildFallbackProblem(question) }))
-      .catch(() => alive && setState({ id: question.id, problem: buildFallbackProblem(question) }));
+      .then((p) => alive && setState({ id: question.id, problem: p ?? buildFallbackProblem(question, slug) }))
+      .catch(() => alive && setState({ id: question.id, problem: buildFallbackProblem(question, slug) }));
     return () => { alive = false; };
   }, [slug, question]);
 
@@ -98,8 +102,9 @@ export default function WorkspacePage() {
   }
   if (state.id !== question.id) return <div className={styles.center}>Loading problem…</div>;
 
+  const Component = { function: DsaWorkspace, output: OutputWorkspace }[state.problem.kind] ?? Workspace;
   return (
-    <Workspace key={question.id} slug={slug} set={set.set} question={question} problem={state.problem}
+    <Component key={question.id} slug={slug} set={set.set} question={question} problem={state.problem}
       prev={set.questions[index - 1] ?? null} next={set.questions[index + 1] ?? null} />
   );
 }

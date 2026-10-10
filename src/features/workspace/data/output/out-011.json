@@ -1,0 +1,9 @@
+{
+  "id": "out-011",
+  "kind": "output",
+  "code": "const nums = [1,2,3,4,5,6,7];\nnums.forEach((n) => {\n  if(n%2 === 0) {\n    break;\n  }\n  console.log(n);\n});",
+  "expected": [
+    "Uncaught SyntaxError: Illegal break statement"
+  ],
+  "explanation": "`break` is only valid directly inside a loop or switch. Inside the `forEach` callback it is a function body, so the whole script fails to parse with a SyntaxError and nothing runs."
+}

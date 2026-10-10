@@ -1,0 +1,12 @@
+{
+  "id": "out-006",
+  "kind": "output",
+  "code": "console.log(\"Start\");\nsetTimeout(() => {\n  console.log(\"Timeout\");\n});\nPromise.resolve().then(() =>\n  console.log(\"Promise\"));\nconsole.log(\"End\");",
+  "expected": [
+    "Start",
+    "End",
+    "Promise",
+    "Timeout"
+  ],
+  "explanation": "Synchronous code runs first (Start, End). Then the microtask queue (promise callbacks) is drained, and only after that the timer callback (macrotask) runs."
+}

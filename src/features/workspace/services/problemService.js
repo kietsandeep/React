@@ -9,7 +9,25 @@ export async function loadProblem(setSlug, questionId) {
 }
 
 // Used when a question has no detail file yet: the editor still works, but there are no tests or solution.
-export function buildFallbackProblem(question) {
+export function buildFallbackProblem(question, setSlug) {
+  if (setSlug === "dsa") {
+    return {
+      id: question.id,
+      placeholder: true,
+      kind: "function",
+      statement: question.description,
+      examples: [],
+      files: { "solution.js": `/**
+ * ${question.title.replace(/\*\//g, "")}
+ */
+function solve(input) {
+  // Write your solution here
+}
+` },
+      solution: null,
+      tests: [],
+    };
+  }
   return {
     id: question.id,
     placeholder: true,

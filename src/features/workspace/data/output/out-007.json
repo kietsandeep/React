@@ -1,0 +1,14 @@
+{
+  "id": "out-007",
+  "kind": "output",
+  "code": "function x(){\n\n  for(var i=1;i<=5;i++){\n    setTimeout(()=>{\n      console.log(i)\n    }, i*1000)\n  }\n  console.log(\"Namaste JavaScript\")\n}\nx();",
+  "expected": [
+    "Namaste JavaScript",
+    "6",
+    "6",
+    "6",
+    "6",
+    "6"
+  ],
+  "explanation": "`var` is function-scoped, so all five callbacks share one `i`. By the time the timers fire the loop has finished and `i` is 6. Using `let` would print 1..5."
+}

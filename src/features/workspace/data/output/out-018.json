@@ -1,0 +1,9 @@
+{
+  "id": "out-018",
+  "kind": "output",
+  "code": "let output = (function(x){\n delete x;\n return x;\n})(3);\nconsole.log(output);",
+  "expected": [
+    "3"
+  ],
+  "explanation": "`delete` cannot remove a parameter, so `x` stays 3."
+}

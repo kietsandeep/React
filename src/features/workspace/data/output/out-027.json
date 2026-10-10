@@ -1,0 +1,9 @@
+{
+  "id": "out-027",
+  "kind": "output",
+  "code": "async function load() {\n  const data = await Promise.resolve({ ok: true });\n  console.log(\"Result: \" + data);\n}\n\nload();",
+  "expected": [
+    "Result: [object Object]"
+  ],
+  "explanation": "`await` gives back the resolved object, not text. Adding an object to a string (or assigning it to `innerHTML`) converts it with `String()`, producing `[object Object]`. (The original question used `fetch`, which returns a Response object and has the same problem.)"
+}

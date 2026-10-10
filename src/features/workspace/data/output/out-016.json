@@ -1,0 +1,11 @@
+{
+  "id": "out-016",
+  "kind": "output",
+  "code": "for (var i = 0; i < 3; i++) {\n  setTimeout(function () {\n    console.log(i);\n  }, 1000 + i);\n}",
+  "expected": [
+    "3",
+    "3",
+    "3"
+  ],
+  "explanation": "All callbacks share the same `var i`, which is 3 once the loop ends, so 3 is printed three times."
+}

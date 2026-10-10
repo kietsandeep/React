@@ -1,24 +1,39 @@
+/* CodeCrest palette — deep teal + amber on warm paper. Change the brand here and the whole site follows. */
 :root, [data-theme="light"] {
-  --bg: #f6f7fb;
+  --bg: #f6f4ee;
   --surface: #ffffff;
-  --text: #0f172a;
-  --muted: #64748b;
-  --line: #e8eaf1;
-  --brand: #5b5bd6;
-  --brand-soft: #eceafd;
+  --text: #0c1f24;
+  --muted: #5f7075;
+  --line: #e4e0d3;
+  --brand: #0d9488;
+  --brand-deep: #0f766e;
+  --brand-ink: #063b38;
+  --brand-soft: #dff5f1;
+  --accent: #f59e0b;
+  --accent-soft: #fef0d0;
+  --coral: #f2603c;
   --green: #16a34a;
-  --shadow: 0 4px 24px rgba(30, 41, 82, 0.07);
+  --hero-from: #06302f;
+  --hero-to: #0b5a53;
+  --shadow: 0 6px 28px rgba(8, 47, 45, 0.08);
   --radius: 18px;
-  --container: 1130px;
-  --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --container: 1160px;
+  --font: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Sora", "DM Sans", system-ui, sans-serif;
 }
 [data-theme="dark"] {
-  --bg: #0b1020;
-  --surface: #131a31;
-  --text: #e8ecf8;
-  --muted: #98a2c0;
-  --line: #243050;
-  --brand: #8b8cf5;
-  --brand-soft: #232550;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --bg: #071416;
+  --surface: #0e2023;
+  --text: #e6f2f1;
+  --muted: #8fa9a8;
+  --line: #1c3639;
+  --brand: #2dd4bf;
+  --brand-deep: #14b8a6;
+  --brand-ink: #04211f;
+  --brand-soft: #0f3330;
+  --accent: #fbbf24;
+  --accent-soft: #3a2c0b;
+  --hero-from: #04201f;
+  --hero-to: #0a4a45;
+  --shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
 }

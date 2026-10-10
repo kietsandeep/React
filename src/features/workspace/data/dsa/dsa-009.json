@@ -1,0 +1,105 @@
+{
+  "id": "dsa-009",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given `n`, return an array with the first `n` terms of the Fibonacci sequence, starting `0, 1, 1, 2, ...`. `fibonacci(0)` returns an empty array.",
+  "examples": [
+    "console.log(fibonacci(6)); // [0, 1, 1, 2, 3, 5]"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {number} n\n * @return {number[]}\n */\nfunction fibonacci(n) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {number} n\n * @return {number[]}\n */\nfunction fibonacci(n) {\n  const out = [];\n  for (let i = 0; i < n; i++) {\n    out.push(i < 2 ? i : out[i - 1] + out[i - 2]);\n  }\n  return out;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Zero terms",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "fibonacci",
+          "args": [
+            0
+          ],
+          "equals": []
+        }
+      ]
+    },
+    {
+      "name": "One term",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "fibonacci",
+          "args": [
+            1
+          ],
+          "equals": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two terms",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "fibonacci",
+          "args": [
+            2
+          ],
+          "equals": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Six terms",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "fibonacci",
+          "args": [
+            6
+          ],
+          "equals": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ten terms",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "fibonacci",
+          "args": [
+            10
+          ],
+          "equals": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            5,
+            8,
+            13,
+            21,
+            34
+          ]
+        }
+      ]
+    }
+  ]
+}

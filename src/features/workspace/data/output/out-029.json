@@ -1,0 +1,9 @@
+{
+  "id": "out-029",
+  "kind": "output",
+  "code": "x++;\nconsole.log(x);\nvar x = 21;",
+  "expected": [
+    "NaN"
+  ],
+  "explanation": "`var x` is hoisted with the value `undefined`. `x++` turns it into `NaN`, and the later assignment of 21 comes too late."
+}

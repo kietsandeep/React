@@ -7,7 +7,7 @@ export function filterQuestions(questions, filters, doneIds) {
       (filters.level === "all" || item.difficulty === filters.level) &&
       (filters.company === "all" || item.company === filters.company) &&
       (filters.status === "all" || (filters.status === "done") === doneIds.has(item.id)) &&
-      (!q || `${item.title} ${item.description} ${item.company}`.toLowerCase().includes(q))
+      (!q || `${item.title} ${item.description} ${item.company} ${item.category ?? ""} ${item.code ?? ""}`.toLowerCase().includes(q))
   );
 }
 

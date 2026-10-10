@@ -1,0 +1,70 @@
+{
+  "id": "dsa-003",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a non-negative integer `n`, return `n!` — the product of all positive integers up to `n`. `0!` is `1`.",
+  "examples": [
+    "console.log(factorial(5)); // 120",
+    "console.log(factorial(0)); // 1"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {number} n\n * @return {number}\n */\nfunction factorial(n) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {number} n\n * @return {number}\n */\nfunction factorial(n) {\n  let result = 1;\n  for (let i = 2; i <= n; i++) result *= i;\n  return result;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Zero",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "factorial",
+          "args": [
+            0
+          ],
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "One",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "factorial",
+          "args": [
+            1
+          ],
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "Small number",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "factorial",
+          "args": [
+            5
+          ],
+          "equals": 120
+        }
+      ]
+    },
+    {
+      "name": "Larger number",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "factorial",
+          "args": [
+            10
+          ],
+          "equals": 3628800
+        }
+      ]
+    }
+  ]
+}

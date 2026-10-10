@@ -1,0 +1,69 @@
+{
+  "id": "dsa-004",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a `sentence`, return the longest word in it. If several words tie, return the first one.",
+  "examples": [
+    "console.log(longestWord(\"I love JavaScript\")); // \"JavaScript\""
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {string} sentence\n * @return {string}\n */\nfunction longestWord(sentence) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {string} sentence\n * @return {string}\n */\nfunction longestWord(sentence) {\n  let best = \"\";\n  for (const w of sentence.split(\" \")) {\n    if (w.length > best.length) best = w;\n  }\n  return best;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Simple sentence",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "longestWord",
+          "args": [
+            "I love JavaScript"
+          ],
+          "equals": "JavaScript"
+        }
+      ]
+    },
+    {
+      "name": "Tie returns first",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "longestWord",
+          "args": [
+            "one two"
+          ],
+          "equals": "one"
+        }
+      ]
+    },
+    {
+      "name": "Middle word",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "longestWord",
+          "args": [
+            "a bb ccc dd"
+          ],
+          "equals": "ccc"
+        }
+      ]
+    },
+    {
+      "name": "Single word",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "longestWord",
+          "args": [
+            "hello"
+          ],
+          "equals": "hello"
+        }
+      ]
+    }
+  ]
+}

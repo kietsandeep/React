@@ -1,0 +1,64 @@
+{
+  "id": "dsa-014",
+  "kind": "function",
+  "language": "javascript",
+  "statement": "Given a string `str`, return an object that maps each character to the number of times it appears.",
+  "examples": [
+    "console.log(charCount(\"aab\")); // { a: 2, b: 1 }"
+  ],
+  "files": {
+    "solution.js": "/**\n * @param {string} str\n * @return {Object<string, number>}\n */\nfunction charCount(str) {\n  // Write your solution here\n}\n"
+  },
+  "solution": {
+    "solution.js": "/**\n * @param {string} str\n * @return {Object<string, number>}\n */\nfunction charCount(str) {\n  const counts = {};\n  for (const ch of str) counts[ch] = (counts[ch] || 0) + 1;\n  return counts;\n}\n"
+  },
+  "tests": [
+    {
+      "name": "Two letters",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "charCount",
+          "args": [
+            "aab"
+          ],
+          "equals": {
+            "a": 2,
+            "b": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Empty string",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "charCount",
+          "args": [
+            ""
+          ],
+          "equals": {}
+        }
+      ]
+    },
+    {
+      "name": "Repeated letter",
+      "steps": [
+        {
+          "expect": "call",
+          "fn": "charCount",
+          "args": [
+            "hello"
+          ],
+          "equals": {
+            "h": 1,
+            "e": 1,
+            "l": 2,
+            "o": 1
+          }
+        }
+      ]
+    }
+  ]
+}

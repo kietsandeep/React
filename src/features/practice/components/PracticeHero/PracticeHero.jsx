@@ -1,17 +1,20 @@
 import Icon from "@/components/common/Icon/Icon";
+import { getLabels } from "@/features/practice/utils/labels";
 import styles from "./PracticeHero.module.css";
 
 export default function PracticeHero({ set, stats }) {
+  const L = getLabels(set);
   const items = [
-    { label: "Questions", value: stats.total },
-    { label: "Easy", value: stats.easy, tone: "easy" },
-    { label: "Medium", value: stats.medium, tone: "medium" },
-    { label: "Hard", value: stats.hard, tone: "hard" },
+    { label: L.total, value: stats.total },
+    { label: L.levels.easy, value: stats.easy, tone: "easy" },
+    { label: L.levels.medium, value: stats.medium, tone: "medium" },
+    { label: L.levels.hard, value: stats.hard, tone: "hard" },
   ];
   return (
+    <div className="container">
     <section className={styles.hero}>
-      <div className={`container ${styles.inner}`}>
-        <span className={styles.iconBox}><Icon name="laptop" size={30} /></span>
+      <div className={styles.inner}>
+        <span className={styles.iconBox}><Icon name={L.icon} size={30} /></span>
         <div className={styles.text}>
           <span className={styles.eyebrow}>{set.eyebrow}</span>
           <h1>{set.title}</h1>
@@ -27,5 +30,6 @@ export default function PracticeHero({ set, stats }) {
         </ul>
       </div>
     </section>
+    </div>
   );
 }

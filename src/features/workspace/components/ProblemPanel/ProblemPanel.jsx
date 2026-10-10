@@ -2,14 +2,13 @@ import Icon from "@/components/common/Icon/Icon";
 import InlineText from "../InlineText/InlineText";
 import styles from "./ProblemPanel.module.css";
 
-const LABEL = { easy: "Easy", medium: "Medium", hard: "Hard" };
 
-export default function ProblemPanel({ question, problem, done }) {
+export default function ProblemPanel({ question, problem, done, levels }) {
   const { thingsToDo = [], instructions } = problem;
   return (
     <aside className={styles.panel} aria-label="Problem description">
       <div className={styles.chips}>
-        <span className={`${styles.chip} ${styles[question.difficulty]}`}><Icon name="flame" size={13} /> {LABEL[question.difficulty]}</span>
+        <span className={`${styles.chip} ${styles[question.difficulty]}`}><Icon name="flame" size={13} /> {levels[question.difficulty]}</span>
         <span className={`${styles.chip} ${styles.company}`}>Asked in {question.company}</span>
         {done && <span className={`${styles.chip} ${styles.done}`}><Icon name="checkCircle" size={13} /> Completed</span>}
       </div>

@@ -1,9 +1,13 @@
-.head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
-  padding: 32px 0 20px; margin-bottom: 24px; border-bottom: 1px solid var(--line); }
-.head h1 { font-size: clamp(20px, 3vw, 28px); font-weight: 800; letter-spacing: -.02em; color: var(--brand); }
-.head p { margin-top: 4px; font-size: 13px; color: var(--muted); }
+.head { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  margin: 28px 0 24px; padding: 30px 36px; border-radius: 26px; overflow: hidden; color: #eafaf7;
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); box-shadow: var(--shadow); }
+.head::after { content: ""; position: absolute; right: -60px; bottom: -140px; width: 340px; height: 340px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, .3), transparent 65%); pointer-events: none; }
+.head > * { position: relative; z-index: 1; }
+.head h1 { font-size: clamp(22px, 3.2vw, 32px); letter-spacing: -.03em; color: #fff; }
+.head p { margin-top: 6px; font-size: 14px; color: #b9dcd7; }
 .layout { display: grid; grid-template-columns: 290px 1fr; gap: 24px; padding-bottom: 48px; align-items: start; }
-.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; min-width: 0; }
 .panel h2 { font-size: 22px; font-weight: 800; }
 .intro { margin: 6px 0 22px; font-style: italic; font-size: 14px; color: var(--muted); }
 .panel h2 + .list { margin-top: 20px; }

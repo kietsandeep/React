@@ -1,0 +1,10 @@
+{
+  "id": "out-019",
+  "kind": "output",
+  "code": "function getName1(){\n  console.log(this.name);\n}\n\nObject.prototype.getName2 = () =>{\n  console.log(this.name)\n}\n\nlet personObj = {\n  name:\"Tony\",\n  print: getName1\n}\n\npersonObj.print()\npersonObj.getName2()",
+  "expected": [
+    "Tony",
+    ""
+  ],
+  "explanation": "`print` is a normal function, so `this` is `personObj` → Tony. `getName2` is an arrow function: it ignores the calling object and uses `this` from where it was defined (the global object), where `name` is an empty string in a browser."
+}

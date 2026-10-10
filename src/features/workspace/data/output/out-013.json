@@ -1,0 +1,13 @@
+{
+  "id": "out-013",
+  "kind": "output",
+  "code": "setTimeout(() => console.log(1), 0);\n\nconsole.log(2);\n\nnew Promise(res => {\n  console.log(3)\n  res();\n}).then(() => console.log(4));\n\nconsole.log(5);",
+  "expected": [
+    "2",
+    "3",
+    "5",
+    "4",
+    "1"
+  ],
+  "explanation": "The Promise executor runs synchronously (3). Order: sync code 2, 3, 5 → microtask 4 → timer 1."
+}

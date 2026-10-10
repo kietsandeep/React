@@ -4,6 +4,7 @@ import { NAV_ITEMS } from "@/constants/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
+import { SITE } from "@/constants/site";
 import styles from "./Header.module.css";
 
 function NavDropdown({ item }) {
@@ -31,7 +32,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link to="/" className={styles.logo}>Interview<span>Depth</span></Link>
+        <Link to="/" className={styles.logo}><span className={styles.mark}>{SITE.short}</span>{SITE.name}</Link>
         <nav className={styles.nav} aria-label="Main">
           {NAV_ITEMS.map((item) =>
             item.children ? (

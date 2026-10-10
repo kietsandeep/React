@@ -33,7 +33,12 @@ export function sandboxBridge() {
     showError(new Error("Could not load React / Babel from the CDN. Check your internet connection and reload the preview."), true);
   } else {
     try {
-      const src = payload.js + "\n;ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));";
+      // Expose top-level names (function/const/let/var) so function-style tests can call them.
+      const names = [];
+      payload.js.replace(/(?:^|\n)[ \t]*(?:const|let|var|function)\s+([A-Za-z_$][\w$]*)/g, (m, n) => { names.push(n); return m; });
+      const expose = "\n;window.__fns = {" + names.map((n) => n + ": typeof " + n + " !== 'undefined' ? " + n + " : undefined").join(",") + "};";
+      const mount = "\n;if (typeof App !== 'undefined') ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));";
+      const src = payload.js + expose + mount;
       const out = Babel.transform(src, { presets: ["react"] }).code;
       (0, eval)(out);
     } catch (e) { showError(e, true); }
@@ -62,7 +67,18 @@ export function sandboxBridge() {
     },
     wait: (s) => tick(s.ms),
   };
+  const show = (v) => { try { return JSON.stringify(v, (k, x) => (x === undefined ? "undefined" : typeof x === "number" && !isFinite(x) ? String(x) : x)); } catch (e) { return String(v); } };
+  const norm = (v, sortIt) => (sortIt && Array.isArray(v) ? v.slice().sort((a, b) => (JSON.stringify(a) < JSON.stringify(b) ? -1 : 1)) : v);
   const checks = {
+    call: async (s) => {
+      const f = (window.__fns || {})[s.fn];
+      if (typeof f !== "function") fail('Could not find a function named "' + s.fn + '". Declare it at the top level of solution.js.');
+      const args = JSON.parse(JSON.stringify(s.args || []));
+      let got;
+      try { got = await f.apply(null, args); } catch (e) { fail(s.fn + "(" + (s.args || []).map(show).join(", ") + ") threw: " + e.message); }
+      const a = show(norm(got, s.unordered)), b = show(norm(s.equals, s.unordered));
+      if (a !== b) { const err = new Error(s.fn + "(" + (s.args || []).map(show).join(", ") + ") expected " + b + " but got " + a); err.got = a; throw err; }
+    },
     count: (s) => { const n = all(s.testid).length; if (n !== s.equals) fail('Expected ' + s.equals + ' element(s) with data-testid="' + s.testid + '" but found ' + n); },
     exists: (s) => { if (!all(s.testid).length) fail('Expected an element with data-testid="' + s.testid + '" to exist'); },
     absent: (s) => { if (all(s.testid).length) fail('Expected no element with data-testid="' + s.testid + '"'); },
@@ -88,10 +104,10 @@ export function sandboxBridge() {
       try {
         for (const s of t.steps) {
           if (s.act) { if (!acts[s.act]) fail("Unknown action " + s.act); await acts[s.act](s); await tick(); }
-          else { if (!checks[s.expect]) fail("Unknown check " + s.expect); checks[s.expect](s); }
+          else { if (!checks[s.expect]) fail("Unknown check " + s.expect); await checks[s.expect](s); }
         }
         results.push({ name: t.name, passed: true });
-      } catch (e) { results.push({ name: t.name, passed: false, message: e.message }); }
+      } catch (e) { results.push({ name: t.name, passed: false, message: e.message, got: e.got }); }
     }
     send({ type: "test-results", results });
   });

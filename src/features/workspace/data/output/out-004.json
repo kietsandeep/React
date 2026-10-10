@@ -1,0 +1,9 @@
+{
+  "id": "out-004",
+  "kind": "output",
+  "code": "let a = 'jscafe'\na[0] = 'c'\n\nconsole.log(a)",
+  "expected": [
+    "jscafe"
+  ],
+  "explanation": "Strings are immutable. Assigning to an index silently does nothing in sloppy mode (it would throw in strict mode), so `a` is unchanged."
+}

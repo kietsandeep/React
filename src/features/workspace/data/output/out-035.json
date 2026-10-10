@@ -1,0 +1,11 @@
+{
+  "id": "out-035",
+  "kind": "output",
+  "code": "console.log([]+[]);\nconsole.log([1]+[]);\nconsole.log([1]+\"abc\");",
+  "expected": [
+    "",
+    "1",
+    "1abc"
+  ],
+  "explanation": "Arrays are converted to strings: `[]` is `\"\"` and `[1]` is `\"1\"`. So the results are an empty string, `\"1\"` and `\"1abc\"`."
+}
