@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "set": {
+    "slug": "machine-coding",
+    "eyebrow": "React · Machine Coding",
+    "title": "React Machine Coding Interview Questions",
+    "subtitle": "Real coding-round questions and UI scenarios. Open any question, build the component in the live editor, and run it instantly.",
+    "searchPlaceholder": "Search questions (tabs, stopwatch, pagination...)",
+    "mockAssessment": {
+      "title": "Machine Coding Mock Assessment",
+      "unlockAfter": 5
+    }
+  },
+  "questions": [
+    {
+      "id": "mc-001",
+      "number": 1,
+      "slug": "star-rating-widget",
+      "title": "Star Rating Widget",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 8512,
+      "description": "Build a reusable star rating with a hover preview and a selected value."
+    },
+    {
+      "id": "mc-002",
+      "number": 2,
+      "slug": "accordion-faq",
+      "title": "Accordion / FAQ",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 7023,
+      "description": "Expand one panel at a time from a list of items."
+    },
+    {
+      "id": "mc-003",
+      "number": 3,
+      "slug": "tabs-component",
+      "title": "Tabs Component",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 5534,
+      "description": "Switch content panels via a tab bar with an active indicator."
+    },
+    {
+      "id": "mc-004",
+      "number": 4,
+      "slug": "stopwatch",
+      "title": "Stopwatch",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 4045,
+      "description": "Start/stop/reset a timer using an interval id stored in a ref."
+    },
+    {
+      "id": "mc-005",
+      "number": 5,
+      "slug": "pagination",
+      "title": "Pagination",
+      "difficulty": "medium",
+      "company": "Atlassian",
+      "views": 2556,
+      "description": "Page through a list with Prev/Next and numbered page buttons."
+    },
+    {
+      "id": "mc-006",
+      "number": 6,
+      "slug": "autocomplete-typeahead",
+      "title": "Autocomplete / Typeahead",
+      "difficulty": "medium",
+      "company": "Infosys",
+      "views": 9568,
+      "description": "Filter a suggestion list as the user types and pick a value."
+    },
+    {
+      "id": "mc-007",
+      "number": 7,
+      "slug": "traffic-light",
+      "title": "Traffic Light",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 8079,
+      "description": "Cycle through states on a timer with per-state durations."
+    },
+    {
+      "id": "mc-008",
+      "number": 8,
+      "slug": "tic-tac-toe",
+      "title": "Tic-Tac-Toe",
+      "difficulty": "hard",
+      "company": "Amazon",
+      "views": 6590,
+      "description": "A 3×3 game with alternating turns and win/draw detection."
+    },
+    {
+      "id": "mc-009",
+      "number": 9,
+      "slug": "implement-debouncing",
+      "title": "Implement Debouncing",
+      "difficulty": "medium",
+      "company": "Flipkart",
+      "views": 5101,
+      "description": "Delay reacting to a fast-changing value until the user pauses typing."
+    },
+    {
+      "id": "mc-010",
+      "number": 10,
+      "slug": "implement-a-search-box",
+      "title": "Implement a Search Box",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 3612,
+      "description": "Filter a list live as the user types, with an empty-state message."
+    },
+    {
+      "id": "mc-011",
+      "number": 11,
+      "slug": "implement-a-todo-list",
+      "title": "Implement a Todo List",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 2123,
+      "description": "Add, complete and delete items while updating an array immutably."
+    },
+    {
+      "id": "mc-012",
+      "number": 12,
+      "slug": "nested-comments-thread",
+      "title": "Nested Comments Thread",
+      "difficulty": "hard",
+      "company": "Uber",
+      "views": 9135,
+      "description": "Render a recursive comment tree and update deeply nested state immutably."
+    },
+    {
+      "id": "mc-013",
+      "number": 13,
+      "slug": "crud-operations-in-a-table",
+      "title": "CRUD Operations in a Table",
+      "difficulty": "medium",
+      "company": "PayPal",
+      "views": 7646,
+      "description": "Create, read, update and delete rows of a table backed by a single form."
+    },
+    {
+      "id": "mc-014",
+      "number": 14,
+      "slug": "stop-duplicate-api-calls",
+      "title": "Stop Duplicate API Calls",
+      "difficulty": "medium",
+      "company": "Swiggy",
+      "views": 6157,
+      "description": "Guard against firing multiple concurrent requests when a trigger is spammed."
+    },
+    {
+      "id": "mc-015",
+      "number": 15,
+      "slug": "country-and-state-dependent-dropdowns",
+      "title": "Country & State Dependent Dropdowns",
+      "difficulty": "medium",
+      "company": "Zomato",
+      "views": 4668,
+      "description": "Load the second dropdown's options based on the first dropdown's selection."
+    },
+    {
+      "id": "mc-016",
+      "number": 16,
+      "slug": "dark-light-theme-toggle",
+      "title": "Dark / Light Theme Toggle",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 3179,
+      "description": "Switch the whole UI between light and dark by driving a class from state."
+    },
+    {
+      "id": "mc-017",
+      "number": 17,
+      "slug": "infinite-scroll",
+      "title": "Infinite Scroll",
+      "difficulty": "medium",
+      "company": "Walmart",
+      "views": 1690,
+      "description": "Load the next batch of items automatically as the user scrolls to the bottom."
+    },
+    {
+      "id": "mc-018",
+      "number": 18,
+      "slug": "multi-step-progress-bar-with-validation",
+      "title": "Multi-Step Progress Bar with Validation",
+      "difficulty": "medium",
+      "company": "Oracle",
+      "views": 8702,
+      "description": "A configurable step wizard where Next is blocked until the current step is valid."
+    },
+    {
+      "id": "mc-019",
+      "number": 19,
+      "slug": "c-shaped-boxes-click-and-auto-reset",
+      "title": "C-Shaped Boxes — Click & Auto-Reset",
+      "difficulty": "medium",
+      "company": "Salesforce",
+      "views": 7213,
+      "description": "Track click order, then unwind it on a timer — a classic sequencing puzzle."
+    },
+    {
+      "id": "mc-020",
+      "number": 20,
+      "slug": "transfer-list-merge-apis-move-between-boxes",
+      "title": "Transfer List (Merge APIs + Move Between Boxes)",
+      "difficulty": "hard",
+      "company": "TCS",
+      "views": 5724,
+      "description": "Merge two API responses, de-duplicate, and move selected items between two lists."
+    },
+    {
+      "id": "mc-021",
+      "number": 21,
+      "slug": "typewriter-effect",
+      "title": "Typewriter Effect",
+      "difficulty": "medium",
+      "company": "Cognizant",
+      "views": 4235,
+      "description": "Reveal text one character at a time on demand, with a blinking caret."
+    },
+    {
+      "id": "mc-022",
+      "number": 22,
+      "slug": "otp-input",
+      "title": "OTP Input",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 2746,
+      "description": "A segmented OTP field with auto-advance, backspace navigation and paste support."
+    },
+    {
+      "id": "mc-023",
+      "number": 23,
+      "slug": "multi-select-checkboxes-with-select-all",
+      "title": "Multi-Select Checkboxes with Select All",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 9758,
+      "description": "Sync a Select-All checkbox with individual checkboxes, both ways."
+    },
+    {
+      "id": "mc-024",
+      "number": 24,
+      "slug": "implement-usefetch-for-api-calls",
+      "title": "Implement useFetch for API Calls",
+      "difficulty": "medium",
+      "company": "Atlassian",
+      "views": 8269,
+      "description": "Extract data fetching (loading / error / data) into a reusable custom hook."
+    },
+    {
+      "id": "mc-025",
+      "number": 25,
+      "slug": "counter-component-using-a-custom-hook",
+      "title": "Counter Component using a Custom Hook",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 6780,
+      "description": "Move counter logic into a reusable hook and use it across multiple components."
+    },
+    {
+      "id": "mc-026",
+      "number": 26,
+      "slug": "drag-and-drop-reorderable-list",
+      "title": "Drag & Drop Reorderable List",
+      "difficulty": "hard",
+      "company": "Accenture",
+      "views": 5291,
+      "description": "Reorder a list by dragging items, using the native HTML5 drag-and-drop events."
+    },
+    {
+      "id": "mc-027",
+      "number": 27,
+      "slug": "nested-circles",
+      "title": "Nested Circles",
+      "difficulty": "medium",
+      "company": "Amazon",
+      "views": 3802,
+      "description": "Render N concentric circles from a number input using a recursive component."
+    },
+    {
+      "id": "mc-028",
+      "number": 28,
+      "slug": "cancel-api-calls-with-abortcontroller",
+      "title": "Cancel API Calls with AbortController",
+      "difficulty": "medium",
+      "company": "Flipkart",
+      "views": 2313,
+      "description": "Cancel an in-flight request with AbortController — on demand, on re-fetch, and on unmount."
+    },
+    {
+      "id": "mc-029",
+      "number": 29,
+      "slug": "tree-structure-expand-collapse",
+      "title": "Tree Structure (Expand / Collapse)",
+      "difficulty": "medium",
+      "company": "Google",
+      "views": 9325,
+      "description": "Render a nested tree where every node can expand to reveal its children."
+    },
+    {
+      "id": "mc-030",
+      "number": 30,
+      "slug": "quiz-component",
+      "title": "Quiz Component",
+      "difficulty": "medium",
+      "company": "Adobe",
+      "views": 7836,
+      "description": "A multi-question quiz with navigation, answer tracking and a final score."
+    },
+    {
+      "id": "mc-031",
+      "number": 31,
+      "slug": "generate-a-table-of-numbers",
+      "title": "Generate a Table of Numbers",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 6347,
+      "description": "Render an R×C table filled with sequential numbers from two inputs."
+    },
+    {
+      "id": "mc-032",
+      "number": 32,
+      "slug": "like-button",
+      "title": "Like Button",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 4858,
+      "description": "Toggle a liked state and reflect it in the button's appearance and count."
+    },
+    {
+      "id": "mc-033",
+      "number": 33,
+      "slug": "hacker-news-job-board",
+      "title": "Hacker News Job Board",
+      "difficulty": "medium",
+      "company": "Swiggy",
+      "views": 3369,
+      "description": "Fetch job story IDs then their details from the Hacker News API and list them."
+    },
+    {
+      "id": "mc-034",
+      "number": 34,
+      "slug": "users-table-with-sorting",
+      "title": "Users Table with Sorting",
+      "difficulty": "medium",
+      "company": "Zomato",
+      "views": 1880,
+      "description": "Sort a data table by clicking column headers, toggling ascending/descending."
+    },
+    {
+      "id": "mc-035",
+      "number": 35,
+      "slug": "file-explorer",
+      "title": "File Explorer",
+      "difficulty": "medium",
+      "company": "Razorpay",
+      "views": 8892,
+      "description": "A VS-Code-style file tree where folders expand/collapse and files are leaves."
+    },
+    {
+      "id": "mc-036",
+      "number": 36,
+      "slug": "modal-dialog-with-portals",
+      "title": "Modal Dialog with Portals",
+      "difficulty": "medium",
+      "company": "Walmart",
+      "views": 7403,
+      "description": "Render a modal outside the app root using a portal, with backdrop and Escape to close."
+    },
+    {
+      "id": "mc-037",
+      "number": 37,
+      "slug": "room-reservation-system",
+      "title": "Room Reservation System",
+      "difficulty": "medium",
+      "company": "Oracle",
+      "views": 5914,
+      "description": "A per-date reservation grid with guest names, validation, cancellation and a bookings summary."
+    },
+    {
+      "id": "mc-038",
+      "number": 38,
+      "slug": "toast-notification-system",
+      "title": "Toast Notification System",
+      "difficulty": "medium",
+      "company": "Salesforce",
+      "views": 4425,
+      "description": "Trigger stacking toasts of different types that auto-dismiss or can be closed manually."
+    },
+    {
+      "id": "mc-039",
+      "number": 39,
+      "slug": "timer-with-progress-bar",
+      "title": "Timer with Progress Bar",
+      "difficulty": "medium",
+      "company": "TCS",
+      "views": 2936,
+      "description": "A countdown timer whose progress bar fills as time elapses, with start/pause/reset."
+    },
+    {
+      "id": "mc-040",
+      "number": 40,
+      "slug": "password-strength-check",
+      "title": "Password Strength Check",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 9948,
+      "description": "Score a password against rules and show a live strength meter + checklist."
+    },
+    {
+      "id": "mc-041",
+      "number": 41,
+      "slug": "form-with-validation",
+      "title": "Form with Validation",
+      "difficulty": "medium",
+      "company": "Capgemini",
+      "views": 8459,
+      "description": "A controlled form that validates on submit and shows inline error messages."
+    },
+    {
+      "id": "mc-042",
+      "number": 42,
+      "slug": "multi-select-dropdown",
+      "title": "Multi-Select Dropdown",
+      "difficulty": "medium",
+      "company": "Wipro",
+      "views": 6970,
+      "description": "A dropdown that supports search, select all, clear all and a selected count."
+    },
+    {
+      "id": "mc-043",
+      "number": 43,
+      "slug": "shopping-cart",
+      "title": "Shopping Cart",
+      "difficulty": "hard",
+      "company": "Atlassian",
+      "views": 5481,
+      "description": "Add/remove items, adjust quantity, apply a coupon, compute totals and persist the cart."
+    },
+    {
+      "id": "mc-044",
+      "number": 44,
+      "slug": "session-timeout-system",
+      "title": "Session Timeout System",
+      "difficulty": "hard",
+      "company": "Infosys",
+      "views": 3992,
+      "description": "Detect inactivity, warn with a countdown, allow extending, and auto-logout."
+    },
+    {
+      "id": "mc-045",
+      "number": 45,
+      "slug": "optimistic-ui-like-button",
+      "title": "Optimistic UI — Like Button",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 2503,
+      "description": "Update the UI immediately, then roll back if the API call fails."
+    },
+    {
+      "id": "mc-046",
+      "number": 46,
+      "slug": "character-counter",
+      "title": "Character Counter",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 9515,
+      "description": "A text field limited to a max length with a live character count."
+    },
+    {
+      "id": "mc-047",
+      "number": 47,
+      "slug": "copy-to-clipboard",
+      "title": "Copy to Clipboard",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 8026,
+      "description": "Copy a value with the Clipboard API and give temporary button feedback."
+    },
+    {
+      "id": "mc-048",
+      "number": 48,
+      "slug": "file-upload-with-image-preview",
+      "title": "File Upload with Image Preview",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 6537,
+      "description": "Preview a selected image before uploading it."
+    },
+    {
+      "id": "mc-049",
+      "number": 49,
+      "slug": "scroll-to-top-button",
+      "title": "Scroll-to-Top Button",
+      "difficulty": "easy",
+      "company": "Wipro",
+      "views": 5048,
+      "description": "Show a floating button after scrolling down, that smoothly returns to the top."
+    },
+    {
+      "id": "mc-050",
+      "number": 50,
+      "slug": "user-profile-edit",
+      "title": "User Profile Edit",
+      "difficulty": "medium",
+      "company": "Uber",
+      "views": 3559,
+      "description": "Load a user, edit their details in a form, then save or cancel the changes."
+    },
+    {
+      "id": "mc-051",
+      "number": 51,
+      "slug": "half-star-rating",
+      "title": "Half-Star Rating",
+      "difficulty": "medium",
+      "company": "PayPal",
+      "views": 2070,
+      "description": "A star rating that supports half values based on which half of a star you hover/click."
+    },
+    {
+      "id": "mc-052",
+      "number": 52,
+      "slug": "nested-accordion-tree",
+      "title": "Nested Accordion (Tree)",
+      "difficulty": "medium",
+      "company": "Swiggy",
+      "views": 9082,
+      "description": "Render a recursive accordion from a tree; each node expands/collapses its children independently."
+    },
+    {
+      "id": "mc-053",
+      "number": 53,
+      "slug": "nested-checkbox-tree",
+      "title": "Nested Checkbox Tree",
+      "difficulty": "hard",
+      "company": "Zomato",
+      "views": 7593,
+      "description": "Recursive checkbox tree where checking a parent toggles all descendants and parents reflect a checked / unchecked / indeterminate state."
+    },
+    {
+      "id": "mc-054",
+      "number": 54,
+      "slug": "optimistic-ui-like-button-54",
+      "title": "Optimistic UI — Like Button",
+      "difficulty": "hard",
+      "company": "Razorpay",
+      "views": 6104,
+      "description": "Update the UI instantly on click, then reconcile with a simulated API — rolling back on failure."
+    },
+    {
+      "id": "mc-055",
+      "number": 55,
+      "slug": "show-more-show-less-text",
+      "title": "Show More / Show Less Text",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 4615,
+      "description": "Truncate long text to a character limit with a toggle to expand and collapse it."
+    },
+    {
+      "id": "mc-056",
+      "number": 56,
+      "slug": "reusable-modal-dialog",
+      "title": "Reusable Modal Dialog",
+      "difficulty": "medium",
+      "company": "Oracle",
+      "views": 3126,
+      "description": "Build a reusable modal that opens, closes on the X, closes on outside click, and closes on submit."
+    },
+    {
+      "id": "mc-057",
+      "number": 57,
+      "slug": "temperature-converter",
+      "title": "Temperature Converter",
+      "difficulty": "easy",
+      "company": "Cognizant",
+      "views": 1637,
+      "description": "Convert temperatures between Celsius and Fahrenheit with two synced inputs."
+    },
+    {
+      "id": "mc-058",
+      "number": 58,
+      "slug": "expense-tracker",
+      "title": "Expense Tracker",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 8649,
+      "description": "Add expenses through a validated form, list them, delete any, and keep a live total."
+    },
+    {
+      "id": "mc-059",
+      "number": 59,
+      "slug": "authentication-context",
+      "title": "Authentication Context",
+      "difficulty": "hard",
+      "company": "Cognizant",
+      "views": 7160,
+      "description": "Manage global auth state with Context + useReducer and render UI based on it."
+    },
+    {
+      "id": "mc-060",
+      "number": 60,
+      "slug": "password-visibility-toggle",
+      "title": "Password Visibility Toggle",
+      "difficulty": "easy",
+      "company": "Capgemini",
+      "views": 5671,
+      "description": "Toggle a password field between hidden and visible with a show/hide button."
+    },
+    {
+      "id": "mc-061",
+      "number": 61,
+      "slug": "counter-with-step",
+      "title": "Counter with Step",
+      "difficulty": "easy",
+      "company": "TCS",
+      "views": 4182,
+      "description": "A counter that increments/decrements by a user-defined step, with reset."
+    },
+    {
+      "id": "mc-062",
+      "number": 62,
+      "slug": "scroll-to-section-tabs",
+      "title": "Scroll-to-Section Tabs",
+      "difficulty": "medium",
+      "company": "Atlassian",
+      "views": 2693,
+      "description": "Clicking a tab smoothly scrolls to its section and marks the tab active."
+    },
+    {
+      "id": "mc-063",
+      "number": 63,
+      "slug": "sidebar",
+      "title": "Sidebar",
+      "difficulty": "easy",
+      "company": "Accenture",
+      "views": 9705,
+      "description": "A right-side sidebar that slides in/out from a fixed, always-visible toggle button."
+    },
+    {
+      "id": "mc-064",
+      "number": 64,
+      "slug": "price-range-slider",
+      "title": "Price Range Slider",
+      "difficulty": "medium",
+      "company": "Accenture",
+      "views": 8216,
+      "description": "A dual-handle price range slider synced with number inputs, with a filled track and constraints."
+    },
+    {
+      "id": "mc-065",
+      "number": 65,
+      "slug": "product-filter-fetch-price-rating",
+      "title": "Product Filter (Fetch + Price + Rating)",
+      "difficulty": "medium",
+      "company": "Amazon",
+      "views": 6727,
+      "description": "Fetch products from an API and filter them by price range and minimum rating together."
+    }
+  ]
+}

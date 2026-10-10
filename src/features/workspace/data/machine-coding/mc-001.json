@@ -1,0 +1,102 @@
+{
+  "id": "mc-001",
+  "thingsToDo": [
+    "Render N stars (default 5) driven by a `max` prop.",
+    "Clicking a star sets the rating; the filled stars reflect it.",
+    "Hovering previews the rating; leaving restores the selected value.",
+    "Show the numeric value (e.g. 3/5) next to the stars."
+  ],
+  "instructions": {
+    "intro": "Add these `data-testid` attributes to the matching elements in your solution so the **Submit** checks can verify it:",
+    "testIds": [
+      {
+        "id": "star",
+        "description": "each individual star (all 5)"
+      },
+      {
+        "id": "rating-value",
+        "description": "the numeric rating label (e.g. 3/5)"
+      }
+    ]
+  },
+  "files": {
+    "Practice.js": "const { useState } = React;\n\nconst StarRating = ({ max = 5 }) => {\n  // TODO: track rating + hover, render stars, show value\n  return <div className=\"rating\">★★★★★</div>;\n};\n\nconst Practice = () => <StarRating max={5} />;\n",
+    "App.js": "const App = () => <Practice />;\n",
+    "styles.css": ".rating { display: flex; align-items: center; gap: 4px; font-size: 32px; user-select: none; }\n.star { cursor: pointer; color: #cbd5e1; transition: color .1s; }\n.star.filled { color: #f59e0b; }\n.rating-value { margin-left: 12px; font-size: 16px; color: #475569; }\n"
+  },
+  "solution": {
+    "Practice.js": "const { useState } = React;\n\nconst StarRating = ({ max = 5 }) => {\n  const [rating, setRating] = useState(0);\n  const [hover, setHover] = useState(0);\n  const active = hover || rating;\n\n  return (\n    <div className=\"rating\">\n      {Array.from({ length: max }, (_, i) => i + 1).map((n) => (\n        <span\n          key={n}\n          data-testid=\"star\"\n          className={n <= active ? \"star filled\" : \"star\"}\n          onClick={() => setRating(n)}\n          onMouseEnter={() => setHover(n)}\n          onMouseLeave={() => setHover(0)}\n        >\n          ★\n        </span>\n      ))}\n      <span className=\"rating-value\" data-testid=\"rating-value\">{rating}/{max}</span>\n    </div>\n  );\n};\n\nconst Practice = () => <StarRating max={5} />;\n"
+  },
+  "tests": [
+    {
+      "name": "Renders 5 stars by default",
+      "steps": [
+        {
+          "expect": "count",
+          "testid": "star",
+          "equals": 5
+        }
+      ]
+    },
+    {
+      "name": "Shows 0/5 before anything is selected",
+      "steps": [
+        {
+          "expect": "text",
+          "testid": "rating-value",
+          "equals": "0/5"
+        }
+      ]
+    },
+    {
+      "name": "Clicking the 4th star sets the rating to 4/5",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "star",
+          "index": 3
+        },
+        {
+          "expect": "text",
+          "testid": "rating-value",
+          "equals": "4/5"
+        }
+      ]
+    },
+    {
+      "name": "Clicking another star updates the rating",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "star",
+          "index": 1
+        },
+        {
+          "expect": "text",
+          "testid": "rating-value",
+          "equals": "2/5"
+        }
+      ]
+    },
+    {
+      "name": "Hovering and leaving keeps the selected value",
+      "steps": [
+        {
+          "act": "hover",
+          "testid": "star",
+          "index": 4
+        },
+        {
+          "act": "unhover",
+          "testid": "star",
+          "index": 4
+        },
+        {
+          "expect": "text",
+          "testid": "rating-value",
+          "equals": "2/5"
+        }
+      ]
+    }
+  ]
+}

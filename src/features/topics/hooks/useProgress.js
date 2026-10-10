@@ -16,5 +16,8 @@ export function useProgress(topicSlug) {
       return next;
     });
   }, []);
-  return { done, toggle };
+  const mark = useCallback((id) => {
+    setDone((prev) => (prev.has(id) ? prev : new Set(prev).add(id)));
+  }, []);
+  return { done, toggle, mark };
 }

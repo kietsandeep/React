@@ -1,0 +1,13 @@
+.editor { display: flex; height: 100%; min-height: 0; background: #1e1e1e; color: #d4d4d4; font: var(--fs) / var(--lh) ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.gutter { flex: none; min-width: 44px; padding: 14px 10px 14px 12px; overflow: hidden; text-align: right; color: #858585; user-select: none; }
+.stack { position: relative; flex: 1; min-width: 0; }
+.pre, .ta { position: absolute; inset: 0; margin: 0; padding: 14px 14px 14px 6px; border: 0; font: inherit; letter-spacing: 0; tab-size: 2; white-space: pre; word-wrap: normal; }
+.pre { overflow: hidden; pointer-events: none; color: #d4d4d4; }
+.ta { overflow: auto; resize: none; outline: 0; background: transparent; color: transparent; caret-color: #fff; }
+.ta::selection { background: rgba(90, 140, 255, .35); color: transparent; }
+.tk_comment { color: #6a9955; font-style: italic; }
+.tk_string { color: #ce9178; }
+.tk_keyword { color: #569cd6; }
+.tk_number { color: #b5cea8; }
+.tk_tag { color: #4ec9b0; }
+.tk_fn { color: #dcdcaa; }

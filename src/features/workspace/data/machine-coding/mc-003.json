@@ -1,0 +1,93 @@
+{
+  "id": "mc-003",
+  "thingsToDo": [
+    "Render a button for every tab in the provided `tabs` array.",
+    "Show the content of the active tab (the first tab is active initially).",
+    "Clicking a tab switches the content.",
+    "Give the active tab button the class `active`."
+  ],
+  "instructions": {
+    "intro": "Add these `data-testid` attributes to the matching elements in your solution so the **Submit** checks can verify it:",
+    "testIds": [
+      {
+        "id": "tab",
+        "description": "each tab button (all 3)"
+      },
+      {
+        "id": "tab-panel",
+        "description": "the content of the active tab"
+      }
+    ]
+  },
+  "files": {
+    "Practice.js": "const { useState } = React;\n\nconst tabs = [\n  { label: \"Home\", content: \"Home content\" },\n  { label: \"Profile\", content: \"Profile content\" },\n  { label: \"Settings\", content: \"Settings content\" },\n];\n\nconst Tabs = ({ tabs }) => {\n  // TODO: track the active tab, render the tab bar + the active panel\n  return <div className=\"tabs\">{tabs.map((t) => <span key={t.label}>{t.label}</span>)}</div>;\n};\n\nconst Practice = () => <Tabs tabs={tabs} />;\n",
+    "App.js": "const App = () => <Practice />;\n",
+    "styles.css": ".tab-bar { display: flex; gap: 4px; border-bottom: 2px solid #e2e8f0; }\n.tab { padding: 10px 16px; border: 0; background: none; font: inherit; font-weight: 600; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; }\n.tab.active { color: #4f46e5; border-bottom-color: #4f46e5; }\n.tab-panel { padding: 18px 4px; color: #334155; }\n"
+  },
+  "solution": {
+    "Practice.js": "const { useState } = React;\n\nconst tabs = [\n  { label: \"Home\", content: \"Home content\" },\n  { label: \"Profile\", content: \"Profile content\" },\n  { label: \"Settings\", content: \"Settings content\" },\n];\n\nconst Tabs = ({ tabs }) => {\n  const [active, setActive] = useState(0);\n\n  return (\n    <div className=\"tabs\">\n      <div className=\"tab-bar\">\n        {tabs.map((t, i) => (\n          <button\n            key={t.label}\n            data-testid=\"tab\"\n            className={i === active ? \"tab active\" : \"tab\"}\n            onClick={() => setActive(i)}\n          >\n            {t.label}\n          </button>\n        ))}\n      </div>\n      <div data-testid=\"tab-panel\" className=\"tab-panel\">{tabs[active].content}</div>\n    </div>\n  );\n};\n\nconst Practice = () => <Tabs tabs={tabs} />;\n"
+  },
+  "tests": [
+    {
+      "name": "Renders 3 tabs",
+      "steps": [
+        {
+          "expect": "count",
+          "testid": "tab",
+          "equals": 3
+        }
+      ]
+    },
+    {
+      "name": "First tab is active initially",
+      "steps": [
+        {
+          "expect": "text",
+          "testid": "tab-panel",
+          "contains": "Home content"
+        },
+        {
+          "expect": "hasClass",
+          "testid": "tab",
+          "class": "active",
+          "index": 0,
+          "equals": true
+        }
+      ]
+    },
+    {
+      "name": "Clicking a tab shows its content",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "tab",
+          "index": 1
+        },
+        {
+          "expect": "text",
+          "testid": "tab-panel",
+          "contains": "Profile content"
+        }
+      ]
+    },
+    {
+      "name": "The clicked tab gets the `active` class",
+      "steps": [
+        {
+          "expect": "hasClass",
+          "testid": "tab",
+          "class": "active",
+          "index": 1,
+          "equals": true
+        },
+        {
+          "expect": "hasClass",
+          "testid": "tab",
+          "class": "active",
+          "index": 0,
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

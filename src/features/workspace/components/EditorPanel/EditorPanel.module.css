@@ -1,0 +1,16 @@
+.panel { display: flex; flex-direction: column; min-width: 0; min-height: 0; background: var(--surface); }
+.full { position: fixed; inset: 0; z-index: 60; }
+.head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 16px; height: 50px; flex: none; border-bottom: 1px solid var(--line); }
+.tabs { display: flex; gap: 6px; overflow-x: auto; }
+.tabs button { padding: 8px 12px; border: 0; background: none; font-size: 13.5px; font-weight: 700; color: var(--muted); white-space: nowrap; border-radius: 8px; }
+.tabs .active { color: var(--text); }
+.tools { display: flex; gap: 6px; }
+.tools > button, .menuWrap > button { display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 8px; background: none; color: var(--text); }
+.tools > button:hover, .menuWrap > button:hover { background: var(--bg); }
+.menuWrap { position: relative; }
+.menu { position: absolute; right: 0; top: 40px; z-index: 5; width: 220px; padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); display: grid; gap: 10px; font-size: 13px; }
+.row { display: flex; justify-content: space-between; align-items: center; }
+.row span button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); }
+.row b { display: inline-block; min-width: 44px; text-align: center; }
+.reset { padding: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); font-weight: 700; color: #dc2626; }
+.body { flex: 1; min-height: 0; }

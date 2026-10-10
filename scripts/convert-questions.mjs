@@ -4,6 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { toBlocks } from "./lib/toBlocks.mjs";
 
 const [, , input, output = "src/features/topics/data/react.json", topic = "react"] = process.argv;
 if (!input) {
@@ -13,20 +14,6 @@ if (!input) {
 
 const slugify = (s) =>
   s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-
-// "1. a 2. b 3. c"  ->  ordered list block; anything else -> text block
-function toBlocks(answer) {
-  if (Array.isArray(answer)) return answer; // already converted
-  const text = String(answer).trim();
-  if (/^1\.\s/.test(text) && /\s2\.\s/.test(text)) {
-    const items = text
-      .split(/\s+(?=\d+\.\s)/)
-      .map((s) => s.replace(/^\d+\.\s*/, "").trim())
-      .filter(Boolean);
-    return [{ type: "list", ordered: true, items }];
-  }
-  return [{ type: "text", value: text }];
-}
 
 const mod = await import(pathToFileURL(path.resolve(input)).href);
 const data = mod.default ?? mod.data;

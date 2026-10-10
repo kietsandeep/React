@@ -1,0 +1,120 @@
+{
+  "id": "mc-061",
+  "thingsToDo": [
+    "Show the count, starting at 0.",
+    "A number input sets the step (default 1).",
+    "Increment / decrement change the count by the current step.",
+    "Reset sets the count back to 0 and the step back to 1."
+  ],
+  "instructions": {
+    "intro": "Add these `data-testid` attributes to the matching elements in your solution so the **Submit** checks can verify it:",
+    "testIds": [
+      {
+        "id": "count",
+        "description": "the current count"
+      },
+      {
+        "id": "step-input",
+        "description": "the number input for the step"
+      },
+      {
+        "id": "increment",
+        "description": "the + button"
+      },
+      {
+        "id": "decrement",
+        "description": "the − button"
+      },
+      {
+        "id": "reset",
+        "description": "the reset button"
+      }
+    ]
+  },
+  "files": {
+    "Practice.js": "const { useState } = React;\n\nconst Counter = () => {\n  // TODO: track count and step\n  return (\n    <div className=\"counter\">\n      <h2>0</h2>\n      <label>Step <input type=\"number\" defaultValue={1} /></label>\n      <div className=\"row\">\n        <button>−</button>\n        <button>+</button>\n        <button>Reset</button>\n      </div>\n    </div>\n  );\n};\n\nconst Practice = () => <Counter />;\n",
+    "App.js": "const App = () => <Practice />;\n",
+    "styles.css": ".counter { display: grid; gap: 12px; max-width: 260px; }\n.counter h2 { margin: 0; font-size: 44px; }\n.counter input { width: 70px; padding: 6px 8px; margin-left: 6px; border: 1px solid #cbd5e1; border-radius: 6px; }\n.row { display: flex; gap: 8px; }\n.row button { padding: 8px 14px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; font: inherit; font-weight: 600; cursor: pointer; }\n"
+  },
+  "solution": {
+    "Practice.js": "const { useState } = React;\n\nconst Counter = () => {\n  const [count, setCount] = useState(0);\n  const [step, setStep] = useState(1);\n\n  return (\n    <div className=\"counter\">\n      <h2 data-testid=\"count\">{count}</h2>\n      <label>\n        Step\n        <input\n          data-testid=\"step-input\"\n          type=\"number\"\n          value={step}\n          onChange={(e) => setStep(Number(e.target.value))}\n        />\n      </label>\n      <div className=\"row\">\n        <button data-testid=\"decrement\" onClick={() => setCount(count - step)}>−</button>\n        <button data-testid=\"increment\" onClick={() => setCount(count + step)}>+</button>\n        <button data-testid=\"reset\" onClick={() => { setCount(0); setStep(1); }}>Reset</button>\n      </div>\n    </div>\n  );\n};\n\nconst Practice = () => <Counter />;\n"
+  },
+  "tests": [
+    {
+      "name": "Starts at 0",
+      "steps": [
+        {
+          "expect": "text",
+          "testid": "count",
+          "equals": "0"
+        }
+      ]
+    },
+    {
+      "name": "Increment adds the default step of 1",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "increment"
+        },
+        {
+          "expect": "text",
+          "testid": "count",
+          "equals": "1"
+        }
+      ]
+    },
+    {
+      "name": "Increment uses a custom step",
+      "steps": [
+        {
+          "act": "type",
+          "testid": "step-input",
+          "value": 5
+        },
+        {
+          "act": "click",
+          "testid": "increment"
+        },
+        {
+          "expect": "text",
+          "testid": "count",
+          "equals": "6"
+        }
+      ]
+    },
+    {
+      "name": "Decrement subtracts the step",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "decrement"
+        },
+        {
+          "expect": "text",
+          "testid": "count",
+          "equals": "1"
+        }
+      ]
+    },
+    {
+      "name": "Reset restores count 0 and step 1",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "reset"
+        },
+        {
+          "expect": "text",
+          "testid": "count",
+          "equals": "0"
+        },
+        {
+          "expect": "value",
+          "testid": "step-input",
+          "equals": 1
+        }
+      ]
+    }
+  ]
+}

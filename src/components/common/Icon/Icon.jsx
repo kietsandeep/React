@@ -6,6 +6,26 @@ const paths = {
   code: <path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" />,
   laptop: <><rect x="4" y="5" width="16" height="11" rx="2" /><path d="M2 19h20M10 10l-1.5 1.5L10 13M14 10l1.5 1.5L14 13" /></>,
   caret: <path d="M6 9l6 6 6-6" />,
+  search: <><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></>,
+  flame: <path d="M12 3c.5 3 4 5 4 9.5a4 4 0 0 1-8 0c0-2 1-3 2-4 .2 1.2 1 2 2 2 0-3-1-5 0-7.5z" />,
+  eye: <><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" /><circle cx="12" cy="12" r="3" /></>,
+  check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
+  checkCircle: <><circle cx="12" cy="12" r="9" /><path d="M8 12.5l3 3 5-6" /></>,
+  lock: <><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></>,
+  flag: <path d="M5 21V4M5 4h11l-2 4 2 4H5" />,
+  chevronRight: <path d="M9 6l6 6-6 6" />,
+  // --- added for the workspace page ---
+  arrowLeft: <path d="M19 12H5M11 6l-6 6 6 6" />,
+  chevronLeft: <path d="M15 6l-6 6 6 6" />,
+  chevronUp: <path d="M6 15l6-6 6 6" />,
+  play: <path d="M7 5l12 7-12 7z" />,
+  expand: <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />,
+  sliders: <><path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></>,
+  refresh: <path d="M20 11a8 8 0 0 0-14.5-4M4 4v4h4M4 13a8 8 0 0 0 14.5 4M20 20v-4h-4" />,
+  terminal: <><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 9l3 3-3 3M13 15h4" /></>,
+  browser: <><circle cx="12" cy="12" r="9" /><path d="M7 12h3l2-4 2 8 2-4h1" /></>,
+  close: <path d="M6 6l12 12M18 6L6 18" />,
+  x: <path d="M6 6l12 12M18 6L6 18" />,
 };
 
 export default function Icon({ name, size = 18, ...rest }) {

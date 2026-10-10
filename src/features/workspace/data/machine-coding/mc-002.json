@@ -1,0 +1,107 @@
+{
+  "id": "mc-002",
+  "thingsToDo": [
+    "Render a header for every item in the provided `items` array.",
+    "Clicking a header opens its answer panel.",
+    "Only one panel can be open at a time.",
+    "Clicking the open header closes it again."
+  ],
+  "instructions": {
+    "intro": "Add these `data-testid` attributes to the matching elements in your solution so the **Submit** checks can verify it:",
+    "testIds": [
+      {
+        "id": "accordion-header",
+        "description": "each question header (all 3)"
+      },
+      {
+        "id": "accordion-panel",
+        "description": "the answer panel — render it only for the open item"
+      }
+    ]
+  },
+  "files": {
+    "Practice.js": "const { useState } = React;\n\nconst items = [\n  { q: \"What is React?\", a: \"A JavaScript library for building user interfaces.\" },\n  { q: \"What is JSX?\", a: \"A syntax extension that lets you write markup inside JavaScript.\" },\n  { q: \"What is a Hook?\", a: \"A function that lets components use state and other React features.\" },\n];\n\nconst Accordion = ({ items }) => {\n  // TODO: track the open index, render headers + the open panel\n  return (\n    <div className=\"accordion\">\n      {items.map((item) => (\n        <div key={item.q}>{item.q}</div>\n      ))}\n    </div>\n  );\n};\n\nconst Practice = () => <Accordion items={items} />;\n",
+    "App.js": "const App = () => <Practice />;\n",
+    "styles.css": ".accordion { max-width: 420px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; }\n.accordion-header { width: 100%; display: flex; justify-content: space-between; padding: 14px 16px; border: 0; border-bottom: 1px solid #e2e8f0; background: #f8fafc; font: inherit; font-weight: 600; cursor: pointer; }\n.accordion-panel { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; color: #475569; line-height: 1.6; }\n"
+  },
+  "solution": {
+    "Practice.js": "const { useState } = React;\n\nconst items = [\n  { q: \"What is React?\", a: \"A JavaScript library for building user interfaces.\" },\n  { q: \"What is JSX?\", a: \"A syntax extension that lets you write markup inside JavaScript.\" },\n  { q: \"What is a Hook?\", a: \"A function that lets components use state and other React features.\" },\n];\n\nconst Accordion = ({ items }) => {\n  const [open, setOpen] = useState(null);\n\n  return (\n    <div className=\"accordion\">\n      {items.map((item, i) => (\n        <div key={item.q}>\n          <button\n            data-testid=\"accordion-header\"\n            className=\"accordion-header\"\n            onClick={() => setOpen(open === i ? null : i)}\n          >\n            {item.q} <span>{open === i ? \"−\" : \"+\"}</span>\n          </button>\n          {open === i && (\n            <div data-testid=\"accordion-panel\" className=\"accordion-panel\">{item.a}</div>\n          )}\n        </div>\n      ))}\n    </div>\n  );\n};\n\nconst Practice = () => <Accordion items={items} />;\n"
+  },
+  "tests": [
+    {
+      "name": "Renders a header for each of the 3 items",
+      "steps": [
+        {
+          "expect": "count",
+          "testid": "accordion-header",
+          "equals": 3
+        }
+      ]
+    },
+    {
+      "name": "All panels are closed initially",
+      "steps": [
+        {
+          "expect": "count",
+          "testid": "accordion-panel",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "name": "Clicking a header opens its panel",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "accordion-header",
+          "index": 0
+        },
+        {
+          "expect": "count",
+          "testid": "accordion-panel",
+          "equals": 1
+        },
+        {
+          "expect": "text",
+          "testid": "accordion-panel",
+          "contains": "library"
+        }
+      ]
+    },
+    {
+      "name": "Opening another item closes the first (one at a time)",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "accordion-header",
+          "index": 1
+        },
+        {
+          "expect": "count",
+          "testid": "accordion-panel",
+          "equals": 1
+        },
+        {
+          "expect": "text",
+          "testid": "accordion-panel",
+          "contains": "syntax"
+        }
+      ]
+    },
+    {
+      "name": "Clicking the open header closes it",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "accordion-header",
+          "index": 1
+        },
+        {
+          "expect": "count",
+          "testid": "accordion-panel",
+          "equals": 0
+        }
+      ]
+    }
+  ]
+}

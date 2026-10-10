@@ -1,0 +1,113 @@
+{
+  "id": "mc-060",
+  "thingsToDo": [
+    "Render a password input that starts hidden (`type=\"password\"`).",
+    "A button toggles the input between hidden and visible.",
+    "The button label is `Show` while hidden and `Hide` while visible.",
+    "Keep what the user typed when toggling."
+  ],
+  "instructions": {
+    "intro": "Add these `data-testid` attributes to the matching elements in your solution so the **Submit** checks can verify it:",
+    "testIds": [
+      {
+        "id": "password-input",
+        "description": "the password input"
+      },
+      {
+        "id": "toggle-visibility",
+        "description": "the show / hide button"
+      }
+    ]
+  },
+  "files": {
+    "Practice.js": "const { useState } = React;\n\nconst PasswordField = () => {\n  // TODO: control the input value and toggle its type\n  return (\n    <div className=\"field\">\n      <input type=\"password\" placeholder=\"Password\" />\n      <button>Show</button>\n    </div>\n  );\n};\n\nconst Practice = () => <PasswordField />;\n",
+    "App.js": "const App = () => <Practice />;\n",
+    "styles.css": ".field { display: flex; gap: 8px; max-width: 320px; }\n.field input { flex: 1; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; }\n.field button { padding: 0 14px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; font: inherit; font-weight: 600; cursor: pointer; }\n"
+  },
+  "solution": {
+    "Practice.js": "const { useState } = React;\n\nconst PasswordField = () => {\n  const [password, setPassword] = useState(\"\");\n  const [visible, setVisible] = useState(false);\n\n  return (\n    <div className=\"field\">\n      <input\n        data-testid=\"password-input\"\n        type={visible ? \"text\" : \"password\"}\n        value={password}\n        onChange={(e) => setPassword(e.target.value)}\n        placeholder=\"Password\"\n      />\n      <button data-testid=\"toggle-visibility\" onClick={() => setVisible(!visible)}>\n        {visible ? \"Hide\" : \"Show\"}\n      </button>\n    </div>\n  );\n};\n\nconst Practice = () => <PasswordField />;\n"
+  },
+  "tests": [
+    {
+      "name": "Input starts hidden with a Show button",
+      "steps": [
+        {
+          "expect": "attr",
+          "testid": "password-input",
+          "name": "type",
+          "equals": "password"
+        },
+        {
+          "expect": "text",
+          "testid": "toggle-visibility",
+          "contains": "Show"
+        }
+      ]
+    },
+    {
+      "name": "Typing keeps the value",
+      "steps": [
+        {
+          "act": "type",
+          "testid": "password-input",
+          "value": "secret123"
+        },
+        {
+          "expect": "value",
+          "testid": "password-input",
+          "equals": "secret123"
+        }
+      ]
+    },
+    {
+      "name": "Clicking the button reveals the password",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "toggle-visibility"
+        },
+        {
+          "expect": "attr",
+          "testid": "password-input",
+          "name": "type",
+          "equals": "text"
+        },
+        {
+          "expect": "text",
+          "testid": "toggle-visibility",
+          "contains": "Hide"
+        }
+      ]
+    },
+    {
+      "name": "The typed value is preserved while visible",
+      "steps": [
+        {
+          "expect": "value",
+          "testid": "password-input",
+          "equals": "secret123"
+        }
+      ]
+    },
+    {
+      "name": "Clicking again hides it",
+      "steps": [
+        {
+          "act": "click",
+          "testid": "toggle-visibility"
+        },
+        {
+          "expect": "attr",
+          "testid": "password-input",
+          "name": "type",
+          "equals": "password"
+        },
+        {
+          "expect": "text",
+          "testid": "toggle-visibility",
+          "contains": "Show"
+        }
+      ]
+    }
+  ]
+}

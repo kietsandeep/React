@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { NAV_ITEMS } from "@/constants/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import Icon from "@/components/common/Icon/Icon";
@@ -8,9 +8,11 @@ import styles from "./Header.module.css";
 
 function NavDropdown({ item }) {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isActive = item.children.some((c) => pathname === c.to || pathname.startsWith(`${c.to}/`));
   return (
     <div className={styles.dropdown} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className={styles.link} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+      <button className={`${styles.link} ${isActive ? styles.active : ""}`} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
         {item.label} <Icon name="caret" size={12} />
       </button>
       {open && (

@@ -1,0 +1,9 @@
+.page { display: flex; flex-direction: column; height: 100vh; background: var(--bg); }
+.body { flex: 1; min-height: 0; display: grid; grid-template-columns: 420px minmax(0, 1fr) minmax(0, 1fr); }
+.noProblem { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.center { display: grid; place-items: center; min-height: 100vh; color: var(--muted); background: var(--bg); }
+@media (max-width: 1000px) {
+  .page { height: auto; min-height: 100vh; }
+  .body, .noProblem { display: flex; flex-direction: column; }
+  .body > * { min-height: 60vh; }
+}

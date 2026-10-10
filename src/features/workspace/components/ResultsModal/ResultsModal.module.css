@@ -1,0 +1,9 @@
+.summary { margin: 0 0 14px; padding: 10px 14px; border-radius: 10px; font-size: 14px; font-weight: 700; }
+.ok { background: rgba(22, 163, 74, .14); color: #15803d; }
+.bad { background: rgba(239, 68, 68, .12); color: #dc2626; }
+.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; }
+.list p { margin: 3px 0 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.pass svg { color: #16a34a; flex: none; } .fail svg { color: #dc2626; flex: none; }
+.btn { padding: 9px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-size: 13.5px; font-weight: 700; color: var(--text); }
+.primary { background: var(--green); border-color: var(--green); color: #fff; }

@@ -7,7 +7,7 @@ npm run build
 ```
 
 ## Adding your questions
-1. `node scripts/convert-questions.mjs ./your-old-data.js src/features/topics/data/react.json react`
+1. `node scripts/build-react-json.mjs` regenerates `react.json` from `scripts/source/*` (or edit `react.json` directly)
 2. Add code/screenshots to answers in `react.json` (see docs/QUESTION_SCHEMA.md)
 3. Put images in `public/images/react/` and reference as `/images/react/name.png`
 
