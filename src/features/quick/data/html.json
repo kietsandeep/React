@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "slug": "html",
+    "title": "HTML — Quick Revision",
+    "subtitle": "Semantics, forms, accessibility and SEO in one sitting."
+  },
+  "questions": [
+    {
+      "id": "html-q1",
+      "q": "What is semantic HTML and why does it matter?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Semantic elements describe the meaning of content (`header`, `nav`, `main`, `article`, `section`, `aside`, `footer`) instead of using generic `div`s. Benefits: accessibility (screen readers can navigate landmarks), SEO, and more readable code."
+        }
+      ]
+    },
+    {
+      "id": "html-q2",
+      "q": "Difference between block, inline and inline-block elements?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**Block** (`div`, `p`) starts on a new line and takes full width.",
+            "**Inline** (`span`, `a`) flows within text; width/height and vertical margins don't apply.",
+            "**Inline-block** flows inline but accepts width, height and margins."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-q3",
+      "q": "What does the DOCTYPE do?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`<!DOCTYPE html>` tells the browser to render in standards mode. Without it browsers fall back to quirks mode with legacy layout behaviour."
+        }
+      ]
+    },
+    {
+      "id": "html-q4",
+      "q": "<script> vs async vs defer?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Plain `<script>`: blocks HTML parsing while it downloads and runs.",
+            "`async`: downloads in parallel, runs as soon as ready (order not guaranteed).",
+            "`defer`: downloads in parallel, runs after parsing finishes, in order."
+          ]
+        },
+        {
+          "type": "note",
+          "variant": "tip",
+          "value": "Use `defer` for scripts that depend on the DOM or on each other; `async` for independent scripts like analytics."
+        }
+      ]
+    },
+    {
+      "id": "html-q5",
+      "q": "How do you make a page accessible?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Use semantic elements and a logical heading order.",
+            "Give every image meaningful `alt` text (empty `alt=\"\"` for decorative ones).",
+            "Associate every input with a `<label>`.",
+            "Make everything keyboard reachable with a visible focus style.",
+            "Use ARIA only when native HTML can't express the role; keep colour contrast sufficient."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-q6",
+      "q": "What are data-* attributes?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Custom attributes for storing extra information on an element, readable from JS through `element.dataset`."
+        },
+        {
+          "type": "code",
+          "language": "html",
+          "value": "<li data-id=\"42\" data-role=\"admin\">Sam</li>\n<script>\n  li.dataset.id; // \"42\"\n</script>"
+        }
+      ]
+    },
+    {
+      "id": "html-q7",
+      "q": "What is the difference between <div> and <span>?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`div` is a block-level generic container for layout; `span` is an inline generic container for styling part of text. Neither carries meaning."
+        }
+      ]
+    },
+    {
+      "id": "html-q8",
+      "q": "How do HTML forms work? Name common input types and validation attributes.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A `<form>` groups controls and submits their `name`/value pairs to its `action` using `method` GET or POST. Input types include `text, email, password, number, date, checkbox, radio, file, range, tel, url`. Built-in validation: `required, min, max, minlength, maxlength, pattern, type`."
+        }
+      ]
+    },
+    {
+      "id": "html-q9",
+      "q": "localStorage vs sessionStorage vs cookies?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**localStorage**: ~5 MB, persists until cleared, never sent to the server.",
+            "**sessionStorage**: same API, cleared when the tab closes.",
+            "**Cookies**: ~4 KB, sent with every request, can expire and be `HttpOnly`/`Secure`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-q10",
+      "q": "What are meta tags? Which ones matter most?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`<meta charset=\"utf-8\">` — character encoding.",
+            "`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">` — responsive layout on mobile.",
+            "`description`, Open Graph (`og:title`, `og:image`) — search and social previews."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-q11",
+      "q": "How do responsive images work (srcset, sizes, picture)?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`srcset` + `sizes` let the browser pick the best file for the screen width and pixel density; `<picture>` with `<source>` swaps formats or art direction. Add `loading=\"lazy\"` for below-the-fold images and always set width/height to avoid layout shift."
+        },
+        {
+          "type": "code",
+          "language": "html",
+          "value": "<img src=\"a-800.jpg\" srcset=\"a-400.jpg 400w, a-800.jpg 800w\" sizes=\"(max-width: 600px) 100vw, 50vw\" alt=\"Team photo\" loading=\"lazy\">"
+        }
+      ]
+    },
+    {
+      "id": "html-q12",
+      "q": "<b> vs <strong> and <i> vs <em>?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`strong` and `em` convey importance/emphasis (screen readers may change tone); `b` and `i` are purely stylistic."
+        }
+      ]
+    },
+    {
+      "id": "html-q13",
+      "q": "What is the difference between id and class?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`id` must be unique per page and identifies one element (anchors, labels, JS hooks). `class` can be reused on many elements and combined. In CSS, id selectors have higher specificity."
+        }
+      ]
+    },
+    {
+      "id": "html-q14",
+      "q": "What do <dialog>, <details> and <template> do?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`<dialog>`: native modal/non-modal dialog (`showModal()`).",
+            "`<details>`/`<summary>`: built-in disclosure widget.",
+            "`<template>`: inert markup you clone with JS."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-q15",
+      "q": "What happens when you type a URL and press Enter?",
+      "difficulty": "hard",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "DNS lookup resolves the domain to an IP.",
+            "TCP (and TLS) connection is established.",
+            "Browser sends the HTTP request; server responds with HTML.",
+            "The browser parses HTML into the DOM and CSS into the CSSOM, builds the render tree.",
+            "Layout, paint and composite; scripts and other resources load along the way."
+          ]
+        }
+      ]
+    }
+  ]
+}

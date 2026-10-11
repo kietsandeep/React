@@ -1,0 +1,6 @@
+.grid { display: grid; grid-template-columns: repeat(var(--cols, 3), 1fr); gap: 16px; }
+.bento { gap: 20px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+@media (min-width: 1001px) { .grid > :last-child:nth-child(3n + 1):not(:only-child) { grid-column: 1 / -1; } }
+@media (max-width: 1000px) and (min-width: 761px) { .grid > :last-child:nth-child(odd):not(:only-child) { grid-column: 1 / -1; } }

@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "id": "practice",
+    "card": "practice",
+    "basePath": "/practice",
+    "hubPath": "/practice",
+    "eyebrow": "Hands-on practice",
+    "title": "Practise the rounds that decide the interview",
+    "subtitle": "Pick a track, open a question and solve it in a live coding workspace. More tracks are added regularly.",
+    "viewAllLabel": "View all practice tracks",
+    "searchable": false,
+    "soon": {
+      "title": "More tracks coming soon",
+      "text": "System design, mock assessments, CSS challenges and more.",
+      "link": {
+        "label": "Meanwhile, try quick revision",
+        "to": "/quick-prep"
+      }
+    }
+  },
+  "items": [
+    {
+      "slug": "machine-coding",
+      "icon": "laptop",
+      "title": "React Machine Coding",
+      "unit": "UI challenges",
+      "countSuffix": "+",
+      "description": "Build star ratings, tabs, autocompletes and more in a live editor — then run the checks.",
+      "tags": [
+        "Live preview",
+        "Auto tests",
+        "Solutions"
+      ]
+    },
+    {
+      "slug": "dsa",
+      "icon": "code",
+      "title": "DSA Questions",
+      "unit": "problems",
+      "description": "JavaScript logic problems from beginner to advanced, checked against test cases.",
+      "tags": [
+        "Beginner → Advanced",
+        "Timed",
+        "Company tags"
+      ]
+    },
+    {
+      "slug": "output",
+      "icon": "terminal",
+      "title": "JavaScript Output",
+      "unit": "output questions",
+      "description": "Predict what the code prints — hoisting, closures, coercion and the event loop — then run it to check.",
+      "tags": [
+        "Predict & run",
+        "Event loop",
+        "Solutions"
+      ]
+    }
+  ]
+}

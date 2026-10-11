@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "slug": "typescript",
+    "title": "TypeScript — Quick Revision",
+    "subtitle": "Types, generics and utility types you are expected to know."
+  },
+  "questions": [
+    {
+      "id": "typescript-q1",
+      "q": "What is TypeScript and why use it?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "TypeScript is a typed superset of JavaScript that compiles to plain JS. Types are checked at compile time, catching bugs early, enabling autocomplete and safe refactoring. They are erased at runtime, so there is no runtime cost."
+        }
+      ]
+    },
+    {
+      "id": "typescript-q2",
+      "q": "interface vs type — what is the difference?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Both describe object shapes and can be extended.",
+            "`interface` supports declaration merging and `extends`; best for public object contracts and classes.",
+            "`type` can also name unions, tuples, primitives and mapped/conditional types."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typescript-q3",
+      "q": "any vs unknown vs never?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`any` turns off type checking — avoid.",
+            "`unknown` is the type-safe `any`: you must narrow it before use.",
+            "`never` is a value that can't exist (function that always throws, exhausted union)."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "ts",
+          "value": "function len(x: unknown) {\n  if (typeof x === 'string') return x.length; // narrowed\n  return 0;\n}"
+        }
+      ]
+    },
+    {
+      "id": "typescript-q4",
+      "q": "What are generics?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Generics let a function, class or type work with many types while keeping them linked, instead of using `any`."
+        },
+        {
+          "type": "code",
+          "language": "ts",
+          "value": "function first<T>(items: T[]): T | undefined {\n  return items[0];\n}\nfirst([1, 2]);      // number | undefined\nfirst(['a']);       // string | undefined"
+        }
+      ]
+    },
+    {
+      "id": "typescript-q5",
+      "q": "What are union and intersection types?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`A | B` — a value is either A or B.",
+            "`A & B` — a value has all members of A and B."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "ts",
+          "value": "type Id = string | number;\ntype Admin = User & { permissions: string[] };"
+        }
+      ]
+    },
+    {
+      "id": "typescript-q6",
+      "q": "How does type narrowing work?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "TypeScript narrows a union inside a branch using `typeof`, `instanceof`, `in`, equality checks, truthiness, or a discriminant property. User-defined guards use `x is T`."
+        },
+        {
+          "type": "code",
+          "language": "ts",
+          "value": "type Shape = { kind: 'circle'; r: number } | { kind: 'square'; s: number };\nfunction area(sh: Shape) {\n  switch (sh.kind) {\n    case 'circle': return Math.PI * sh.r ** 2;\n    case 'square': return sh.s ** 2;\n  }\n}"
+        }
+      ]
+    },
+    {
+      "id": "typescript-q7",
+      "q": "Name the common utility types.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`Partial<T>` — all properties optional.",
+            "`Required<T>` — all required.",
+            "`Readonly<T>` — immutable properties.",
+            "`Pick<T, K>` / `Omit<T, K>` — choose or drop keys.",
+            "`Record<K, V>` — object with keys K and values V.",
+            "`ReturnType<F>`, `Parameters<F>`, `NonNullable<T>`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typescript-q8",
+      "q": "Optional properties, readonly, and the non-null assertion?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`name?: string` — may be missing (`string | undefined`).",
+            "`readonly id: number` — can't be reassigned.",
+            "`value!` — tells the compiler it isn't null/undefined; unchecked, so use sparingly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typescript-q9",
+      "q": "What is enum and what are alternatives?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`enum` creates a named set of constants (numeric by default; string enums are safer). A lighter alternative is a union of literals — `type Role = 'admin' | 'user'` — which has no runtime code."
+        }
+      ]
+    },
+    {
+      "id": "typescript-q10",
+      "q": "What does strict mode enable?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`strict: true` turns on a group of checks including `strictNullChecks`, `noImplicitAny`, `strictFunctionTypes` and `strictPropertyInitialization`. It's the recommended default for new projects."
+        }
+      ]
+    },
+    {
+      "id": "typescript-q11",
+      "q": "What are mapped and conditional types?",
+      "difficulty": "hard",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "code",
+          "language": "ts",
+          "value": "type Flags<T> = { [K in keyof T]: boolean };       // mapped\ntype IsString<T> = T extends string ? 'yes' : 'no'; // conditional"
+        },
+        {
+          "type": "text",
+          "value": "Combined with `infer` they power utilities such as `ReturnType`."
+        }
+      ]
+    },
+    {
+      "id": "typescript-q12",
+      "q": "keyof, typeof and indexed access types?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "code",
+          "language": "ts",
+          "value": "const user = { id: 1, name: 'Sam' };\ntype User = typeof user;      // { id: number; name: string }\ntype Key = keyof User;        // 'id' | 'name'\ntype Name = User['name'];     // string"
+        }
+      ]
+    },
+    {
+      "id": "typescript-q13",
+      "q": "How do you type React props and hooks?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "code",
+          "language": "tsx",
+          "value": "type ButtonProps = { label: string; onClick?: () => void };\nconst Button = ({ label, onClick }: ButtonProps) => <button onClick={onClick}>{label}</button>;\n\nconst [user, setUser] = useState<User | null>(null);"
+        }
+      ]
+    },
+    {
+      "id": "typescript-q14",
+      "q": "as assertions vs type guards vs satisfies?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`as` forces a type and can lie. A type guard proves it at runtime. `satisfies` checks that a value matches a type **without widening** its inferred type."
+        }
+      ]
+    },
+    {
+      "id": "typescript-q15",
+      "q": "What is structural typing?",
+      "difficulty": "hard",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "TypeScript compares types by shape, not by name. Any object with the required properties is assignable, even if it was never declared as that type."
+        }
+      ]
+    }
+  ]
+}

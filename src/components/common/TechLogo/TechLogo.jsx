@@ -37,6 +37,13 @@ const logos = {
   ),
   html: shield("#e44d26", "5"),
   css: shield("#2965f1", "3"),
+  ts: badge("#3178c6", "#fff", "TS"),
+  node: (
+    <svg viewBox="0 0 64 64" width="60" height="60" aria-hidden="true">
+      <path d="M32 3l25 14.5v29L32 61 7 46.5v-29z" fill="#3c873a" />
+      <text x="32" y="41" textAnchor="middle" fontFamily="Arial" fontWeight="800" fontSize="22" fill="#fff">JS</text>
+    </svg>
+  ),
 };
 
 export default function TechLogo({ name }) {

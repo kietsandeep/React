@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { NAV_ITEMS } from "@/constants/navigation";
+import { getNavigation } from "@/config/registry";
 import { useTheme } from "@/context/ThemeContext";
 import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
@@ -14,7 +14,7 @@ function NavDropdown({ item }) {
   return (
     <div className={styles.dropdown} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button className={`${styles.link} ${isActive ? styles.active : ""}`} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
-        {item.label} <Icon name="caret" size={12} />
+        {item.label}{item.badge && <em className={styles.badge}>{item.badge}</em>} <Icon name="caret" size={12} />
       </button>
       {open && (
         <ul className={styles.menu}>
@@ -29,18 +29,19 @@ function NavDropdown({ item }) {
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const items = useMemo(getNavigation, []);
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.logo}><span className={styles.mark}>{SITE.short}</span>{SITE.name}</Link>
         <nav className={styles.nav} aria-label="Main">
-          {NAV_ITEMS.map((item) =>
+          {items.map((item) =>
             item.children ? (
               <NavDropdown key={item.label} item={item} />
             ) : (
               <NavLink key={item.to} to={item.to} end
                 className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`}>
-                {item.label}
+                {item.label}{item.badge && <em className={styles.badge}>{item.badge}</em>}
               </NavLink>
             )
           )}

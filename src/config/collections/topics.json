@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "id": "topics",
+    "card": "topic",
+    "basePath": "/topics",
+    "hubPath": "/topics",
+    "eyebrow": "Interview prep",
+    "title": "Master every frontend topic",
+    "subtitle": "Deep-dive questions and answers with code, diagrams and the follow-ups interviewers actually ask.",
+    "viewAllLabel": "View all topics",
+    "searchable": true,
+    "searchPlaceholder": "Search topics…"
+  },
+  "items": [
+    {
+      "slug": "react",
+      "logo": "react",
+      "accent": "#38bdf8",
+      "count": "200+",
+      "title": "React JS Interview Questions",
+      "shortTitle": "React JS",
+      "description": "Hooks, virtual DOM, state management, performance optimisation, and architecture patterns asked at top product companies."
+    },
+    {
+      "slug": "javascript",
+      "logo": "js",
+      "accent": "#facc15",
+      "count": "95+",
+      "title": "JavaScript Interview Questions",
+      "shortTitle": "JavaScript",
+      "description": "Closures, prototypes, async/await, event loop, and the tricky parts of the language that interviewers love to probe."
+    },
+    {
+      "slug": "js-output",
+      "logo": "js",
+      "accent": "#fb923c",
+      "count": "60+",
+      "title": "JS Output Questions",
+      "shortTitle": "JS Output",
+      "description": "Read the snippet, predict the output. Tests your mental model of hoisting, scope, coercion, and the event loop."
+    },
+    {
+      "slug": "angular",
+      "logo": "angular",
+      "accent": "#f43f5e",
+      "count": "200+",
+      "title": "Angular Interview Questions",
+      "shortTitle": "Angular",
+      "description": "Dependency injection, RxJS, change detection, modules, routing, and the Angular ecosystem from the ground up."
+    },
+    {
+      "slug": "vue",
+      "logo": "vue",
+      "accent": "#34d399",
+      "count": "200+",
+      "title": "Vue JS Interview Questions",
+      "shortTitle": "Vue JS",
+      "description": "Composition API, reactivity system, Vuex / Pinia, directives, lifecycle hooks, and Vue 3 patterns."
+    },
+    {
+      "slug": "html",
+      "logo": "html",
+      "accent": "#f97316",
+      "count": "45+",
+      "title": "HTML Interview Questions",
+      "shortTitle": "HTML",
+      "description": "Semantic markup, accessibility, SEO meta, web standards, forms, and modern browser APIs that matter in real projects."
+    },
+    {
+      "slug": "css",
+      "logo": "css",
+      "accent": "#6366f1",
+      "count": "50+",
+      "title": "CSS Interview Questions",
+      "shortTitle": "CSS",
+      "description": "Flexbox, Grid, responsive design, specificity, animations, custom properties, and the questions that trip up even seniors."
+    }
+  ]
+}

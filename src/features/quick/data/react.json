@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "slug": "react",
+    "title": "React — Quick Revision",
+    "subtitle": "Hooks, rendering and performance — the essentials interviewers ask."
+  },
+  "questions": [
+    {
+      "id": "react-q1",
+      "q": "What is the Virtual DOM and how does reconciliation work?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "The Virtual DOM is a lightweight JavaScript description of the UI. On every update React builds a new tree, **diffs** it against the previous one and applies only the minimal real DOM changes. It assumes different element types produce different trees and uses `key` to match list items."
+        }
+      ]
+    },
+    {
+      "id": "react-q2",
+      "q": "State vs props?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**Props** are inputs passed from parent to child; read-only inside the child.",
+            "**State** is data owned by the component that changes over time and triggers a re-render when updated."
+          ]
+        },
+        {
+          "type": "note",
+          "variant": "tip",
+          "value": "Data flows down (props), events flow up (callbacks)."
+        }
+      ]
+    },
+    {
+      "id": "react-q3",
+      "q": "How does useState work? Why is the update asynchronous?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`useState` returns the current value and a setter. Calling the setter schedules a re-render; React batches updates, so the variable in the current render does not change immediately. When the next value depends on the previous one, use the functional form."
+        },
+        {
+          "type": "code",
+          "language": "jsx",
+          "value": "const [count, setCount] = useState(0);\nsetCount(count + 1);\nsetCount(count + 1);       // still +1 total\nsetCount(c => c + 1);\nsetCount(c => c + 1);      // +2 total"
+        }
+      ]
+    },
+    {
+      "id": "react-q4",
+      "q": "Explain useEffect and its dependency array.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`useEffect` runs side effects after render. The dependency array controls when:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "No array → after every render.",
+            "`[]` → once after mount.",
+            "`[a, b]` → when `a` or `b` change."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Return a cleanup function to remove subscriptions, timers or listeners — it runs before the next effect and on unmount."
+        },
+        {
+          "type": "code",
+          "language": "jsx",
+          "value": "useEffect(() => {\n  const id = setInterval(tick, 1000);\n  return () => clearInterval(id);\n}, []);"
+        }
+      ]
+    },
+    {
+      "id": "react-q5",
+      "q": "Why do lists need a key and what makes a good key?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Keys let React match items between renders so it can reorder, add and remove them without recreating everything. Use a stable unique id from your data. Avoid array indexes when the list can be reordered or filtered — it causes wrong state and wasted renders."
+        }
+      ]
+    },
+    {
+      "id": "react-q6",
+      "q": "Controlled vs uncontrolled components?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**Controlled**: form value lives in React state (`value` + `onChange`). Easy validation and conditional logic.",
+            "**Uncontrolled**: the DOM keeps the value; you read it with a `ref` when needed. Less code for simple forms."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react-q7",
+      "q": "What causes a re-render, and how do you avoid unnecessary ones?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A component re-renders when its state changes, its parent re-renders, or a context it consumes changes. To limit work:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "`React.memo` for pure child components.",
+            "`useCallback` / `useMemo` to keep function and object props stable.",
+            "Move state down, closer to where it is used.",
+            "Split large contexts; virtualise long lists."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react-q8",
+      "q": "useMemo vs useCallback vs React.memo?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`useMemo(fn, deps)` caches a computed **value**.",
+            "`useCallback(fn, deps)` caches a **function** reference.",
+            "`React.memo(Component)` skips re-rendering when props are shallow-equal."
+          ]
+        },
+        {
+          "type": "note",
+          "variant": "warning",
+          "value": "They are optimisations, not guarantees. Measure first; memoising everything adds cost."
+        }
+      ]
+    },
+    {
+      "id": "react-q9",
+      "q": "What is useRef used for?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A ref holds a mutable value that **persists across renders without causing one**. Typical uses: accessing DOM nodes (focus, scroll, measure), storing timer ids, and keeping the previous value of something."
+        },
+        {
+          "type": "code",
+          "language": "jsx",
+          "value": "const inputRef = useRef(null);\n<input ref={inputRef} />\ninputRef.current.focus();"
+        }
+      ]
+    },
+    {
+      "id": "react-q10",
+      "q": "What are the Rules of Hooks?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Call hooks only at the top level — never inside loops, conditions or nested functions.",
+            "Call hooks only from React function components or custom hooks."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "React relies on the call order of hooks being identical every render to match each hook with its stored state."
+        }
+      ]
+    },
+    {
+      "id": "react-q11",
+      "q": "What is Context API and when should you not use it?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Context passes data through the tree without prop drilling (theme, auth user, locale). Every consumer re-renders when the value changes, so it suits slow-changing data. For frequently-changing, complex state prefer a state library or split contexts."
+        }
+      ]
+    },
+    {
+      "id": "react-q12",
+      "q": "What is a custom hook?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A function whose name starts with `use` that calls other hooks to share stateful logic between components (not state itself — each caller gets its own)."
+        },
+        {
+          "type": "code",
+          "language": "jsx",
+          "value": "function useLocalStorage(key, initial) {\n  const [v, setV] = useState(() => JSON.parse(localStorage.getItem(key)) ?? initial);\n  useEffect(() => localStorage.setItem(key, JSON.stringify(v)), [key, v]);\n  return [v, setV];\n}"
+        }
+      ]
+    },
+    {
+      "id": "react-q13",
+      "q": "useReducer vs useState?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`useReducer` centralises state transitions in a pure `(state, action) => newState` function. It fits state with several related fields or complex update rules, and makes updates easy to test and log."
+        }
+      ]
+    },
+    {
+      "id": "react-q14",
+      "q": "What is lifting state up and prop drilling?",
+      "difficulty": "hard",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "When two siblings need the same data, move it to their closest common parent and pass it down. Passing props through many layers that don't use them is **prop drilling**; solve it with composition (`children`), context, or a store."
+        }
+      ]
+    },
+    {
+      "id": "react-q15",
+      "q": "How do you handle code splitting in React?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Load code on demand with `React.lazy` and `Suspense`, typically per route."
+        },
+        {
+          "type": "code",
+          "language": "jsx",
+          "value": "const Settings = lazy(() => import('./Settings'));\n<Suspense fallback={<Spinner />}>\n  <Settings />\n</Suspense>"
+        }
+      ]
+    },
+    {
+      "id": "react-q16",
+      "q": "What are error boundaries?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Class components implementing `getDerivedStateFromError` / `componentDidCatch` that catch errors thrown while rendering their children and show a fallback UI. They do not catch errors in event handlers or async code."
+        }
+      ]
+    },
+    {
+      "id": "react-q17",
+      "q": "What does React 18 add — concurrent rendering and automatic batching?",
+      "difficulty": "hard",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**Automatic batching**: state updates in timeouts, promises and native events are batched too.",
+            "**Transitions** (`startTransition`) mark updates as non-urgent so typing stays responsive.",
+            "`useDeferredValue`, Suspense improvements and `createRoot`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react-q18",
+      "q": "Class lifecycle methods vs hooks?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`componentDidMount` → `useEffect(fn, [])`",
+            "`componentDidUpdate` → `useEffect(fn, [deps])`",
+            "`componentWillUnmount` → the cleanup returned from `useEffect`"
+          ]
+        }
+      ]
+    }
+  ]
+}

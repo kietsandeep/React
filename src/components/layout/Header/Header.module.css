@@ -16,3 +16,5 @@
   border: 1px solid var(--line); background: var(--surface); }
 .support { background: var(--brand); border-color: var(--brand); color: #fff; border-radius: 50%; }
 @media (max-width: 760px) { .inner { padding: 10px 16px; height: auto; } }
+
+.badge { margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #111; font-style: normal; font-size: 10.5px; font-weight: 800; letter-spacing: .02em; vertical-align: 1px; }

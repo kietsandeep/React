@@ -1,8 +1,8 @@
-import { COMPANIES } from "../../data/home.data";
 import styles from "./CompanyMarquee.module.css";
 
-export default function CompanyMarquee() {
-  const items = [...COMPANIES, ...COMPANIES]; // duplicated for a seamless loop
+export default function CompanyMarquee({ companies = [] }) {
+  if (!companies.length) return null;
+  const items = [...companies, ...companies]; // duplicated for a seamless loop
   return (
     <div className={styles.viewport} aria-label="Companies our users joined">
       <ul className={styles.track}>

@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "slug": "css",
+    "title": "CSS — Quick Revision",
+    "subtitle": "Layout, specificity and the box model — the CSS interview core."
+  },
+  "questions": [
+    {
+      "id": "css-q1",
+      "q": "Explain the CSS box model.",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Every element is a box: **content → padding → border → margin**. With `box-sizing: content-box` (default) `width` covers only the content; with `border-box` it includes padding and border, which is why most resets use `* { box-sizing: border-box }`."
+        }
+      ]
+    },
+    {
+      "id": "css-q2",
+      "q": "How is specificity calculated?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Compare in order: inline style > IDs > classes/attributes/pseudo-classes > elements/pseudo-elements. `!important` overrides normal rules. With equal specificity the later rule wins."
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "value": "p { }            /* 0,0,0,1 */\n.card p { }      /* 0,0,1,1 */\n#hero .card p { } /* 0,1,1,1 */"
+        }
+      ]
+    },
+    {
+      "id": "css-q3",
+      "q": "Flexbox: main axis vs cross axis, and the key properties?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`display:flex` on the container; `flex-direction` sets the main axis.",
+            "`justify-content` aligns along the main axis; `align-items` along the cross axis.",
+            "`flex-wrap`, `gap` for spacing and wrapping.",
+            "On items: `flex: grow shrink basis`, `align-self`, `order`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css-q4",
+      "q": "Flexbox vs Grid — when do you use each?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Flexbox is **one-dimensional** (a row or a column) — ideal for toolbars, nav and centring. Grid is **two-dimensional** (rows and columns together) — ideal for page layouts and card galleries."
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "value": ".gallery {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));\n  gap: 16px;\n}"
+        }
+      ]
+    },
+    {
+      "id": "css-q5",
+      "q": "How do you centre a div horizontally and vertically?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "code",
+          "language": "css",
+          "value": ".parent {\n  display: grid;\n  place-items: center;\n}\n/* or: display:flex; justify-content:center; align-items:center; */"
+        }
+      ]
+    },
+    {
+      "id": "css-q6",
+      "q": "position: static, relative, absolute, fixed, sticky?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**static**: normal flow.",
+            "**relative**: offset from its normal spot; creates a positioning context.",
+            "**absolute**: removed from flow, positioned against the nearest positioned ancestor.",
+            "**fixed**: positioned against the viewport.",
+            "**sticky**: relative until a scroll threshold, then fixed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css-q7",
+      "q": "What is the difference between em, rem, %, vh/vw?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`rem` — relative to the root font size (predictable scaling).",
+            "`em` — relative to the element's (or parent's) font size; compounds when nested.",
+            "`%` — relative to the parent's corresponding property.",
+            "`vw/vh` — 1% of viewport width/height."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css-q8",
+      "q": "How do you build a responsive layout?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Start mobile-first with fluid units, flexible grids and `max-width`. Add `@media (min-width: …)` breakpoints, use `clamp()` for fluid type, and `<meta name=\"viewport\">`. Container queries let a component respond to its own container instead of the viewport."
+        }
+      ]
+    },
+    {
+      "id": "css-q9",
+      "q": "What is a stacking context and how does z-index work?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`z-index` only orders elements within the same stacking context. A new context is created by the root, positioned elements with a z-index, `opacity < 1`, `transform`, `filter`, `isolation: isolate` and more. A child can never escape its parent's context."
+        }
+      ]
+    },
+    {
+      "id": "css-q10",
+      "q": "display: none vs visibility: hidden vs opacity: 0?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`display:none` — removed from layout and accessibility tree.",
+            "`visibility:hidden` — invisible but still occupies space.",
+            "`opacity:0` — invisible, occupies space and still receives events."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css-q11",
+      "q": "What are CSS custom properties (variables)?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Defined with `--name` and read with `var(--name, fallback)`. They cascade and inherit, can change at runtime with JS, and make theming (e.g. dark mode) simple."
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "value": ":root { --brand: #0d9488; }\n[data-theme='dark'] { --brand: #2dd4bf; }\n.btn { background: var(--brand); }"
+        }
+      ]
+    },
+    {
+      "id": "css-q12",
+      "q": "Pseudo-classes vs pseudo-elements?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Pseudo-classes select an element in a state (`:hover`, `:focus-visible`, `:nth-child()`, `:not()`). Pseudo-elements style a part of it or generate content (`::before`, `::after`, `::placeholder`)."
+        }
+      ]
+    },
+    {
+      "id": "css-q13",
+      "q": "What is margin collapsing?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Adjacent vertical margins of block elements (siblings, or parent and first/last child) combine into one — the larger wins. It doesn't happen in flex or grid containers, or when padding/border separates the margins."
+        }
+      ]
+    },
+    {
+      "id": "css-q14",
+      "q": "How do transitions and animations differ?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A **transition** animates between two states when a property changes. A **@keyframes animation** can run on load, have many steps, loop and be controlled independently. Prefer animating `transform` and `opacity` for smooth, GPU-friendly results."
+        }
+      ]
+    },
+    {
+      "id": "css-q15",
+      "q": "What does clamp() give you?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`clamp(min, preferred, max)` picks a value that grows with the viewport but is bounded, e.g. `font-size: clamp(1rem, 2vw + .5rem, 2rem)` — fluid typography without media queries."
+        }
+      ]
+    }
+  ]
+}

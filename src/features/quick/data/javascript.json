@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "slug": "javascript",
+    "title": "JavaScript — Quick Revision",
+    "subtitle": "The questions that come up in almost every JavaScript interview."
+  },
+  "questions": [
+    {
+      "id": "javascript-q1",
+      "q": "What is the difference between var, let and const?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**var** is function-scoped, hoisted and initialised as `undefined`; it can be redeclared.",
+            "**let** is block-scoped, hoisted but unusable until its declaration (temporal dead zone); it can be reassigned.",
+            "**const** is block-scoped like let, but the binding cannot be reassigned. Objects it points to can still be mutated."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "console.log(a); // undefined\nvar a = 1;\nconsole.log(b); // ReferenceError (TDZ)\nlet b = 2;"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q2",
+      "q": "What is a closure? Give a practical use.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A closure is a function that remembers the variables of the scope where it was created, even after that scope has finished executing."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "function counter() {\n  let n = 0;\n  return () => ++n;\n}\nconst next = counter();\nnext(); // 1\nnext(); // 2"
+        },
+        {
+          "type": "text",
+          "value": "Common uses: data privacy, function factories, memoisation, debounce/throttle and event handlers that need remembered state."
+        }
+      ]
+    },
+    {
+      "id": "javascript-q3",
+      "q": "How does this work in JavaScript?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`this` is decided by **how a function is called**, not where it is written:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Method call `obj.fn()` → `this` is `obj`.",
+            "Plain call `fn()` → `undefined` in strict mode (global object otherwise).",
+            "`call`, `apply`, `bind` set `this` explicitly.",
+            "`new Fn()` → the newly created object.",
+            "Arrow functions have no own `this`; they use the one from the enclosing scope."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "javascript-q4",
+      "q": "Explain the event loop, microtasks and macrotasks.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "JavaScript runs on one thread. The call stack executes synchronous code; async work is handed to the browser/Node and its callback is queued. When the stack is empty the event loop picks the next task."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Microtasks** (Promise `.then`, `queueMicrotask`) run to completion after the current task, before anything else.",
+            "**Macrotasks** (`setTimeout`, `setInterval`, I/O, UI events) run one per loop turn."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "console.log(1);\nsetTimeout(() => console.log(2), 0);\nPromise.resolve().then(() => console.log(3));\nconsole.log(4);\n// 1 4 3 2"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q5",
+      "q": "What is hoisting?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Declarations are registered during the creation phase of an execution context, so they can be referenced before the line that declares them. Function declarations are fully hoisted; `var` is hoisted as `undefined`; `let`/`const`/`class` are hoisted but stay in the temporal dead zone until declared."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "hello(); // works\nfunction hello() { console.log('hi'); }\n\nbye(); // TypeError: bye is not a function\nvar bye = function () {};"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q6",
+      "q": "How do Promises work and what is async/await?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A Promise represents a value that will exist later. It is **pending**, then settles as **fulfilled** or **rejected**. `then/catch/finally` chain follow-up work. `async/await` is syntax on top of promises that makes asynchronous code read top to bottom."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "async function load() {\n  try {\n    const res = await fetch('/api/user');\n    return await res.json();\n  } catch (e) {\n    console.error(e);\n  }\n}"
+        },
+        {
+          "type": "note",
+          "variant": "tip",
+          "value": "`await` pauses only the async function, not the whole thread. Independent calls should run together with `Promise.all`."
+        }
+      ]
+    },
+    {
+      "id": "javascript-q7",
+      "q": "Difference between == and ===?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`===` compares value and type with no conversion. `==` converts operands first (type coercion), which gives surprising results such as `0 == ''` and `null == undefined`. Prefer `===`; use `Object.is` when you need to tell `NaN` and `-0` apart."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "'5' == 5;   // true\n'5' === 5;  // false\nnull == undefined;  // true\nnull === undefined; // false\nNaN === NaN; // false"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q8",
+      "q": "Explain prototypal inheritance.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Every object has an internal link ([[Prototype]]) to another object. When a property isn't found on the object, the engine walks up this chain until it finds it or reaches `null`. `class` syntax is sugar over this mechanism."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "const animal = { speak() { return 'sound'; } };\nconst dog = Object.create(animal);\ndog.speak(); // found on the prototype\n\nclass Dog extends Animal {}\nObject.getPrototypeOf(Dog.prototype) === Animal.prototype; // true"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q9",
+      "q": "map vs forEach vs filter vs reduce?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`forEach` runs a function for each item and returns `undefined`.",
+            "`map` returns a new array of transformed items.",
+            "`filter` returns a new array of items that pass a test.",
+            "`reduce` folds the array into a single value (number, object, array…)."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "[1,2,3].map(n => n * 2);        // [2,4,6]\n[1,2,3].filter(n => n > 1);     // [2,3]\n[1,2,3].reduce((s, n) => s + n, 0); // 6"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q10",
+      "q": "call, apply and bind — what is the difference?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`fn.call(ctx, a, b)` invokes immediately with arguments listed.",
+            "`fn.apply(ctx, [a, b])` invokes immediately with an array of arguments.",
+            "`fn.bind(ctx, a)` returns a **new function** with `this` (and optional leading args) fixed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "javascript-q11",
+      "q": "Shallow copy vs deep copy — how do you clone an object?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A shallow copy duplicates only the top level; nested objects stay shared. Spread (`{...o}`) and `Object.assign` are shallow. For a deep copy use `structuredClone(o)` (handles dates, maps, sets, cycles). `JSON.parse(JSON.stringify(o))` works only for plain JSON data and drops functions, `undefined` and dates."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "const a = { n: { x: 1 } };\nconst s = { ...a };\ns.n.x = 2;\na.n.x; // 2 — shared!\nconst d = structuredClone(a);"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q12",
+      "q": "What are debounce and throttle?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**Debounce** waits until calls stop for N ms, then runs once (search-as-you-type).",
+            "**Throttle** runs at most once every N ms (scroll, resize)."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "function debounce(fn, ms) {\n  let t;\n  return (...args) => {\n    clearTimeout(t);\n    t = setTimeout(() => fn(...args), ms);\n  };\n}"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q13",
+      "q": "What are arrow functions and how do they differ from normal functions?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Shorter syntax; implicit return for expressions.",
+            "No own `this`, `arguments` or `super` — they use the enclosing ones.",
+            "Cannot be used with `new` and have no `prototype`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "javascript-q14",
+      "q": "What is event delegation and bubbling?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Events travel from the target up through its ancestors (**bubbling**). With delegation you attach one listener to a parent and inspect `event.target`, instead of attaching one per child — fewer listeners and it works for elements added later."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "list.addEventListener('click', (e) => {\n  const li = e.target.closest('li');\n  if (li) select(li.dataset.id);\n});"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q15",
+      "q": "What are the primitive types in JavaScript?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`string`, `number`, `bigint`, `boolean`, `undefined`, `null` and `symbol`. Everything else is an object. Primitives are immutable and compared by value; objects are compared by reference. Note `typeof null === 'object'` is a long-standing quirk."
+        }
+      ]
+    },
+    {
+      "id": "javascript-q16",
+      "q": "What is destructuring, spread and rest?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "code",
+          "language": "js",
+          "value": "const { name, age = 18, ...others } = user;   // object destructuring + rest\nconst [first, , third] = list;             // array destructuring\nconst merged = { ...a, ...b };             // spread\nfunction sum(...nums) {}                   // rest parameters"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q17",
+      "q": "What are generators and iterators?",
+      "difficulty": "hard",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "An iterator is any object with a `next()` method returning `{ value, done }`. A generator function (`function*`) produces an iterator whose body can pause at `yield` and resume later — useful for lazy sequences and custom iteration."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "function* ids() {\n  let i = 1;\n  while (true) yield i++;\n}\nconst g = ids();\ng.next().value; // 1\ng.next().value; // 2"
+        }
+      ]
+    },
+    {
+      "id": "javascript-q18",
+      "q": "What is currying and memoisation?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "**Currying** turns `f(a, b)` into `f(a)(b)`, enabling partial application.",
+            "**Memoisation** caches results by arguments so repeated calls are instant."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "const memo = (fn) => {\n  const cache = new Map();\n  return (n) => cache.has(n) ? cache.get(n) : (cache.set(n, fn(n)), cache.get(n));\n};"
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,3 @@
-// One place to rename / re-brand the site.
-export const SITE = {
-  name: "CodeCrest",
-  short: "CC",
-  tagline: "Practice the rounds. Land the offer.",
-  email: "hello@codecrest.dev",
-};
+// Re-exported from config/site.json so existing imports keep working. Edit the JSON to rebrand.
+import site from "@/config/site.json";
+export const SITE = site;

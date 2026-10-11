@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "slug": "nodejs",
+    "title": "Node.js — Quick Revision",
+    "subtitle": "The runtime concepts that come up in backend and full-stack interviews."
+  },
+  "questions": [
+    {
+      "id": "nodejs-q1",
+      "q": "What is Node.js and why is it fast for I/O?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Node.js is a JavaScript runtime built on Chrome's V8 engine. It uses a **single-threaded event loop** with non-blocking I/O (libuv), so one process can handle many concurrent connections while waiting on disk or network."
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q2",
+      "q": "Explain the Node.js event loop phases.",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**timers** — `setTimeout`/`setInterval` callbacks",
+            "**pending callbacks** — deferred system callbacks",
+            "**poll** — retrieve and run I/O callbacks",
+            "**check** — `setImmediate` callbacks",
+            "**close callbacks**"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "`process.nextTick` and promise microtasks run between phases, before the loop continues."
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q3",
+      "q": "process.nextTick vs setImmediate vs setTimeout(0)?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`nextTick` — runs right after the current operation, before other async work.",
+            "`setTimeout(0)` — timers phase, after at least ~1 ms.",
+            "`setImmediate` — check phase, after I/O callbacks."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q4",
+      "q": "CommonJS vs ES Modules?",
+      "difficulty": "easy",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "CommonJS: `require()` / `module.exports`, synchronous loading.",
+            "ESM: `import` / `export`, static analysis and top-level `await`; enable with `\"type\": \"module\"` or `.mjs`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q5",
+      "q": "How do callbacks, promises and async/await relate in Node?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Callbacks (error-first `(err, data)`) came first and led to nesting. Promises flatten chains and `async/await` makes them read like sync code. `util.promisify` or `fs/promises` convert callback APIs."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "import { readFile } from 'node:fs/promises';\nconst text = await readFile('data.json', 'utf8');"
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q6",
+      "q": "What is middleware in Express?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A function `(req, res, next)` that runs between the request and the final handler — for logging, parsing bodies, authentication, validation, error handling. Order matters; call `next()` to continue or end the response."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "app.use(express.json());\napp.use((req, res, next) => { console.log(req.method, req.url); next(); });\napp.get('/users', (req, res) => res.json([]));"
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q7",
+      "q": "How do you handle errors in Node/Express?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Use `try/catch` with `async/await` and pass errors to `next(err)`.",
+            "Register an error-handling middleware `(err, req, res, next)` last.",
+            "Listen for `unhandledRejection` / `uncaughtException` to log and exit cleanly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q8",
+      "q": "What are streams and why use them?",
+      "difficulty": "medium",
+      "priority": "must",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Streams process data in chunks instead of loading it all in memory — `Readable`, `Writable`, `Duplex`, `Transform`. They give low memory use and backpressure handling."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "import { createReadStream, createWriteStream } from 'node:fs';\nimport { pipeline } from 'node:stream/promises';\nawait pipeline(createReadStream('in.txt'), createWriteStream('out.txt'));"
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q9",
+      "q": "What is the difference between fork, spawn, worker threads and cluster?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "`child_process.spawn/fork` start separate OS processes.",
+            "`worker_threads` run JS on extra threads within one process — good for CPU-heavy work.",
+            "`cluster` forks one worker per CPU core sharing a server port."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q10",
+      "q": "How do you secure a Node API?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Validate and sanitise all input; use parameterised queries.",
+            "Hash passwords (bcrypt/argon2); use short-lived JWTs or sessions with `HttpOnly` cookies.",
+            "`helmet` headers, CORS allow-list, rate limiting.",
+            "Keep dependencies updated; never commit secrets — use environment variables."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q11",
+      "q": "What is package.json and the difference between dependencies and devDependencies?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "`package.json` describes the project: name, scripts, and dependencies. `dependencies` are needed at runtime; `devDependencies` only for development (tests, linters, build tools). `package-lock.json` pins exact versions."
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q12",
+      "q": "What is a Buffer?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "A fixed-size chunk of raw binary memory outside the V8 heap, used for files, network packets and encodings."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "const buf = Buffer.from('hi', 'utf8');\nbuf.toString('hex'); // '6869'"
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q13",
+      "q": "What is the difference between REST and GraphQL?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "REST exposes multiple resource endpoints with fixed responses. GraphQL exposes one endpoint where the client specifies exactly the fields it needs, reducing over- and under-fetching at the cost of more server complexity."
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q14",
+      "q": "How do you scale a Node.js application?",
+      "difficulty": "medium",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "list",
+          "items": [
+            "Run multiple processes (cluster/PM2) or containers behind a load balancer.",
+            "Keep the app stateless; move sessions to Redis.",
+            "Cache hot data, use queues for slow jobs, offload CPU work to worker threads."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs-q15",
+      "q": "What does EventEmitter do?",
+      "difficulty": "easy",
+      "priority": "good",
+      "answer": [
+        {
+          "type": "text",
+          "value": "Core class for the publish/subscribe pattern: `on(event, fn)` registers a listener and `emit(event, data)` calls them. Many Node APIs (streams, HTTP servers) are built on it."
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "value": "import { EventEmitter } from 'node:events';\nconst bus = new EventEmitter();\nbus.on('ready', (n) => console.log(n));\nbus.emit('ready', 1);"
+        }
+      ]
+    }
+  ]
+}

@@ -1,58 +1,60 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/common/Icon/Icon";
-import { SLIDES } from "../../data/home.data";
 import styles from "./HeroCarousel.module.css";
 
 const AUTOPLAY_MS = 6000;
 
-function Visual({ type }) {
-  if (type === "code") {
-    return (
-      <div className={styles.window}>
-        <div className={styles.winHead}><i /><i /><i /><span>StarRating.js</span></div>
-        <pre className={styles.code}>{`const StarRating = ({ max = 5 }) => {
-  const [rating, setRating] = useState(0);
-  const [hover, setHover] = useState(0);
-  return stars.map((n) => (
-    <Star filled={n <= (hover || rating)} />
-  ));
-};`}</pre>
-        <div className={styles.badgeRow}><span className={styles.ok}>✓ Renders 5 stars</span><span className={styles.ok}>✓ Hover preview</span></div>
-      </div>
-    );
-  }
-  if (type === "topics") {
-    const chips = ["React", "JavaScript", "CSS", "HTML", "Angular", "Vue", "Closures", "Hooks", "Event loop"];
-    return (
-      <div className={styles.chipCloud}>
-        {chips.map((c, i) => <span key={c} className={styles.chip} style={{ "--i": i }}>{c}</span>)}
-        <div className={styles.bigStat}><b>200+</b><small>React questions answered</small></div>
-      </div>
-    );
-  }
-  if (type === "tests") {
-    return (
-      <div className={styles.window}>
-        <div className={styles.winHead}><i /><i /><i /><span>Test Results</span><em>4/4 passed</em></div>
-        <ul className={styles.tests}>
-          {["Sorted simple", "No duplicates", "All the same", "Empty array"].map((t) => (
-            <li key={t}><Icon name="check" size={14} /> {t} <span>Passed</span></li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-  return (
+// Each visual type reads its content from the slide's JSON (`slide.visual`). Add a type here to support a new look.
+const VISUALS = {
+  code: ({ title, code, badges = [] }) => (
+    <div className={styles.window}>
+      <div className={styles.winHead}><i /><i /><i /><span>{title}</span></div>
+      <pre className={styles.code}>{code}</pre>
+      <div className={styles.badgeRow}>{badges.map((b) => <span key={b} className={styles.ok}>{b}</span>)}</div>
+    </div>
+  ),
+  topics: ({ chips = [], stat }) => (
+    <div className={styles.chipCloud}>
+      {chips.map((c, i) => <span key={c} className={styles.chip} style={{ "--i": i }}>{c}</span>)}
+      {stat && <div className={styles.bigStat}><b>{stat.value}</b><small>{stat.label}</small></div>}
+    </div>
+  ),
+  tests: ({ title, summary, items = [] }) => (
+    <div className={styles.window}>
+      <div className={styles.winHead}><i /><i /><i /><span>{title}</span><em>{summary}</em></div>
+      <ul className={styles.tests}>
+        {items.map((t) => <li key={t}><Icon name="check" size={14} /> {t} <span>Passed</span></li>)}
+      </ul>
+    </div>
+  ),
+  checklist: ({ title, items = [] }) => (
+    <div className={styles.window}>
+      <div className={styles.winHead}><i /><i /><i /><span>{title}</span></div>
+      <ul className={styles.tests}>
+        {items.map((t) => (
+          <li key={t.text} style={t.done ? undefined : { opacity: 0.6 }}>
+            <Icon name={t.done ? "checkCircle" : "flag"} size={14} /> {t.text} <span>{t.done ? "Done" : "Next"}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ),
+  progress: ({ items = [] }) => (
     <div className={styles.progress}>
-      {[["React", 82], ["DSA", 56], ["Machine coding", 34]].map(([n, v]) => (
+      {items.map(([n, v]) => (
         <div key={n}><span>{n}<b>{v}%</b></span><i><u style={{ width: `${v}%` }} /></i></div>
       ))}
     </div>
-  );
+  ),
+};
+
+function Visual({ visual }) {
+  const Render = visual && VISUALS[visual.type];
+  return Render ? <Render {...visual} /> : null;
 }
 
-export default function HeroCarousel() {
+export default function HeroCarousel({ slides: SLIDES }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduced = useRef(typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches);
@@ -82,7 +84,7 @@ export default function HeroCarousel() {
               <Link to={s.alt.to} className={styles.ghost} tabIndex={i === index ? 0 : -1}>{s.alt.label}</Link>
             </div>
           </div>
-          <div className={styles.visual} aria-hidden="true"><Visual type={s.visual} /></div>
+          <div className={styles.visual} aria-hidden="true"><Visual visual={s.visual} /></div>
         </article>
       ))}
 

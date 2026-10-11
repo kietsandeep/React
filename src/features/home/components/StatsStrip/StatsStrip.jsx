@@ -1,10 +1,10 @@
-import { STATS } from "../../data/home.data";
 import styles from "./StatsStrip.module.css";
 
-export default function StatsStrip() {
+// stats: [{ value, label }] — resolved from home.json by the registry.
+export default function StatsStrip({ stats }) {
   return (
     <ul className={styles.strip}>
-      {STATS.map((s) => (
+      {stats.map((s) => (
         <li key={s.label}><b>{s.value}</b><span>{s.label}</span></li>
       ))}
     </ul>

@@ -1,5 +1,5 @@
 .footer { margin-top: 24px; background: var(--hero-from); color: #cfe7e3; }
-.grid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 40px; padding-top: 56px; padding-bottom: 40px; }
+.grid { display: grid; grid-template-columns: 1.6fr repeat(var(--cols, 3), 1fr); gap: 40px; padding-top: 56px; padding-bottom: 40px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font: 800 20px var(--font-display); color: #fff; }
 .logo span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--accent)); font-size: 13px; }
 .brand p { margin-top: 14px; max-width: 34ch; line-height: 1.65; font-size: 14.5px; color: #9ccbc5; }

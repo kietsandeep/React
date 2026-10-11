@@ -1,0 +1,46 @@
+{
+  "blurb": "Practise real coding rounds and deep-dive interview questions, all in one place.",
+  "maxLinksPerColumn": 6,
+  "columns": [
+    {
+      "title": "Practice",
+      "collection": "practice",
+      "allLabel": "All practice"
+    },
+    {
+      "title": "Quick Revision",
+      "collection": "quick",
+      "allLabel": "All technologies"
+    },
+    {
+      "title": "Interview Q&A",
+      "collection": "topics",
+      "allLabel": "All topics"
+    },
+    {
+      "title": "Company",
+      "links": [
+        {
+          "label": "About us",
+          "to": "/about"
+        },
+        {
+          "label": "Contact",
+          "to": "/contact"
+        },
+        {
+          "label": "Privacy policy",
+          "to": "/privacy"
+        },
+        {
+          "label": "Terms of use",
+          "to": "/terms"
+        }
+      ]
+    }
+  ],
+  "bottom": {
+    "left": "© {year} {name}. All rights reserved.",
+    "right": "Built for frontend developers, by frontend developers."
+  }
+}

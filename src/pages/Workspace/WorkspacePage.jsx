@@ -14,8 +14,7 @@ import EditorPanel from "@/features/workspace/components/EditorPanel/EditorPanel
 import PreviewPanel from "@/features/workspace/components/PreviewPanel/PreviewPanel";
 import ResultsModal from "@/features/workspace/components/ResultsModal/ResultsModal";
 import SolutionModal from "@/features/workspace/components/SolutionModal/SolutionModal";
-import DsaWorkspace from "@/features/workspace/components/DsaWorkspace/DsaWorkspace";
-import OutputWorkspace from "@/features/workspace/components/OutputWorkspace/OutputWorkspace";
+import { WORKSPACES } from "@/features/workspace/registry";
 import styles from "./WorkspacePage.module.css";
 
 function Workspace({ slug, set, question, problem, prev, next }) {
@@ -102,7 +101,7 @@ export default function WorkspacePage() {
   }
   if (state.id !== question.id) return <div className={styles.center}>Loading problem…</div>;
 
-  const Component = { function: DsaWorkspace, output: OutputWorkspace }[state.problem.kind] ?? Workspace;
+  const Component = WORKSPACES[state.problem.kind] ?? Workspace;
   return (
     <Component key={question.id} slug={slug} set={set.set} question={question} problem={state.problem}
       prev={set.questions[index - 1] ?? null} next={set.questions[index + 1] ?? null} />

@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Interview Q&A",
+    "to": "/topics"
+  },
+  {
+    "label": "Quick Revision",
+    "to": "/quick-prep",
+    "badge": "New"
+  },
+  {
+    "label": "Practice",
+    "collection": "practice",
+    "allLabel": "All practice"
+  },
+  {
+    "label": "Trainings",
+    "to": "/trainings"
+  },
+  {
+    "label": "Leaderboard",
+    "to": "/leaderboard"
+  }
+]

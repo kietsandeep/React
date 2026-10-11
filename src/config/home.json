@@ -1,0 +1,266 @@
+{
+  "sections": [
+    {
+      "type": "hero"
+    },
+    {
+      "type": "stats"
+    },
+    {
+      "type": "cards",
+      "id": "practice",
+      "collection": "practice",
+      "limit": 3,
+      "columns": 3
+    },
+    {
+      "type": "cards",
+      "id": "quick",
+      "collection": "quick",
+      "limit": 6,
+      "columns": 3
+    },
+    {
+      "type": "cards",
+      "id": "topics",
+      "collection": "topics",
+      "limit": 6,
+      "columns": 3
+    },
+    {
+      "type": "steps",
+      "eyebrow": "How it works",
+      "title": "From first question to final round"
+    },
+    {
+      "type": "cta"
+    }
+  ],
+  "slides": [
+    {
+      "id": "coding-round",
+      "eyebrow": "Practice coding round",
+      "title": "Build it live. Pass the tests. Own the round.",
+      "text": "Real React machine-coding questions in a live editor with instant preview and automated checks — exactly how product companies run the round.",
+      "cta": {
+        "label": "Start machine coding",
+        "to": "/practice/machine-coding"
+      },
+      "alt": {
+        "label": "Try DSA",
+        "to": "/practice/dsa"
+      },
+      "visual": {
+        "type": "code",
+        "title": "StarRating.js",
+        "code": "const StarRating = ({ max = 5 }) => {\n  const [rating, setRating] = useState(0);\n  const [hover, setHover] = useState(0);\n  return stars.map((n) => (\n    <Star filled={n <= (hover || rating)} />\n  ));\n};",
+        "badges": [
+          "✓ Renders 5 stars",
+          "✓ Hover preview"
+        ]
+      }
+    },
+    {
+      "id": "quick-revision",
+      "eyebrow": "Interview tomorrow?",
+      "title": "Revise what matters most, in one sitting.",
+      "text": "Pick a technology and get a short list of the must-know questions with crisp answers — built for the night before the interview.",
+      "cta": {
+        "label": "Start quick revision",
+        "to": "/quick-prep"
+      },
+      "alt": {
+        "label": "Browse topics",
+        "to": "/topics"
+      },
+      "visual": {
+        "type": "checklist",
+        "title": "Tonight's revision",
+        "items": [
+          {
+            "text": "JavaScript — closures & this",
+            "done": true
+          },
+          {
+            "text": "React — hooks & rendering",
+            "done": true
+          },
+          {
+            "text": "CSS — flexbox vs grid",
+            "done": false
+          },
+          {
+            "text": "HTML — semantics",
+            "done": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "interview-prep",
+      "eyebrow": "Interview preps",
+      "title": "Every frontend topic, answered in depth.",
+      "text": "200+ React questions plus JavaScript, CSS, HTML, Angular and Vue — with code snippets, diagrams and the follow-ups interviewers actually ask.",
+      "cta": {
+        "label": "Browse React questions",
+        "to": "/topics/react"
+      },
+      "alt": {
+        "label": "See all topics",
+        "to": "/topics"
+      },
+      "visual": {
+        "type": "topics",
+        "chips": [
+          "React",
+          "JavaScript",
+          "CSS",
+          "HTML",
+          "Angular",
+          "Vue",
+          "Closures",
+          "Hooks",
+          "Event loop"
+        ],
+        "stat": {
+          "value": "200+",
+          "label": "React questions answered"
+        }
+      }
+    },
+    {
+      "id": "dsa",
+      "eyebrow": "DSA & logic rounds",
+      "title": "130 problems, from warm-up to whiteboard.",
+      "text": "Beginner to advanced algorithm questions tagged by company. Write the function, hit Run, and see every test case pass or fail.",
+      "cta": {
+        "label": "Solve DSA questions",
+        "to": "/practice/dsa"
+      },
+      "alt": {
+        "label": "Machine coding",
+        "to": "/practice/machine-coding"
+      },
+      "visual": {
+        "type": "tests",
+        "title": "Test Results",
+        "summary": "4/4 passed",
+        "items": [
+          "Sorted simple",
+          "No duplicates",
+          "All the same",
+          "Empty array"
+        ]
+      }
+    },
+    {
+      "id": "progress",
+      "eyebrow": "Track your progress",
+      "title": "Know exactly how interview-ready you are.",
+      "text": "Solved questions are saved as you go, so you always see what is done, what is pending, and what to tackle next before the big day.",
+      "cta": {
+        "label": "Pick up where you left off",
+        "to": "/practice/dsa"
+      },
+      "alt": {
+        "label": "Browse topics",
+        "to": "/topics"
+      },
+      "visual": {
+        "type": "progress",
+        "items": [
+          [
+            "React",
+            82
+          ],
+          [
+            "DSA",
+            56
+          ],
+          [
+            "Machine coding",
+            34
+          ]
+        ]
+      }
+    }
+  ],
+  "stats": [
+    {
+      "countOf": "topics.react",
+      "fallback": "200+",
+      "label": "React questions"
+    },
+    {
+      "countOf": "practice.machine-coding",
+      "label": "Machine coding tasks"
+    },
+    {
+      "countOf": "practice.dsa",
+      "label": "DSA problems"
+    },
+    {
+      "countOf": "practice.output",
+      "label": "Output questions"
+    }
+  ],
+  "steps": [
+    {
+      "n": "01",
+      "icon": "flag",
+      "title": "Pick a track",
+      "text": "Choose a topic, a coding round or a DSA set that matches the role you want."
+    },
+    {
+      "n": "02",
+      "icon": "code",
+      "title": "Practise for real",
+      "text": "Write code in the editor, run test cases and learn from the built-in solutions."
+    },
+    {
+      "n": "03",
+      "icon": "checkCircle",
+      "title": "Walk in ready",
+      "text": "Track what you have solved and revisit weak spots until the answers are second nature."
+    }
+  ],
+  "cta": {
+    "title": "Ready to crack your next frontend interview?",
+    "text": "{name} helps you practise the exact rounds companies run — from coding challenges to deep-dive Q&A.",
+    "button": {
+      "label": "Start free practice",
+      "to": "/practice"
+    },
+    "caption": "Our learners have gone on to teams at"
+  },
+  "companies": [
+    {
+      "name": "TCS",
+      "color": "#0f172a"
+    },
+    {
+      "name": "Cognizant",
+      "color": "#2563eb"
+    },
+    {
+      "name": "Accenture",
+      "color": "#7c3aed"
+    },
+    {
+      "name": "Amazon",
+      "color": "#f59e0b"
+    },
+    {
+      "name": "Capgemini",
+      "color": "#0ea5e9"
+    },
+    {
+      "name": "Infosys",
+      "color": "#0284c7"
+    },
+    {
+      "name": "Wipro",
+      "color": "#16a34a"
+    }
+  ]
+}

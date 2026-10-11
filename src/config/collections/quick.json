@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "id": "quick",
+    "card": "quick",
+    "basePath": "/quick-prep",
+    "hubPath": "/quick-prep",
+    "eyebrow": "Interview tomorrow?",
+    "title": "Last-minute revision, one technology at a time",
+    "subtitle": "Short on time? Each card opens the most important questions for that technology — with crisp answers you can read in minutes.",
+    "viewAllLabel": "View all technologies",
+    "searchable": true,
+    "searchPlaceholder": "Search technologies…"
+  },
+  "items": [
+    {
+      "slug": "javascript",
+      "logo": "js",
+      "accent": "#f7df1e",
+      "title": "JavaScript",
+      "description": "Closures, hoisting, this, promises and the event loop."
+    },
+    {
+      "slug": "react",
+      "logo": "react",
+      "accent": "#38bdf8",
+      "title": "React",
+      "description": "Hooks, rendering, state, performance and patterns."
+    },
+    {
+      "slug": "html",
+      "logo": "html",
+      "accent": "#f97316",
+      "title": "HTML",
+      "description": "Semantics, forms, accessibility and SEO basics."
+    },
+    {
+      "slug": "css",
+      "logo": "css",
+      "accent": "#6366f1",
+      "title": "CSS",
+      "description": "Box model, flexbox, grid, specificity and positioning."
+    },
+    {
+      "slug": "typescript",
+      "logo": "ts",
+      "accent": "#3178c6",
+      "title": "TypeScript",
+      "description": "Types vs interfaces, generics, unions and utility types."
+    },
+    {
+      "slug": "nodejs",
+      "logo": "node",
+      "accent": "#4caf50",
+      "title": "Node.js",
+      "description": "Event loop, modules, streams, async patterns and Express."
+    }
+  ]
+}
